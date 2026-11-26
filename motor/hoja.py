@@ -24,11 +24,16 @@ class HojaGoogle:
     def __init__(self, sheet_id: str | None = None, pestana: str = "Solicitudes"):
         import gspread
 
-        info = os.environ.get("GOOGLE_SA_JSON")
+        info = (os.environ.get("GOOGLE_SA_JSON") or "").strip()
         if not info:
             raise RuntimeError("Falta GOOGLE_SA_JSON (el JSON de la cuenta de servicio de Google).")
-        # Acepta el contenido del JSON o la ruta a un archivo
-        datos = json.loads(Path(info).read_text(encoding="utf-8") if Path(info).is_file() else info)
+        # Acepta el contenido del JSON o la ruta a un archivo.
+        # OJO: nunca tratar el contenido como ruta: el error de Python incluiría la clave en el mensaje.
+        try:
+            texto = info if info.startswith("{") else Path(info).read_text(encoding="utf-8")
+            datos = json.loads(texto)
+        except Exception as e:
+            raise RuntimeError(f"GOOGLE_SA_JSON no es un JSON válido ni la ruta a uno ({type(e).__name__}).") from None
         cliente = gspread.service_account_from_dict(datos)
         self.ws = cliente.open_by_key(sheet_id or os.environ["SHEET_ID"]).worksheet(pestana)
         self.cabecera = self.ws.row_values(1)

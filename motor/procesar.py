@@ -76,8 +76,11 @@ def main(argv=None) -> int:
         from .hoja import HojaGoogle
         try:
             hoja, correo = HojaGoogle(), CorreoBrevo()
-        except Exception as e:
+        except RuntimeError as e:  # nuestros propios mensajes: nunca contienen secretos
             print(f"Error de configuración: {e}", file=sys.stderr)
+            return 1
+        except Exception as e:  # errores de librerías: solo el tipo, por si el mensaje incluyera credenciales
+            print(f"Error de configuración ({type(e).__name__}). Revisa los secretos GOOGLE_SA_JSON, SHEET_ID y BREVO_*.", file=sys.stderr)
             return 1
         base_url = os.environ.get("BASE_URL", "")
         if not base_url:
