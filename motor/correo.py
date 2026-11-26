@@ -34,12 +34,13 @@ def componer(sol, met: dict, an: dict, url: str, ejemplo: bool) -> tuple[str, st
 
 class CorreoBrevo:
     def __init__(self):
-        self.clave = os.environ.get("BREVO_API_KEY")
-        self.remitente = os.environ.get("REMITENTE_EMAIL")
+        # .strip(): al pegar un secreto es fácil que se cuele un salto de línea invisible
+        self.clave = (os.environ.get("BREVO_API_KEY") or "").strip()
+        self.remitente = (os.environ.get("REMITENTE_EMAIL") or "").strip()
         if not self.clave or not self.remitente:
             raise RuntimeError("Faltan BREVO_API_KEY o REMITENTE_EMAIL.")
-        self.nombre = os.environ.get("REMITENTE_NOMBRE", "adsignal")
-        self.lista = os.environ.get("BREVO_LISTA_ID")
+        self.nombre = (os.environ.get("REMITENTE_NOMBRE") or "adsignal").strip()
+        self.lista = (os.environ.get("BREVO_LISTA_ID") or "").strip()
 
     def _post(self, ruta: str, cuerpo: dict) -> dict:
         req = urllib.request.Request(
@@ -51,7 +52,11 @@ class CorreoBrevo:
                 texto = r.read().decode() or "{}"
                 return json.loads(texto)
         except urllib.error.HTTPError as e:
+            # La respuesta de Brevo explica el error y no contiene la clave
             raise RuntimeError(f"Brevo {e.code}: {e.read().decode('utf-8', 'replace')[:300]}") from None
+        except (ValueError, urllib.error.URLError) as e:
+            # Errores de cabeceras o de red: su mensaje puede incluir la clave → solo el tipo
+            raise RuntimeError(f"No se pudo conectar con Brevo ({type(e).__name__}). Revisa BREVO_API_KEY.") from None
 
     def enviar(self, para: str, asunto: str, html: str):
         self._post("/smtp/email", {

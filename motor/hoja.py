@@ -35,7 +35,7 @@ class HojaGoogle:
         except Exception as e:
             raise RuntimeError(f"GOOGLE_SA_JSON no es un JSON válido ni la ruta a uno ({type(e).__name__}).") from None
         cliente = gspread.service_account_from_dict(datos)
-        self.ws = cliente.open_by_key(sheet_id or os.environ["SHEET_ID"]).worksheet(pestana)
+        self.ws = cliente.open_by_key((sheet_id or os.environ["SHEET_ID"]).strip()).worksheet(pestana)
         self.cabecera = self.ws.row_values(1)
         faltan = [c for c in COLUMNAS if c not in self.cabecera]
         if faltan:
