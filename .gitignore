@@ -1,0 +1,13 @@
+# Credenciales: NUNCA al repositorio
+*.json.key
+cuenta-servicio*.json
+service-account*.json
+.env
+
+# Pruebas locales
+salida_emails/
+solicitudes_prueba.csv
+anuncios.csv
+informes/
+__pycache__/
+.claude/

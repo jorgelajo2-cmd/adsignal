@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{{ sol.industria }} en {{ sol.nombre_pais }}</title></head>
+<body style="margin:0;padding:0;background:#F5F6F8;font-family:Helvetica,Arial,sans-serif;color:#3A3F4A;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5F6F8;padding:32px 12px;">
+    <tr><td align="center">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;">
+        <tr><td style="padding:28px 32px 8px;font-size:17px;font-weight:bold;color:#0B0D12;letter-spacing:-0.5px;">
+          <span style="color:#3B5BFD;">&#9646;</span> adsignal
+        </td></tr>
+        <tr><td style="padding:8px 32px 0;font-size:13px;color:#737A87;">
+          {{ sol.industria }} · {{ sol.nombre_pais }}{% if ejemplo %} · <span style="color:#A4521F;">datos de ejemplo</span>{% endif %}
+        </td></tr>
+        <tr><td style="padding:10px 32px 0;font-size:24px;line-height:1.25;color:#0B0D12;font-weight:bold;letter-spacing:-0.5px;">
+          {{ an.titular }}
+        </td></tr>
+        <tr><td style="padding:12px 32px 0;font-size:15px;line-height:1.5;">{{ an.subtitulo }}</td></tr>
+        <tr><td style="padding:24px 32px 0;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+            <td width="33%" style="border:1px solid #E7E8EC;border-radius:10px;padding:12px;"><div style="font-size:12px;color:#737A87;">Marcas</div><div style="font-size:22px;color:#0B0D12;">{{ met.n_marcas }}</div></td>
+            <td width="4"></td>
+            <td width="33%" style="border:1px solid #E7E8EC;border-radius:10px;padding:12px;"><div style="font-size:12px;color:#737A87;">Anuncios activos</div><div style="font-size:22px;color:#0B0D12;">{{ met.total_anuncios }}</div></td>
+            <td width="4"></td>
+            <td width="33%" style="border:1px solid #E7E8EC;border-radius:10px;padding:12px;"><div style="font-size:12px;color:#737A87;">Nuevos, 7 días</div><div style="font-size:22px;color:#0B0D12;">{{ met.nuevos }}</div></td>
+          </tr></table>
+        </td></tr>
+        <tr><td style="padding:28px 32px 8px;" align="left">
+          <a href="{{ url }}" style="display:inline-block;background:#3B5BFD;color:#ffffff;text-decoration:none;font-weight:bold;font-size:15px;padding:13px 22px;border-radius:10px;">Ver el informe completo</a>
+        </td></tr>
+        <tr><td style="padding:16px 32px 28px;font-size:12px;line-height:1.5;color:#737A87;">
+          Lo has pedido en adsignal. Datos de la Biblioteca de anuncios de Meta.{% if ejemplo %} Este informe usa marcas y datos de ejemplo mientras el servicio está en pruebas.{% endif %}
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

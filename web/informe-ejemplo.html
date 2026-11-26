@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gimnasios en España: informe de ejemplo de adsignal</title>
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    .cover { text-align: center; padding: 9rem var(--s3) 6rem; }
+    .chips { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: var(--s3); }
+    .chips .tag { background: #fff; box-shadow: 0 0 0 1px var(--line); padding: 0.3rem 0.75rem; }
+    .chips .tag.warn { background: #FFF4EC; color: #A4521F; box-shadow: none; }
+    .cover h1 { font-size: clamp(2rem, 4.4vw, 3.3rem); max-width: 20ch; margin: 0 auto; }
+    .cover p { font-size: var(--t-lg); max-width: 46ch; margin: var(--s2) auto 0; }
+
+    .report { max-width: 900px; margin: calc(var(--s5) * -1) auto 0; position: relative; z-index: 2; }
+    .sheet { background: #fff; border-radius: var(--r-lg); box-shadow: 0 0 0 1px var(--line), 0 30px 60px -30px rgba(11,13,18,0.25); padding: var(--s3); }
+    .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; }
+    .kpi { border: 1px solid var(--line); border-radius: 12px; padding: 0.9rem 1rem; }
+    .kpi span { display: block; font-size: var(--t-xs); color: var(--muted); }
+    .kpi strong { display: flex; align-items: baseline; gap: 0.4rem; font-size: 1.6rem; font-weight: 500; color: var(--ink); letter-spacing: -0.03em; }
+    .tbl { width: 100%; border-collapse: collapse; font-size: var(--t-sm); margin-top: var(--s3); }
+    .tbl th { text-align: left; font-weight: 400; color: var(--muted); font-size: var(--t-xs); padding: 0 0.6rem 0.6rem; }
+    .tbl td { padding: 0.75rem 0.6rem; border-top: 1px solid var(--line); color: var(--ink); }
+    .tbl .n { text-align: right; font-variant-numeric: tabular-nums; }
+    .tbl td.new { color: var(--blue); font-weight: 550; }
+    .table-wrap { overflow-x: auto; }
+
+    h2 { font-size: var(--t-xl); margin: var(--s6) 0 var(--s3); }
+    .trends { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
+    .trends li { background: var(--panel); border-radius: var(--r-md); padding: var(--s3); }
+    .trends strong { display: block; color: var(--ink); font-weight: 550; letter-spacing: -0.02em; margin-bottom: 0.35rem; }
+    .trends span { color: var(--muted); font-size: var(--t-sm); }
+
+    .brands { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s2); }
+    .brand { border: 1px solid var(--line); border-radius: var(--r-md); padding: var(--s3); }
+    .brand header { display: flex; justify-content: space-between; align-items: center; gap: var(--s2); margin-bottom: var(--s2); }
+    .brand h3 { font-size: var(--t-md); font-weight: 600; letter-spacing: -0.02em; }
+    .brand dl { margin: 0; display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.45rem var(--s2); font-size: var(--t-sm); }
+    .brand dt { color: var(--muted); }
+    .brand dd { margin: 0; color: var(--ink); }
+    .brand .insight { margin-top: var(--s2); padding: 0.75rem 0.9rem; border-radius: 10px; background: var(--blue-soft); color: #23308A; font-size: var(--t-sm); }
+
+    .method { color: var(--muted); font-size: var(--t-sm); max-width: 62ch; }
+    .closing { text-align: center; padding: var(--s5) var(--s3); margin: var(--s6) 10px 0; }
+    .closing h2 { margin: 0 0 var(--s3); }
+    .closing.hero-shell::after { background: linear-gradient(180deg, rgba(247,248,251,1) 0%, rgba(247,248,251,0.7) 50%, rgba(247,248,251,0) 100%); }
+
+    @media (max-width: 760px) {
+      .kpis { grid-template-columns: repeat(2, 1fr); }
+      .trends, .brands { grid-template-columns: 1fr; }
+      .brand dl { grid-template-columns: 1fr; gap: 0.1rem; }
+      .brand dd { margin-bottom: 0.45rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Principal">
+    <a class="logo" href="index.html" aria-label="adsignal, inicio"><img src="logo.svg" alt="">adsignal</a>
+    <div class="nav-links"><a class="btn" href="index.html#pedir">Pedir informe</a></div>
+  </nav>
+
+  <header class="hero-shell">
+    <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i>
+    <div class="cover">
+      <div class="chips">
+        <span class="tag">Gimnasios y fitness</span>
+        <span class="tag">España, 23 al 29 de noviembre</span>
+        <span class="tag warn">Datos de ejemplo</span>
+      </div>
+      <h1>Los gimnasios dejan de anunciar precio.</h1>
+      <p>19 anuncios nuevos esta semana. Más de la mitad enseñan socios, no tarifas.</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <main class="report">
+      <section class="sheet" aria-label="Resumen">
+        <div class="kpis">
+          <div class="kpi"><span>Marcas</span><strong>5</strong></div>
+          <div class="kpi"><span>Anuncios activos</span><strong>75</strong></div>
+          <div class="kpi"><span>Nuevos, 7 días</span><strong>19 <i class="tag green" style="font-style:normal">+46%</i></strong></div>
+          <div class="kpi"><span>Más longevo</span><strong>63 días</strong></div>
+        </div>
+        <div class="table-wrap">
+          <table class="tbl">
+            <thead><tr><th>Marca</th><th class="n">Activos</th><th class="n">Nuevos</th><th>Ángulo principal</th></tr></thead>
+            <tbody>
+              <tr><td>Pulso Gym</td><td class="n">23</td><td class="n new">6</td><td><span class="tag blue">Comunidad</span></td></tr>
+              <tr><td>FitCentral</td><td class="n">18</td><td class="n new">5</td><td><span class="tag">Precio</span></td></tr>
+              <tr><td>Núcleo Fitness</td><td class="n">14</td><td class="n new">4</td><td><span class="tag">Clases</span></td></tr>
+              <tr><td>Ola Studio</td><td class="n">11</td><td class="n new">2</td><td><span class="tag">Bienestar</span></td></tr>
+              <tr><td>Barrio Box</td><td class="n">9</td><td class="n new">2</td><td><span class="tag">Resultados</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <h2>Qué ha cambiado</h2>
+      <ul class="trends">
+        <li><strong>Más personas</strong><span>11 de 19 anuncios nuevos muestran socios. Hace un mes, 4.</span></li>
+        <li><strong>Vídeo vertical</strong><span>Todo lo que pasa de 30 días activo es vídeo corto.</span></li>
+        <li><strong>Enero, ya</strong><span>FitCentral anuncia matrícula gratis hasta el 31 de diciembre.</span></li>
+      </ul>
+
+      <h2>Marca a marca</h2>
+      <div class="brands">
+        <article class="brand">
+          <header><h3>Pulso Gym</h3><span class="tag blue">6 nuevos</span></header>
+          <dl><dt>Ofertas</dt><dd>Primer mes a 1 €</dd><dt>Más longevo</dt><dd>Vídeo de socios, 41 días</dd><dt>Dónde</dt><dd>Instagram y Facebook</dd></dl>
+          <p class="insight">Del precio al ambiente: 4 de 6 anuncios nuevos muestran gente.</p>
+        </article>
+        <article class="brand">
+          <header><h3>FitCentral</h3><span class="tag blue">5 nuevos</span></header>
+          <dl><dt>Ofertas</dt><dd>Matrícula gratis hasta el 31/12</dd><dt>Más longevo</dt><dd>Comparativa de cuotas, 52 días</dd><dt>Dónde</dt><dd>Facebook, Instagram, Audience Network</dd></dl>
+          <p class="insight">La única que sigue con precio. Ya prepara enero.</p>
+        </article>
+        <article class="brand">
+          <header><h3>Núcleo Fitness</h3><span class="tag blue">4 nuevos</span></header>
+          <dl><dt>Ofertas</dt><dd>Semana de prueba gratis</dd><dt>Más longevo</dt><dd>Carrusel de horarios, 34 días</dd><dt>Dónde</dt><dd>Instagram</dd></dl>
+          <p class="insight">Cada anuncio presenta a un monitor por su nombre.</p>
+        </article>
+        <article class="brand">
+          <header><h3>Ola Studio</h3><span class="tag blue">2 nuevos</span></header>
+          <dl><dt>Ofertas</dt><dd>Bono de 5 clases</dd><dt>Más longevo</dt><dd>Clase de pilates reformer, 47 días</dd><dt>Dónde</dt><dd>Instagram</dd></dl>
+          <p class="insight">Solo mujeres de 30 a 50. Nunca menciona el precio.</p>
+        </article>
+        <article class="brand">
+          <header><h3>Barrio Box</h3><span class="tag blue">2 nuevos</span></header>
+          <dl><dt>Ofertas</dt><dd>Clase de prueba gratis</dd><dt>Más longevo</dt><dd>Antes y después, 63 días</dd><dt>Dónde</dt><dd>Instagram</dd></dl>
+          <p class="insight">Público local: todos los anuncios nombran el barrio.</p>
+        </article>
+      </div>
+
+      <h2>De dónde salen los datos</h2>
+      <p class="method">De la Biblioteca de anuncios de Meta, con los anuncios activos en España de cada marca. "Nuevo" significa publicado en los últimos 7 días. Las conclusiones se revisan a mano.</p>
+    </main>
+  </div>
+
+  <section class="hero-shell closing" aria-labelledby="h-cierre">
+    <i class="blob b1"></i><i class="blob b2"></i>
+    <h2 id="h-cierre">Pide el informe de tu sector.</h2>
+    <a class="btn light" href="index.html#pedir">Pedir informe</a>
+  </section>
+
+  <div class="wrap">
+    <footer class="site"><span>adsignal, un proyecto de [Tu nombre]</span><a href="privacidad.html">Privacidad</a></footer>
+  </div>
+</body>
+</html>
