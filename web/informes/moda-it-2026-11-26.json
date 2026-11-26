@@ -1,0 +1,430 @@
+{
+  "solicitud": {
+    "industria": "Moda",
+    "pais": "IT",
+    "marcas": [],
+    "email": "",
+    "id": "",
+    "fecha": "2026-11-26"
+  },
+  "ejemplo": true,
+  "metricas": {
+    "fecha_ref": "2026-11-26",
+    "total_anuncios": 78,
+    "n_marcas": 5,
+    "nuevos": 5,
+    "mediana_dias": 29,
+    "plataformas": [
+      {
+        "nombre": "Instagram",
+        "pct": 100
+      },
+      {
+        "nombre": "Facebook",
+        "pct": 88
+      },
+      {
+        "nombre": "Audience Network",
+        "pct": 24
+      },
+      {
+        "nombre": "Messenger",
+        "pct": 4
+      }
+    ],
+    "marcas": [
+      {
+        "page_id": "100001",
+        "nombre": "Kora",
+        "activos": 26,
+        "cuota": 33,
+        "nuevos": 1,
+        "mediana_dias": 29,
+        "max_dias": 97,
+        "mas_longevo": {
+          "dias": 97,
+          "texto": "Resultados que se notan desde el primer mes. Así lo cuentan nuestros clientes.",
+          "url": "https://www.facebook.com/ads/library/?id=1000010004",
+          "id": "1000010004"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 96
+          }
+        ],
+        "creatividades": 8,
+        "alcance_ue": 2402000,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Resultados que se notan desde el primer mes. Así lo cuentan nuestros clientes.",
+            "dias": 97
+          },
+          {
+            "texto": "Últimos días: un regalo de bienvenida. Después vuelve al precio normal.",
+            "dias": 85
+          },
+          {
+            "texto": "Últimos días: envío gratis. Después vuelve al precio normal.",
+            "dias": 75
+          },
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Kora.",
+            "dias": 69
+          },
+          {
+            "texto": "Más de 50.000 personas ya confían en nosotros. Únete a la comunidad Kora.",
+            "dias": 69
+          },
+          {
+            "texto": "Últimos días: una prueba gratuita. Después vuelve al precio normal.",
+            "dias": 55
+          },
+          {
+            "texto": "Más de 10.000 personas ya confían en nosotros. Únete a la comunidad Kora.",
+            "dias": 26
+          },
+          {
+            "texto": "Más de 200.000 personas ya confían en nosotros. Únete a la comunidad Kora.",
+            "dias": 22
+          }
+        ]
+      },
+      {
+        "page_id": "100000",
+        "nombre": "Nova",
+        "activos": 22,
+        "cuota": 28,
+        "nuevos": 4,
+        "mediana_dias": 20,
+        "max_dias": 88,
+        "mas_longevo": {
+          "dias": 88,
+          "texto": "Nuevo en Nova: descubre lo último en moda.",
+          "url": "https://www.facebook.com/ads/library/?id=1000000013",
+          "id": "1000000013"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 95
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 9
+          }
+        ],
+        "creatividades": 5,
+        "alcance_ue": 997800,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Nuevo en Nova: descubre lo último en moda.",
+            "dias": 88
+          },
+          {
+            "texto": "Más de 200.000 personas ya confían en nosotros. Únete a la comunidad Nova.",
+            "dias": 71
+          },
+          {
+            "texto": "Más de 10.000 personas ya confían en nosotros. Únete a la comunidad Nova.",
+            "dias": 67
+          },
+          {
+            "texto": "Garantía total: si no te convence, te devolvemos el dinero.",
+            "dias": 56
+          },
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Nova.",
+            "dias": 44
+          }
+        ]
+      },
+      {
+        "page_id": "100002",
+        "nombre": "Alba",
+        "activos": 11,
+        "cuota": 14,
+        "nuevos": 0,
+        "mediana_dias": 48,
+        "max_dias": 104,
+        "mas_longevo": {
+          "dias": 104,
+          "texto": "Calidad que se nota y dura años. Así trabajamos en Alba.",
+          "url": "https://www.facebook.com/ads/library/?id=1000020008",
+          "id": "1000020008"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 91
+          }
+        ],
+        "creatividades": 7,
+        "alcance_ue": 667800,
+        "edades": "25 - 54",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Alba.",
+            "dias": 104
+          },
+          {
+            "texto": "Más de 50.000 personas ya confían en nosotros. Únete a la comunidad Alba.",
+            "dias": 101
+          },
+          {
+            "texto": "Moda desde 19 €. Sin permanencia y sin letra pequeña.",
+            "dias": 72
+          },
+          {
+            "texto": "Más de 200.000 personas ya confían en nosotros. Únete a la comunidad Alba.",
+            "dias": 63
+          },
+          {
+            "texto": "-30 % en moda solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 48
+          },
+          {
+            "texto": "2x1 en moda solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 25
+          },
+          {
+            "texto": "Más de 10.000 personas ya confían en nosotros. Únete a la comunidad Alba.",
+            "dias": 9
+          }
+        ]
+      },
+      {
+        "page_id": "100004",
+        "nombre": "Vértice",
+        "activos": 11,
+        "cuota": 14,
+        "nuevos": 0,
+        "mediana_dias": 30,
+        "max_dias": 109,
+        "mas_longevo": {
+          "dias": 109,
+          "texto": "-30 % en moda solo esta semana. Aprovecha antes de que acabe.",
+          "url": "https://www.facebook.com/ads/library/?id=1000040008",
+          "id": "1000040008"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 36
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 18
+          }
+        ],
+        "creatividades": 7,
+        "alcance_ue": 909000,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "-30 % en moda solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 109
+          },
+          {
+            "texto": "2x1 en moda solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 64
+          },
+          {
+            "texto": "Más de 10.000 personas ya confían en nosotros. Únete a la comunidad Vértice.",
+            "dias": 45
+          },
+          {
+            "texto": "-20 % en moda solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 37
+          },
+          {
+            "texto": "-15 % en moda solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 30
+          },
+          {
+            "texto": "Resultados que se notan desde el primer mes. Así lo cuentan nuestros clientes.",
+            "dias": 26
+          },
+          {
+            "texto": "Más de 50.000 personas ya confían en nosotros. Únete a la comunidad Vértice.",
+            "dias": 26
+          }
+        ]
+      },
+      {
+        "page_id": "100003",
+        "nombre": "Lumen",
+        "activos": 8,
+        "cuota": 10,
+        "nuevos": 0,
+        "mediana_dias": 44,
+        "max_dias": 79,
+        "mas_longevo": {
+          "dias": 79,
+          "texto": "Calidad que se nota y dura años. Así trabajamos en Lumen.",
+          "url": "https://www.facebook.com/ads/library/?id=1000030006",
+          "id": "1000030006"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 88
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 12
+          }
+        ],
+        "creatividades": 6,
+        "alcance_ue": 605400,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Lumen.",
+            "dias": 79
+          },
+          {
+            "texto": "Resultados que se notan desde el primer mes. Así lo cuentan nuestros clientes.",
+            "dias": 58
+          },
+          {
+            "texto": "Moda desde 29,90 €. Sin permanencia y sin letra pequeña.",
+            "dias": 56
+          },
+          {
+            "texto": "Últimos días: el primer mes gratis. Después vuelve al precio normal.",
+            "dias": 33
+          },
+          {
+            "texto": "Últimos días: un 20 % de descuento. Después vuelve al precio normal.",
+            "dias": 18
+          },
+          {
+            "texto": "Últimos días: una prueba gratuita. Después vuelve al precio normal.",
+            "dias": 17
+          }
+        ]
+      }
+    ]
+  },
+  "analisis": {
+    "fuente": "reglas",
+    "titular": "Kora lidera en anuncios y el argumento más repetido es precio.",
+    "subtitulo": "78 anuncios activos de 5 marcas en Italia. 5 empezaron en los últimos 7 días.",
+    "tendencias": [
+      {
+        "titulo": "Precio es el argumento más usado",
+        "detalle": "Aparece en 42 % de las creatividades distintas."
+      },
+      {
+        "titulo": "Instagram manda",
+        "detalle": "El 100 % de los anuncios se publica en Instagram."
+      },
+      {
+        "titulo": "Nova acelera",
+        "detalle": "Es la marca con más anuncios nuevos: 4 en 7 días."
+      }
+    ],
+    "marcas": {
+      "100001": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Comunidad"
+        ],
+        "ofertas": [
+          "envío gratis"
+        ],
+        "tono": "",
+        "conclusion": "26 anuncios activos (33 % del total), 1 nuevo esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 97 días activo."
+      },
+      "100000": {
+        "angulos": [
+          "Comunidad",
+          "Novedad",
+          "Confianza"
+        ],
+        "ofertas": [],
+        "tono": "",
+        "conclusion": "22 anuncios activos (28 % del total), 4 nuevos esta semana. Apuesta sobre todo por comunidad y novedad. Su anuncio más longevo lleva 88 días activo."
+      },
+      "100002": {
+        "angulos": [
+          "Comunidad",
+          "Precio",
+          "Urgencia"
+        ],
+        "ofertas": [
+          "19 €",
+          "-30 %",
+          "2x1"
+        ],
+        "tono": "",
+        "conclusion": "11 anuncios activos (14 % del total), 0 nuevos esta semana. Apuesta sobre todo por comunidad y precio. Su anuncio más longevo lleva 104 días activo."
+      },
+      "100004": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Comunidad"
+        ],
+        "ofertas": [
+          "-30 %",
+          "2x1",
+          "-20 %"
+        ],
+        "tono": "",
+        "conclusion": "11 anuncios activos (14 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 109 días activo."
+      },
+      "100003": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Calidad"
+        ],
+        "ofertas": [
+          "29,90 €",
+          "el primer mes gratis",
+          "20 % de descuento"
+        ],
+        "tono": "",
+        "conclusion": "8 anuncios activos (10 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 79 días activo."
+      }
+    }
+  }
+}

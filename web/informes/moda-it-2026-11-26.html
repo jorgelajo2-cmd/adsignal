@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moda en Italia: informe de anuncios · adsignal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#0B0D12; --text:#3A3F4A; --muted:#737A87; --line:#E7E8EC; --panel:#F5F6F8; --blue:#3B5BFD; --blue-soft:#EEF1FF; --green:#18A957; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#fff; color:var(--text); font-family:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif; font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3 { color:var(--ink); font-weight:500; letter-spacing:-0.03em; line-height:1.12; margin:0; }
+  a { color:var(--blue); }
+  .wrap { max-width:900px; margin:0 auto; padding:0 24px; }
+  .cover { margin:10px; border-radius:24px; padding:56px 24px 96px; text-align:center;
+           background: radial-gradient(60% 80% at 20% 120%, #3B5BFD 0%, transparent 70%), radial-gradient(50% 70% at 85% 115%, #8C9EFF 0%, transparent 70%), linear-gradient(180deg, #F7F8FB 30%, #DCE4FF 100%); }
+  .brand { display:inline-flex; align-items:center; gap:8px; font-weight:600; letter-spacing:-0.04em; color:var(--ink); font-size:17px; margin-bottom:28px; }
+  .bars { display:inline-flex; gap:2px; align-items:flex-end; height:16px; } .bars i { width:4px; border-radius:2px; background:var(--blue); display:block; }
+  .chips { display:flex; justify-content:center; gap:6px; flex-wrap:wrap; margin-bottom:22px; }
+  .chip { font-size:12px; padding:4px 11px; border-radius:999px; background:#fff; box-shadow:0 0 0 1px var(--line); color:var(--text); }
+  .chip.warn { background:#FFF4EC; color:#A4521F; box-shadow:none; }
+  .cover h1 { font-size:clamp(28px,4.4vw,44px); max-width:22ch; margin:0 auto; }
+  .cover p { font-size:17px; max-width:52ch; margin:14px auto 0; }
+  .sheet { position:relative; margin-top:-60px; background:#fff; border-radius:20px; padding:22px; box-shadow:0 0 0 1px var(--line), 0 30px 60px -30px rgba(11,13,18,.25); }
+  .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+  .kpi { border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
+  .kpi span { display:block; font-size:12px; color:var(--muted); }
+  .kpi strong { font-size:26px; font-weight:500; color:var(--ink); letter-spacing:-0.03em; }
+  h2 { font-size:24px; margin:56px 0 18px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th { text-align:left; font-weight:400; color:var(--muted); font-size:12px; padding:0 8px 8px; }
+  td { padding:11px 8px; border-top:1px solid var(--line); color:var(--ink); vertical-align:middle; }
+  .n { text-align:right; font-variant-numeric:tabular-nums; }
+  .tag { display:inline-block; font-size:12px; font-weight:500; padding:2px 9px; border-radius:999px; background:var(--panel); color:var(--text); margin:0 4px 4px 0; }
+  .tag.blue { background:var(--blue-soft); color:var(--blue); }
+  .sov { display:grid; gap:8px; margin-top:22px; }
+  .sov-row { display:grid; grid-template-columns:140px 1fr 44px; gap:12px; align-items:center; font-size:13px; }
+  .sov-track { height:10px; background:var(--panel); border-radius:6px; overflow:hidden; }
+  .sov-fill { height:100%; background:var(--blue); border-radius:6px; }
+  .trends { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; list-style:none; padding:0; margin:0; }
+  .trends li { background:var(--panel); border-radius:14px; padding:18px; }
+  .trends strong { display:block; color:var(--ink); font-weight:550; margin-bottom:4px; letter-spacing:-0.02em; }
+  .trends span { color:var(--muted); font-size:14px; }
+  .brands { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+  .card { border:1px solid var(--line); border-radius:14px; padding:18px; }
+  .card header { display:flex; justify-content:space-between; align-items:baseline; gap:10px; margin-bottom:12px; }
+  .card h3 { font-size:16px; font-weight:600; letter-spacing:-0.02em; }
+  .card header span { font-size:13px; color:var(--muted); }
+  dl { margin:0; display:grid; grid-template-columns:110px 1fr; gap:6px 12px; font-size:14px; }
+  dt { color:var(--muted); } dd { margin:0; color:var(--ink); }
+  .quote { margin:12px 0 0; padding:10px 12px; border-left:3px solid var(--line); color:var(--text); font-size:13px; }
+  .insight { margin-top:12px; padding:11px 13px; border-radius:10px; background:var(--blue-soft); color:#23308A; font-size:14px; }
+  .method { color:var(--muted); font-size:13px; max-width:68ch; }
+  .method li { margin-bottom:4px; }
+  footer { margin:56px 0 0; padding:20px 0 40px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  @media (max-width:720px) {
+    .kpis { grid-template-columns:repeat(2,1fr); } .trends, .brands { grid-template-columns:1fr; }
+    .sov-row { grid-template-columns:100px 1fr 40px; } .hide-m { display:none; }
+    dl { grid-template-columns:1fr; gap:0; } dd { margin-bottom:6px; }
+  }
+</style>
+</head>
+<body>
+  <header class="cover">
+    <div class="brand"><span class="bars"><i style="height:7px;opacity:.55"></i><i style="height:11px;opacity:.8"></i><i style="height:16px"></i></span>adsignal</div>
+    <div class="chips">
+      <span class="chip">Moda</span>
+      <span class="chip">Italia</span>
+      <span class="chip">26 de noviembre de 2026</span>
+<span class="chip warn">Datos de ejemplo</span>    </div>
+    <h1>Kora lidera en anuncios y el argumento más repetido es precio.</h1>
+    <p>78 anuncios activos de 5 marcas en Italia. 5 empezaron en los últimos 7 días.</p>
+  </header>
+
+  <div class="wrap">
+    <main>
+      <section class="sheet" aria-label="Resumen">
+        <div class="kpis">
+          <div class="kpi"><span>Marcas analizadas</span><strong>5</strong></div>
+          <div class="kpi"><span>Anuncios activos</span><strong>78</strong></div>
+          <div class="kpi"><span>Nuevos, 7 días</span><strong>5</strong></div>
+          <div class="kpi"><span>Días activo (mediana)</span><strong>29</strong></div>
+        </div>
+        <div class="sov" aria-label="Cuota de anuncios por marca">
+          <div class="sov-row"><span>Kora</span><div class="sov-track"><div class="sov-fill" style="width: 33%"></div></div><span class="n">33 %</span></div>
+          <div class="sov-row"><span>Nova</span><div class="sov-track"><div class="sov-fill" style="width: 28%"></div></div><span class="n">28 %</span></div>
+          <div class="sov-row"><span>Alba</span><div class="sov-track"><div class="sov-fill" style="width: 14%"></div></div><span class="n">14 %</span></div>
+          <div class="sov-row"><span>Vértice</span><div class="sov-track"><div class="sov-fill" style="width: 14%"></div></div><span class="n">14 %</span></div>
+          <div class="sov-row"><span>Lumen</span><div class="sov-track"><div class="sov-fill" style="width: 10%"></div></div><span class="n">10 %</span></div>
+        </div>
+      </section>
+
+      <h2>Qué está pasando</h2>
+      <ul class="trends">
+<li><strong>Precio es el argumento más usado</strong><span>Aparece en 42 % de las creatividades distintas.</span></li><li><strong>Instagram manda</strong><span>El 100 % de los anuncios se publica en Instagram.</span></li><li><strong>Nova acelera</strong><span>Es la marca con más anuncios nuevos: 4 en 7 días.</span></li>      </ul>
+
+      <h2>Ranking</h2>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>Marca</th><th class="n">Activos</th><th class="n">Nuevos</th><th class="n hide-m">Mediana días</th><th class="hide-m">Dónde</th><th>Argumento principal</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Kora</td>
+              <td class="n">26</td>
+              <td class="n" style="color:var(--blue)">1</td>
+              <td class="n hide-m">29</td>
+              <td class="hide-m">Instagram, Facebook</td>
+              <td><span class="tag blue">Precio</span></td>
+            </tr>
+            <tr>
+              <td>Nova</td>
+              <td class="n">22</td>
+              <td class="n" style="color:var(--blue)">4</td>
+              <td class="n hide-m">20</td>
+              <td class="hide-m">Instagram, Facebook</td>
+              <td><span class="tag blue">Comunidad</span></td>
+            </tr>
+            <tr>
+              <td>Alba</td>
+              <td class="n">11</td>
+              <td class="n" style="color:var(--blue)">0</td>
+              <td class="n hide-m">48</td>
+              <td class="hide-m">Facebook, Instagram</td>
+              <td><span class="tag blue">Comunidad</span></td>
+            </tr>
+            <tr>
+              <td>Vértice</td>
+              <td class="n">11</td>
+              <td class="n" style="color:var(--blue)">0</td>
+              <td class="n hide-m">30</td>
+              <td class="hide-m">Instagram, Facebook</td>
+              <td><span class="tag blue">Precio</span></td>
+            </tr>
+            <tr>
+              <td>Lumen</td>
+              <td class="n">8</td>
+              <td class="n" style="color:var(--blue)">0</td>
+              <td class="n hide-m">44</td>
+              <td class="hide-m">Facebook, Instagram</td>
+              <td><span class="tag blue">Precio</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Marca a marca</h2>
+      <div class="brands">
+        <article class="card">
+          <header><h3>Kora</h3><span>26 activos · 1 nuevo</span></header>
+          <dl>
+            <dt>Argumentos</dt><dd><span class="tag">Precio</span><span class="tag">Urgencia</span><span class="tag">Comunidad</span></dd>
+            <dt>Ofertas</dt><dd>envío gratis</dd>
+            <dt>Variantes</dt><dd>8 textos distintos</dd>
+            <dt>Dónde</dt><dd>Instagram, Facebook</dd>
+<dt>Más longevo</dt><dd>97 días activo · <a href="https://www.facebook.com/ads/library/?id=1000010004">ver anuncio</a></dd>          </dl>
+<p class="quote">“Resultados que se notan desde el primer mes. Así lo cuentan nuestros clientes.”</p><p class="insight">26 anuncios activos (33 % del total), 1 nuevo esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 97 días activo.</p>        </article>
+        <article class="card">
+          <header><h3>Nova</h3><span>22 activos · 4 nuevos</span></header>
+          <dl>
+            <dt>Argumentos</dt><dd><span class="tag">Comunidad</span><span class="tag">Novedad</span><span class="tag">Confianza</span></dd>
+            <dt>Ofertas</dt><dd>Ninguna detectada</dd>
+            <dt>Variantes</dt><dd>5 textos distintos</dd>
+            <dt>Dónde</dt><dd>Instagram, Facebook, Messenger</dd>
+<dt>Más longevo</dt><dd>88 días activo · <a href="https://www.facebook.com/ads/library/?id=1000000013">ver anuncio</a></dd>          </dl>
+<p class="quote">“Nuevo en Nova: descubre lo último en moda.”</p><p class="insight">22 anuncios activos (28 % del total), 4 nuevos esta semana. Apuesta sobre todo por comunidad y novedad. Su anuncio más longevo lleva 88 días activo.</p>        </article>
+        <article class="card">
+          <header><h3>Alba</h3><span>11 activos · 0 nuevos</span></header>
+          <dl>
+            <dt>Argumentos</dt><dd><span class="tag">Comunidad</span><span class="tag">Precio</span><span class="tag">Urgencia</span></dd>
+            <dt>Ofertas</dt><dd>19 €, -30 %, 2x1</dd>
+            <dt>Variantes</dt><dd>7 textos distintos</dd>
+            <dt>Dónde</dt><dd>Facebook, Instagram, Audience Network</dd>
+<dt>Más longevo</dt><dd>104 días activo · <a href="https://www.facebook.com/ads/library/?id=1000020008">ver anuncio</a></dd>          </dl>
+<p class="quote">“Calidad que se nota y dura años. Así trabajamos en Alba.”</p><p class="insight">11 anuncios activos (14 % del total), 0 nuevos esta semana. Apuesta sobre todo por comunidad y precio. Su anuncio más longevo lleva 104 días activo.</p>        </article>
+        <article class="card">
+          <header><h3>Vértice</h3><span>11 activos · 0 nuevos</span></header>
+          <dl>
+            <dt>Argumentos</dt><dd><span class="tag">Precio</span><span class="tag">Urgencia</span><span class="tag">Comunidad</span></dd>
+            <dt>Ofertas</dt><dd>-30 %, 2x1, -20 %</dd>
+            <dt>Variantes</dt><dd>7 textos distintos</dd>
+            <dt>Dónde</dt><dd>Instagram, Facebook, Audience Network</dd>
+<dt>Más longevo</dt><dd>109 días activo · <a href="https://www.facebook.com/ads/library/?id=1000040008">ver anuncio</a></dd>          </dl>
+<p class="quote">“-30 % en moda solo esta semana. Aprovecha antes de que acabe.”</p><p class="insight">11 anuncios activos (14 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 109 días activo.</p>        </article>
+        <article class="card">
+          <header><h3>Lumen</h3><span>8 activos · 0 nuevos</span></header>
+          <dl>
+            <dt>Argumentos</dt><dd><span class="tag">Precio</span><span class="tag">Urgencia</span><span class="tag">Calidad</span></dd>
+            <dt>Ofertas</dt><dd>29,90 €, el primer mes gratis, 20 % de descuento</dd>
+            <dt>Variantes</dt><dd>6 textos distintos</dd>
+            <dt>Dónde</dt><dd>Facebook, Instagram, Audience Network, Messenger</dd>
+<dt>Más longevo</dt><dd>79 días activo · <a href="https://www.facebook.com/ads/library/?id=1000030006">ver anuncio</a></dd>          </dl>
+<p class="quote">“Calidad que se nota y dura años. Así trabajamos en Lumen.”</p><p class="insight">8 anuncios activos (10 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 79 días activo.</p>        </article>
+      </div>
+
+      <h2>Cómo se ha hecho</h2>
+      <ul class="method">
+        <li>Fuente: Biblioteca de anuncios de Meta (Facebook, Instagram, Messenger y Audience Network), anuncios activos en Italia el 26 de noviembre de 2026.</li>
+        <li>Marcas: los anunciantes con más anuncios activos para «Moda».</li>
+        <li>«Nuevo»: empezó a publicarse en los últimos 7 días. «Días activo»: desde que empezó hasta hoy. Un anuncio que dura semanas suele ser uno que funciona.</li>
+        <li>Los números se calculan directamente de los datos. Los argumentos se detectan por palabras clave en los textos.</li>
+      </ul>
+    </main>
+    <footer><span>adsignal · informe </span><span>Pide otro sector en adsignal</span></footer>
+  </div>
+</body>
+</html>

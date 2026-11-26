@@ -1,0 +1,313 @@
+{
+  "solicitud": {
+    "industria": "Seguros de coche",
+    "pais": "FR",
+    "marcas": [
+      "Alfa",
+      "Beta",
+      "Gamma"
+    ],
+    "email": "",
+    "id": "",
+    "fecha": "2026-11-26"
+  },
+  "ejemplo": true,
+  "metricas": {
+    "fecha_ref": "2026-11-26",
+    "total_anuncios": 55,
+    "n_marcas": 3,
+    "nuevos": 2,
+    "mediana_dias": 32,
+    "plataformas": [
+      {
+        "nombre": "Instagram",
+        "pct": 100
+      },
+      {
+        "nombre": "Facebook",
+        "pct": 93
+      },
+      {
+        "nombre": "Messenger",
+        "pct": 42
+      },
+      {
+        "nombre": "Audience Network",
+        "pct": 4
+      }
+    ],
+    "marcas": [
+      {
+        "page_id": "100000",
+        "nombre": "Alfa",
+        "activos": 27,
+        "cuota": 49,
+        "nuevos": 2,
+        "mediana_dias": 28,
+        "max_dias": 103,
+        "mas_longevo": {
+          "dias": 103,
+          "texto": "Todo desde la app, cuando quieras y donde quieras. Empieza en 2 minutos.",
+          "url": "https://www.facebook.com/ads/library/?id=1000000009",
+          "id": "1000000009"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 89
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 78
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 7
+          }
+        ],
+        "creatividades": 7,
+        "alcance_ue": 1746000,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Todo desde la app, cuando quieras y donde quieras. Empieza en 2 minutos.",
+            "dias": 103
+          },
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Alfa.",
+            "dias": 96
+          },
+          {
+            "texto": "Nuevo en Alfa: descubre lo último en seguros de coche.",
+            "dias": 61
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y el primer mes gratis.",
+            "dias": 61
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un 20 % de descuento.",
+            "dias": 51
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y una prueba gratuita.",
+            "dias": 24
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un regalo de bienvenida.",
+            "dias": 23
+          }
+        ]
+      },
+      {
+        "page_id": "100002",
+        "nombre": "Gamma",
+        "activos": 19,
+        "cuota": 35,
+        "nuevos": 0,
+        "mediana_dias": 33,
+        "max_dias": 107,
+        "mas_longevo": {
+          "dias": 107,
+          "texto": "Ya estamos en tu ciudad. Ven a conocernos y envío gratis.",
+          "url": "https://www.facebook.com/ads/library/?id=1000020006",
+          "id": "1000020006"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 95
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 5
+          }
+        ],
+        "creatividades": 12,
+        "alcance_ue": 1451800,
+        "edades": "18 - 65+",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y envío gratis.",
+            "dias": 107
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y una prueba gratuita.",
+            "dias": 81
+          },
+          {
+            "texto": "-20 % en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 76
+          },
+          {
+            "texto": "Resultados que se notan desde el primer mes. Así lo cuentan nuestros clientes.",
+            "dias": 75
+          },
+          {
+            "texto": "Seguros de coche desde 49 €. Sin permanencia y sin letra pequeña.",
+            "dias": 65
+          },
+          {
+            "texto": "Seguros de coche desde 9,99 €. Sin permanencia y sin letra pequeña.",
+            "dias": 50
+          },
+          {
+            "texto": "-15 % en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 33
+          },
+          {
+            "texto": "Seguros de coche desde 4,99 €/mes. Sin permanencia y sin letra pequeña.",
+            "dias": 30
+          },
+          {
+            "texto": "-30 % en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 29
+          },
+          {
+            "texto": "Seguros de coche desde 29,90 €. Sin permanencia y sin letra pequeña.",
+            "dias": 29
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un regalo de bienvenida.",
+            "dias": 22
+          },
+          {
+            "texto": "Seguros de coche desde 19 €. Sin permanencia y sin letra pequeña.",
+            "dias": 19
+          }
+        ]
+      },
+      {
+        "page_id": "100001",
+        "nombre": "Beta",
+        "activos": 9,
+        "cuota": 16,
+        "nuevos": 0,
+        "mediana_dias": 30,
+        "max_dias": 76,
+        "mas_longevo": {
+          "dias": 76,
+          "texto": "Seguros de coche desde 9,99 €. Sin permanencia y sin letra pequeña.",
+          "url": "https://www.facebook.com/ads/library/?id=1000010008",
+          "id": "1000010008"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 11
+          }
+        ],
+        "creatividades": 6,
+        "alcance_ue": 241200,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Seguros de coche desde 9,99 €. Sin permanencia y sin letra pequeña.",
+            "dias": 76
+          },
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Beta.",
+            "dias": 68
+          },
+          {
+            "texto": "Seguros de coche desde 19 €. Sin permanencia y sin letra pequeña.",
+            "dias": 55
+          },
+          {
+            "texto": "Seguros de coche desde 29,90 €. Sin permanencia y sin letra pequeña.",
+            "dias": 37
+          },
+          {
+            "texto": "Seguros de coche desde 49 €. Sin permanencia y sin letra pequeña.",
+            "dias": 22
+          },
+          {
+            "texto": "Últimos días: envío gratis. Después vuelve al precio normal.",
+            "dias": 21
+          }
+        ]
+      }
+    ]
+  },
+  "analisis": {
+    "fuente": "reglas",
+    "titular": "Alfa acapara el 49 % de los anuncios de seguros de coche.",
+    "subtitulo": "55 anuncios activos de 3 marcas en Francia. 2 empezaron en los últimos 7 días.",
+    "tendencias": [
+      {
+        "titulo": "Precio es el argumento más usado",
+        "detalle": "Aparece en 56 % de las creatividades distintas."
+      },
+      {
+        "titulo": "Instagram manda",
+        "detalle": "El 100 % de los anuncios se publica en Instagram."
+      },
+      {
+        "titulo": "Alfa acelera",
+        "detalle": "Es la marca con más anuncios nuevos: 2 en 7 días."
+      }
+    ],
+    "marcas": {
+      "100000": {
+        "angulos": [
+          "Local",
+          "Conveniencia",
+          "Calidad"
+        ],
+        "ofertas": [
+          "el primer mes gratis",
+          "20 % de descuento"
+        ],
+        "tono": "",
+        "conclusion": "27 anuncios activos (49 % del total), 2 nuevos esta semana. Apuesta sobre todo por local y conveniencia. Su anuncio más longevo lleva 103 días activo."
+      },
+      "100002": {
+        "angulos": [
+          "Precio",
+          "Local",
+          "Urgencia"
+        ],
+        "ofertas": [
+          "conocernos y envío gratis",
+          "-20 %",
+          "49 €"
+        ],
+        "tono": "",
+        "conclusion": "19 anuncios activos (35 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y local. Su anuncio más longevo lleva 107 días activo."
+      },
+      "100001": {
+        "angulos": [
+          "Precio",
+          "Calidad",
+          "Urgencia"
+        ],
+        "ofertas": [
+          "9,99 €",
+          "19 €",
+          "29,90 €"
+        ],
+        "tono": "",
+        "conclusion": "9 anuncios activos (16 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y calidad. Su anuncio más longevo lleva 76 días activo."
+      }
+    }
+  }
+}
