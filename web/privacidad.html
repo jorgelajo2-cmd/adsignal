@@ -10,7 +10,8 @@
     main { max-width: 720px; margin: 7rem auto var(--s6); background: #fff; border-radius: var(--r-lg); box-shadow: 0 0 0 1px var(--line); padding: var(--s4); }
     h1 { font-size: var(--t-xl); margin-bottom: var(--s3); }
     h2 { font-size: var(--t-md); font-weight: 600; letter-spacing: -0.02em; margin: var(--s4) 0 var(--s1); }
-    p { max-width: var(--measure); }
+    p, li { max-width: var(--measure); }
+    ul { padding-left: 1.2rem; }
     .todo { background: rgba(247,184,156,0.18); color: #9A4A26; padding: 0.75rem 1rem; border-radius: var(--r-sm); font-size: var(--t-sm); }
     @media (max-width: 640px) { main { padding: var(--s3); margin: 6rem 0 var(--s5); } }
   </style>
@@ -20,25 +21,33 @@
   <div class="wrap">
     <main>
       <h1>Política de privacidad</h1>
-      <p class="todo">Borrador: completa los datos entre corchetes y revísalo antes de publicar la web.</p>
+      <p style="color:var(--muted)">Última actualización: 26 de noviembre de 2026</p>
 
       <h2>Quién trata tus datos</h2>
-      <p>[Tu nombre y apellidos], [email de contacto].</p>
+      <p>Jorge Lajo, responsable de adsignal. Contacto: <a href="mailto:jorgelajosala@gmail.com">jorgelajosala@gmail.com</a>.</p>
 
       <h2>Qué datos recogemos y para qué</h2>
-      <p>Tu email y el sector que eliges, para enviarte el informe. También guardamos de qué campaña llegaste (parámetros UTM) para saber qué canales funcionan.</p>
+      <p>Cuando pides un informe guardamos tu email, el sector, el país y las marcas que indicas, la página desde la que lo pides y de qué campaña llegas (parámetros UTM). Los usamos para preparar tu informe, enviártelo por email y saber qué canales nos traen visitas.</p>
+      <p>No te enviaremos otras comunicaciones sin pedirte permiso antes.</p>
 
       <h2>Base legal</h2>
-      <p>Tu consentimiento, que das al marcar la casilla del formulario. Puedes retirarlo en cualquier momento con el enlace de baja de cada email.</p>
+      <p>Tu consentimiento, que das al marcar la casilla del formulario. Puedes retirarlo cuando quieras escribiendo al email de contacto.</p>
 
       <h2>Con quién se comparten</h2>
-      <p>Con los proveedores que usamos para enviar los emails y gestionar los contactos: [Brevo / HubSpot]. No vendemos ni cedemos tus datos a nadie más.</p>
+      <p>Con los proveedores que usamos para que el servicio funcione, solo para ese fin:</p>
+      <ul>
+        <li>Make (Celonis): recibe el formulario.</li>
+        <li>Google (Google Sheets): guarda las solicitudes.</li>
+        <li>Brevo: gestiona los contactos y envía el email.</li>
+        <li>GitHub: aloja esta web y los informes. Los informes publicados no contienen tu email ni otros datos personales.</li>
+      </ul>
+      <p>Algunos de estos proveedores pueden tratar datos fuera de la Unión Europea, con las garantías que exige la normativa. No vendemos ni cedemos tus datos a nadie más.</p>
 
       <h2>Cuánto tiempo los guardamos</h2>
-      <p>Mientras sigas suscrito. Si te das de baja, borramos tu email en un plazo máximo de 30 días.</p>
+      <p>Hasta que nos pidas que los borremos y, como máximo, 12 meses desde tu última solicitud.</p>
 
       <h2>Tus derechos</h2>
-      <p>Puedes pedir acceder, corregir o borrar tus datos escribiendo a [email de contacto]. Si crees que no los tratamos bien, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
+      <p>Puedes pedir acceder a tus datos, corregirlos o borrarlos, o retirar tu consentimiento, escribiendo a <a href="mailto:jorgelajosala@gmail.com">jorgelajosala@gmail.com</a>. Si crees que no los tratamos bien, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
     </main>
   </div>
 </body>
