@@ -1,0 +1,445 @@
+{
+  "solicitud": {
+    "industria": "Gimnasios",
+    "pais": "ES",
+    "marcas": [],
+    "id": "73a6a67f10a442808a98ca962ac14f43",
+    "fecha": "2026-11-26"
+  },
+  "ejemplo": true,
+  "metricas": {
+    "fecha_ref": "2026-11-26",
+    "total_anuncios": 93,
+    "n_marcas": 5,
+    "nuevos": 3,
+    "mediana_dias": 38,
+    "plataformas": [
+      {
+        "nombre": "Instagram",
+        "pct": 100
+      },
+      {
+        "nombre": "Facebook",
+        "pct": 97
+      },
+      {
+        "nombre": "Messenger",
+        "pct": 42
+      },
+      {
+        "nombre": "Audience Network",
+        "pct": 28
+      }
+    ],
+    "marcas": [
+      {
+        "page_id": "100002",
+        "nombre": "Atlas",
+        "activos": 28,
+        "cuota": 30,
+        "nuevos": 1,
+        "mediana_dias": 35,
+        "max_dias": 111,
+        "mas_longevo": {
+          "dias": 111,
+          "texto": "Calidad que se nota y dura años. Así trabajamos en Atlas.",
+          "url": "https://www.facebook.com/ads/library/?id=1000020004",
+          "id": "1000020004"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 96
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 93
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 4
+          }
+        ],
+        "creatividades": 6,
+        "alcance_ue": 1412400,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Atlas.",
+            "dias": 111
+          },
+          {
+            "texto": "Resultados que se notan desde el primer mes. Así lo cuentan nuestros clientes.",
+            "dias": 98
+          },
+          {
+            "texto": "Todo desde la app, cuando quieras y donde quieras. Empieza en 2 minutos.",
+            "dias": 92
+          },
+          {
+            "texto": "Gimnasios desde 4,99 €/mes. Sin permanencia y sin letra pequeña.",
+            "dias": 71
+          },
+          {
+            "texto": "Gimnasios desde 9,99 €. Sin permanencia y sin letra pequeña.",
+            "dias": 33
+          },
+          {
+            "texto": "Gimnasios desde 29,90 €. Sin permanencia y sin letra pequeña.",
+            "dias": 31
+          }
+        ]
+      },
+      {
+        "page_id": "100000",
+        "nombre": "Kora",
+        "activos": 27,
+        "cuota": 29,
+        "nuevos": 0,
+        "mediana_dias": 40,
+        "max_dias": 104,
+        "mas_longevo": {
+          "dias": 104,
+          "texto": "Gimnasios desde 19 €. Sin permanencia y sin letra pequeña.",
+          "url": "https://www.facebook.com/ads/library/?id=1000000011",
+          "id": "1000000011"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 93
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 85
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 4
+          }
+        ],
+        "creatividades": 7,
+        "alcance_ue": 2503600,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Gimnasios desde 19 €. Sin permanencia y sin letra pequeña.",
+            "dias": 104
+          },
+          {
+            "texto": "Garantía total: si no te convence, te devolvemos el dinero.",
+            "dias": 71
+          },
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Kora.",
+            "dias": 70
+          },
+          {
+            "texto": "-15 % en gimnasios solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 67
+          },
+          {
+            "texto": "Gimnasios desde 49 €. Sin permanencia y sin letra pequeña.",
+            "dias": 33
+          },
+          {
+            "texto": "-20 % en gimnasios solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 32
+          },
+          {
+            "texto": "Gimnasios desde 4,99 €/mes. Sin permanencia y sin letra pequeña.",
+            "dias": 18
+          }
+        ]
+      },
+      {
+        "page_id": "100003",
+        "nombre": "Vértice",
+        "activos": 18,
+        "cuota": 19,
+        "nuevos": 1,
+        "mediana_dias": 40,
+        "max_dias": 90,
+        "mas_longevo": {
+          "dias": 90,
+          "texto": "Últimos días: envío gratis. Después vuelve al precio normal.",
+          "url": "https://www.facebook.com/ads/library/?id=1000030013",
+          "id": "1000030013"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 11
+          }
+        ],
+        "creatividades": 10,
+        "alcance_ue": 988800,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Últimos días: envío gratis. Después vuelve al precio normal.",
+            "dias": 90
+          },
+          {
+            "texto": "Garantía total: si no te convence, te devolvemos el dinero.",
+            "dias": 87
+          },
+          {
+            "texto": "Últimos días: el primer mes gratis. Después vuelve al precio normal.",
+            "dias": 87
+          },
+          {
+            "texto": "Más de 200.000 personas ya confían en nosotros. Únete a la comunidad Vértice.",
+            "dias": 73
+          },
+          {
+            "texto": "Más de 10.000 personas ya confían en nosotros. Únete a la comunidad Vértice.",
+            "dias": 67
+          },
+          {
+            "texto": "Más de 50.000 personas ya confían en nosotros. Únete a la comunidad Vértice.",
+            "dias": 61
+          },
+          {
+            "texto": "Últimos días: una prueba gratuita. Después vuelve al precio normal.",
+            "dias": 61
+          },
+          {
+            "texto": "Últimos días: un regalo de bienvenida. Después vuelve al precio normal.",
+            "dias": 43
+          },
+          {
+            "texto": "Resultados que se notan desde el primer mes. Así lo cuentan nuestros clientes.",
+            "dias": 38
+          },
+          {
+            "texto": "Últimos días: un 20 % de descuento. Después vuelve al precio normal.",
+            "dias": 32
+          }
+        ]
+      },
+      {
+        "page_id": "100004",
+        "nombre": "Alba",
+        "activos": 13,
+        "cuota": 14,
+        "nuevos": 0,
+        "mediana_dias": 39,
+        "max_dias": 88,
+        "mas_longevo": {
+          "dias": 88,
+          "texto": "Últimos días: envío gratis. Después vuelve al precio normal.",
+          "url": "https://www.facebook.com/ads/library/?id=1000040012",
+          "id": "1000040012"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 92
+          }
+        ],
+        "creatividades": 7,
+        "alcance_ue": 815200,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Últimos días: envío gratis. Después vuelve al precio normal.",
+            "dias": 88
+          },
+          {
+            "texto": "Gimnasios desde 49 €. Sin permanencia y sin letra pequeña.",
+            "dias": 71
+          },
+          {
+            "texto": "Últimos días: un 20 % de descuento. Después vuelve al precio normal.",
+            "dias": 60
+          },
+          {
+            "texto": "Todo desde la app, cuando quieras y donde quieras. Empieza en 2 minutos.",
+            "dias": 55
+          },
+          {
+            "texto": "Garantía total: si no te convence, te devolvemos el dinero.",
+            "dias": 52
+          },
+          {
+            "texto": "Gimnasios desde 19 €. Sin permanencia y sin letra pequeña.",
+            "dias": 17
+          },
+          {
+            "texto": "Gimnasios desde 4,99 €/mes. Sin permanencia y sin letra pequeña.",
+            "dias": 9
+          }
+        ]
+      },
+      {
+        "page_id": "100001",
+        "nombre": "Nova",
+        "activos": 7,
+        "cuota": 8,
+        "nuevos": 1,
+        "mediana_dias": 19,
+        "max_dias": 78,
+        "mas_longevo": {
+          "dias": 78,
+          "texto": "Todo desde la app, cuando quieras y donde quieras. Empieza en 2 minutos.",
+          "url": "https://www.facebook.com/ads/library/?id=1000010001",
+          "id": "1000010001"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          }
+        ],
+        "creatividades": 5,
+        "alcance_ue": 125800,
+        "edades": "18 - 34",
+        "genero": "Men",
+        "textos": [
+          {
+            "texto": "Todo desde la app, cuando quieras y donde quieras. Empieza en 2 minutos.",
+            "dias": 78
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y el primer mes gratis.",
+            "dias": 47
+          },
+          {
+            "texto": "Nuevo en Nova: descubre lo último en gimnasios.",
+            "dias": 19
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y una prueba gratuita.",
+            "dias": 15
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un regalo de bienvenida.",
+            "dias": 6
+          }
+        ]
+      }
+    ]
+  },
+  "analisis": {
+    "fuente": "reglas",
+    "titular": "Atlas lidera en anuncios y el argumento más repetido es precio.",
+    "subtitulo": "93 anuncios activos de 5 marcas en España. 3 empezaron en los últimos 7 días.",
+    "tendencias": [
+      {
+        "titulo": "Precio es el argumento más usado",
+        "detalle": "Aparece en 51 % de las creatividades distintas."
+      },
+      {
+        "titulo": "Instagram manda",
+        "detalle": "El 100 % de los anuncios se publica en Instagram."
+      },
+      {
+        "titulo": "Cuánto duran los anuncios",
+        "detalle": "La mitad de los anuncios lleva más de 38 días activos."
+      }
+    ],
+    "marcas": {
+      "100002": {
+        "angulos": [
+          "Precio",
+          "Calidad",
+          "Resultados"
+        ],
+        "ofertas": [
+          "4,99 €/mes",
+          "9,99 €",
+          "29,90 €"
+        ],
+        "tono": "",
+        "conclusion": "28 anuncios activos (30 % del total), 1 nuevo esta semana. Apuesta sobre todo por precio y calidad. Su anuncio más longevo lleva 111 días activo."
+      },
+      "100000": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Confianza"
+        ],
+        "ofertas": [
+          "19 €",
+          "-15 %",
+          "49 €"
+        ],
+        "tono": "",
+        "conclusion": "27 anuncios activos (29 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 104 días activo."
+      },
+      "100003": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Comunidad"
+        ],
+        "ofertas": [
+          "envío gratis",
+          "el primer mes gratis",
+          "20 % de descuento"
+        ],
+        "tono": "",
+        "conclusion": "18 anuncios activos (19 % del total), 1 nuevo esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 90 días activo."
+      },
+      "100004": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Conveniencia"
+        ],
+        "ofertas": [
+          "envío gratis",
+          "49 €",
+          "20 % de descuento"
+        ],
+        "tono": "",
+        "conclusion": "13 anuncios activos (14 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 88 días activo."
+      },
+      "100001": {
+        "angulos": [
+          "Local",
+          "Conveniencia",
+          "Novedad"
+        ],
+        "ofertas": [
+          "el primer mes gratis"
+        ],
+        "tono": "",
+        "conclusion": "7 anuncios activos (8 % del total), 1 nuevo esta semana. Apuesta sobre todo por local y conveniencia. Su anuncio más longevo lleva 78 días activo."
+      }
+    }
+  }
+}
