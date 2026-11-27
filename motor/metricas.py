@@ -71,6 +71,11 @@ def calcular(anuncios: list[dict], fecha_ref: date) -> dict:
                 textos[t] = max(textos.get(t, 0), d or 0)
         plataformas_sector.update(plataformas)
         todos_dias.extend(dias)
+        # Lanzamientos por día en los últimos 30 días (índice 0 = hace 29 días, 29 = hoy)
+        serie = [0] * 30
+        for d in dias:
+            if d < 30:
+                serie[29 - d] += 1
         edades = Counter(" - ".join(ad.get("target_ages") or []) for ad in ads if ad.get("target_ages"))
         generos = Counter(ad.get("target_gender") for ad in ads if ad.get("target_gender"))
         marcas.append({
@@ -88,10 +93,19 @@ def calcular(anuncios: list[dict], fecha_ref: date) -> dict:
             "edades": edades.most_common(1)[0][0] if edades else None,
             "genero": generos.most_common(1)[0][0] if generos else None,
             "textos": [{"texto": t, "dias": d} for t, d in sorted(textos.items(), key=lambda x: -x[1])][:40],
+            "serie_30d": serie,
         })
 
     marcas.sort(key=lambda m: -m["activos"])
+    # Antigüedad de los anuncios activos, por tramos
+    tramos = [("Esta semana", 0, 7), ("8-30 días", 8, 30), ("1-3 meses", 31, 90), ("Más de 3 meses", 91, 10**6)]
+    antiguedad = []
+    for nombre, lo, hi in tramos:
+        n = sum(1 for d in todos_dias if lo <= d <= hi)
+        antiguedad.append({"nombre": nombre, "n": n, "pct": round(100 * n / len(todos_dias)) if todos_dias else 0})
     return {
+        "antiguedad": antiguedad,
+        "max_serie": max((max(m["serie_30d"]) for m in marcas), default=0),
         "fecha_ref": fecha_ref.isoformat(),
         "total_anuncios": total,
         "n_marcas": len(marcas),

@@ -1,4 +1,4 @@
-# adsignal
+# AdSignal
 
 **Informes automáticos de los anuncios de tu competencia.** Eliges sector y país (UE) en la web y recibes por email un informe con lo que anuncian las marcas de ese mercado en Meta: quién invierte más, qué lanza, qué ofertas usa y qué anuncios mantiene activos más tiempo.
 

@@ -1,0 +1,80 @@
+/* AdSignal: tarjetas de dashboard (cristal oscuro) y gráficos interactivos.
+   Lo usan la landing y el informe (el informe lo incrusta al generarse). */
+.hc {
+  --lite: #EEF2FF;
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; flex-direction: column;
+  padding: 16px 16px 15px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,.062) 0%, rgba(255,255,255,.022) 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.075), inset 0 1px 0 rgba(255,255,255,.09), 0 30px 60px -32px rgba(0,0,0,.95);
+  backdrop-filter: blur(22px) saturate(1.3); -webkit-backdrop-filter: blur(22px) saturate(1.3);
+  transition: box-shadow .5s cubic-bezier(.22,.8,.24,1), transform .5s cubic-bezier(.22,.8,.24,1);
+}
+.hc::before { content: ""; position: absolute; z-index: -1; inset: -40% 30% 55% -30%; background: radial-gradient(closest-side, rgba(61,99,255,.16), transparent); pointer-events: none; }
+.hc:hover { box-shadow: inset 0 0 0 1px rgba(255,255,255,.12), inset 0 1px 0 rgba(255,255,255,.12), 0 34px 70px -32px rgba(0,0,0,.95); }
+
+.hc-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.hc-t { margin: 0; font-size: 14px; font-weight: 500; line-height: 1.25; letter-spacing: -0.015em; color: #F3F5FA; }
+.hc-s { display: flex; align-items: center; gap: 7px; margin-top: 2px; font-size: 12.5px; line-height: 1.3; color: #7A8399; }
+.delta { display: inline-flex; align-items: center; gap: 3px; padding: 1px 6px; border-radius: 6px; font-size: 10.5px; font-weight: 600; letter-spacing: .01em; color: #A9BCFF; background: rgba(61,99,255,.17); box-shadow: inset 0 0 0 1px rgba(138,164,255,.18); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.hc-go { flex: none; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; color: #8A93A8; background: rgba(255,255,255,.05); box-shadow: inset 0 0 0 1px rgba(255,255,255,.07); transition: color .3s, background .3s, transform .4s cubic-bezier(.22,.8,.24,1); }
+.hc-go svg { width: 10px; height: 10px; }
+.hc:hover .hc-go { color: #fff; background: rgba(255,255,255,.1); transform: rotate(45deg); }
+
+.hc-chart { position: relative; flex: 1; min-height: 132px; margin: 18px 0 14px; }
+.hc-foot { display: flex; gap: 22px; align-items: flex-end; }
+.hc-foot > div { min-width: 0; }
+.hc-foot span { display: block; font-size: 9.5px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: #5F687D; }
+.hc-foot b { display: block; margin-top: 2px; font-size: 21px; font-weight: 500; letter-spacing: -0.04em; color: #F3F5FA; font-variant-numeric: tabular-nums; line-height: 1.15; }
+.hc-foot b small { font-size: 12px; font-weight: 500; letter-spacing: 0; color: #7A8399; margin-left: 2px; }
+.hc-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 14px; width: 100%; font-size: 11px; color: #7A8399; }
+.hc-legend div { display: flex; align-items: center; gap: 6px; min-width: 0; transition: color .3s; }
+.hc-legend div > span:first-of-type { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hc-legend i { flex: none; width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: .5; }
+.hc-legend em { margin-left: auto; font-style: normal; font-variant-numeric: tabular-nums; }
+.hc-legend .on { color: #F3F5FA; }
+.hc-legend .on i { opacity: 1; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,.7); }
+
+/* pastilla con el valor */
+.pill { position: absolute; z-index: 3; transform: translate(-50%, -100%); padding: 1px 6px; border-radius: 6px; font-size: 10px; font-weight: 600; line-height: 16px; color: #05070D; background: #EEF2FF; box-shadow: 0 4px 14px -4px rgba(170,190,255,.8); white-space: nowrap; pointer-events: none; font-variant-numeric: tabular-nums; transition: left .35s cubic-bezier(.22,.8,.24,1), top .35s cubic-bezier(.22,.8,.24,1); }
+
+/* --- tallos (actividad diaria): un rastro de luz sigue al puntero --- */
+.stems { position: absolute; inset: 22px 0 18px; display: flex; align-items: flex-end; gap: 2px; cursor: crosshair; }
+.stem { transition: --o .6s ease-out; position: relative; flex: 1; height: 100%; display: flex; justify-content: center; align-items: flex-end; }
+.stem i { position: relative; display: block; width: 1.5px; height: var(--h); min-height: 0; border-radius: 1px; background: linear-gradient(180deg, rgba(238,242,255,var(--o, .3)), rgba(238,242,255,calc(var(--o, .3) * .25))); }
+.stem i::before { content: ""; position: absolute; left: 50%; top: -2px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: rgba(238,242,255,var(--o, .3)); box-shadow: 0 0 calc(var(--o, 0) * 10px) rgba(200,215,255,var(--o, 0)); }
+.stem.z i { height: 0; }
+.stem.z i::before { top: -3px; width: 2px; height: 2px; margin-left: -1px; background: rgba(255,255,255,.18); box-shadow: none; }
+.stem.on i { width: 2px; background: linear-gradient(180deg, #fff, rgba(238,242,255,.35)); }
+.stem.on i::before { width: 6px; height: 6px; margin-left: -3px; top: -3px; background: #fff; box-shadow: 0 0 12px rgba(200,215,255,.9); }
+.stems-axis { position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; font-size: 9.5px; color: #5F687D; font-variant-numeric: tabular-nums; }
+
+/* --- anillo (cuota): se estira hacia donde apuntas --- */
+.ring { position: absolute; inset: 0; display: grid; place-items: center; cursor: crosshair; }
+.ring svg { width: 100%; height: 100%; max-height: 190px; overflow: visible; }
+.ring line { stroke-linecap: round; stroke-width: 1.6; }
+.ring-c { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; pointer-events: none; }
+.ring-c span { font-size: 8.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6F7890; max-width: 9em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ring-c b { font-size: 26px; font-weight: 500; letter-spacing: -0.045em; color: #F3F5FA; line-height: 1.1; font-variant-numeric: tabular-nums; }
+
+/* --- barras: la del puntero se ilumina --- */
+.vbars { position: absolute; inset: 22px 0 0; display: flex; gap: 6px; cursor: crosshair; }
+.vbar { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 7px; min-width: 0; }
+.vbar i { display: block; width: 100%; max-width: 22px; height: var(--h); min-height: 3px; border-radius: 6px; background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.06)); transform-origin: bottom; transition: background .45s, box-shadow .45s, transform .9s cubic-bezier(.16,1,.3,1); }
+.vbar.on i { background: linear-gradient(180deg, #fff 0%, #DCE4FF 55%, #8AA4FF 100%); box-shadow: 0 0 22px -4px rgba(170,190,255,.75); }
+.vbar span { font-size: 9.5px; color: #5F687D; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; transition: color .3s; }
+.vbar.on span { color: #F3F5FA; font-weight: 600; }
+
+/* entrada de los gráficos */
+.hc-chart .stem i, .hc-chart .vbar i { transform: scaleY(0); transform-origin: bottom; transition: transform 1s cubic-bezier(.16,1,.3,1) var(--d, 0ms), background .45s, box-shadow .45s; }
+.hc-chart.go .stem i, .hc-chart.go .vbar i, .static .hc-chart .stem i, .static .hc-chart .vbar i { transform: none; }
+.static .hc-chart * { transition: none !important; }
+
+@property --o { syntax: "<number>"; inherits: true; initial-value: .3; }
+@media (prefers-reduced-motion: reduce) { .hc, .hc-go, .pill { transition: none; } }
+
+/* brillo que sigue al puntero dentro de la tarjeta */
+.hc::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; border-radius: inherit; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, -30%), rgba(255,255,255,.075), transparent 62%); opacity: 0; transition: opacity .45s; }
+.hc:hover::after { opacity: 1; }
+.hc-foot .hc-legend span { display: inline; font-size: 11px; font-weight: 400; letter-spacing: 0; text-transform: none; color: inherit; }

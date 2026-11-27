@@ -1,0 +1,649 @@
+{
+  "solicitud": {
+    "industria": "Seguros de coche",
+    "pais": "FR",
+    "marcas": [],
+    "id": "",
+    "fecha": "2026-11-27"
+  },
+  "ejemplo": true,
+  "metricas": {
+    "antiguedad": [
+      {
+        "nombre": "Esta semana",
+        "n": 8,
+        "pct": 8
+      },
+      {
+        "nombre": "8-30 días",
+        "n": 31,
+        "pct": 31
+      },
+      {
+        "nombre": "1-3 meses",
+        "n": 57,
+        "pct": 56
+      },
+      {
+        "nombre": "Más de 3 meses",
+        "n": 5,
+        "pct": 5
+      }
+    ],
+    "max_serie": 3,
+    "fecha_ref": "2026-11-27",
+    "total_anuncios": 101,
+    "n_marcas": 5,
+    "nuevos": 8,
+    "mediana_dias": 41,
+    "plataformas": [
+      {
+        "nombre": "Instagram",
+        "pct": 100
+      },
+      {
+        "nombre": "Facebook",
+        "pct": 60
+      },
+      {
+        "nombre": "Messenger",
+        "pct": 10
+      },
+      {
+        "nombre": "Audience Network",
+        "pct": 5
+      }
+    ],
+    "marcas": [
+      {
+        "page_id": "100003",
+        "nombre": "Kora",
+        "activos": 28,
+        "cuota": 28,
+        "nuevos": 3,
+        "mediana_dias": 40,
+        "max_dias": 99,
+        "mas_longevo": {
+          "dias": 99,
+          "texto": "Nuevo en Kora: descubre lo último en seguros de coche.",
+          "url": "https://www.facebook.com/ads/library/?id=1000030024",
+          "id": "1000030024"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 7
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 4
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 4
+          }
+        ],
+        "creatividades": 6,
+        "alcance_ue": 1302400,
+        "edades": "25 - 54",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Nuevo en Kora: descubre lo último en seguros de coche.",
+            "dias": 99
+          },
+          {
+            "texto": "Más de 200.000 personas ya confían en nosotros. Únete a la comunidad Kora.",
+            "dias": 90
+          },
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Kora.",
+            "dias": 68
+          },
+          {
+            "texto": "Todo desde la app, cuando quieras y donde quieras. Empieza en 2 minutos.",
+            "dias": 68
+          },
+          {
+            "texto": "Más de 50.000 personas ya confían en nosotros. Únete a la comunidad Kora.",
+            "dias": 41
+          },
+          {
+            "texto": "Más de 10.000 personas ya confían en nosotros. Únete a la comunidad Kora.",
+            "dias": 40
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100000",
+        "nombre": "Alba",
+        "activos": 25,
+        "cuota": 25,
+        "nuevos": 2,
+        "mediana_dias": 28,
+        "max_dias": 96,
+        "mas_longevo": {
+          "dias": 96,
+          "texto": "Nuevo en Alba: descubre lo último en seguros de coche.",
+          "url": "https://www.facebook.com/ads/library/?id=1000000023",
+          "id": "1000000023"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 88
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 4
+          }
+        ],
+        "creatividades": 11,
+        "alcance_ue": 1053200,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Nuevo en Alba: descubre lo último en seguros de coche.",
+            "dias": 96
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y envío gratis.",
+            "dias": 89
+          },
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Alba.",
+            "dias": 47
+          },
+          {
+            "texto": "Últimos días: envío gratis. Después vuelve al precio normal.",
+            "dias": 47
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un regalo de bienvenida.",
+            "dias": 33
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y una prueba gratuita.",
+            "dias": 28
+          },
+          {
+            "texto": "Últimos días: una prueba gratuita. Después vuelve al precio normal.",
+            "dias": 25
+          },
+          {
+            "texto": "Últimos días: un regalo de bienvenida. Después vuelve al precio normal.",
+            "dias": 16
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y el primer mes gratis.",
+            "dias": 13
+          },
+          {
+            "texto": "Últimos días: el primer mes gratis. Después vuelve al precio normal.",
+            "dias": 11
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un 20 % de descuento.",
+            "dias": 11
+          }
+        ],
+        "serie_30d": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100002",
+        "nombre": "Vértice",
+        "activos": 25,
+        "cuota": 25,
+        "nuevos": 2,
+        "mediana_dias": 46,
+        "max_dias": 107,
+        "mas_longevo": {
+          "dias": 107,
+          "texto": "Más de 200.000 personas ya confían en nosotros. Únete a la comunidad Vértice.",
+          "url": "https://www.facebook.com/ads/library/?id=1000020002",
+          "id": "1000020002"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 96
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 8
+          }
+        ],
+        "creatividades": 8,
+        "alcance_ue": 1680800,
+        "edades": "25 - 54",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Más de 200.000 personas ya confían en nosotros. Únete a la comunidad Vértice.",
+            "dias": 107
+          },
+          {
+            "texto": "-30 % en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 88
+          },
+          {
+            "texto": "Resultados que se notan desde el primer mes. Así lo cuentan nuestros clientes.",
+            "dias": 81
+          },
+          {
+            "texto": "-15 % en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 72
+          },
+          {
+            "texto": "Más de 50.000 personas ya confían en nosotros. Únete a la comunidad Vértice.",
+            "dias": 68
+          },
+          {
+            "texto": "Garantía total: si no te convence, te devolvemos el dinero.",
+            "dias": 65
+          },
+          {
+            "texto": "2x1 en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 42
+          },
+          {
+            "texto": "Más de 10.000 personas ya confían en nosotros. Únete a la comunidad Vértice.",
+            "dias": 4
+          }
+        ],
+        "serie_30d": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100001",
+        "nombre": "Lumen",
+        "activos": 14,
+        "cuota": 14,
+        "nuevos": 0,
+        "mediana_dias": 48,
+        "max_dias": 93,
+        "mas_longevo": {
+          "dias": 93,
+          "texto": "-30 % en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+          "url": "https://www.facebook.com/ads/library/?id=1000010000",
+          "id": "1000010000"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 29
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 14
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 7
+          }
+        ],
+        "creatividades": 10,
+        "alcance_ue": 435600,
+        "edades": "18 - 65+",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "-30 % en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 93
+          },
+          {
+            "texto": "Más de 200.000 personas ya confían en nosotros. Únete a la comunidad Lumen.",
+            "dias": 87
+          },
+          {
+            "texto": "Nuevo en Lumen: descubre lo último en seguros de coche.",
+            "dias": 86
+          },
+          {
+            "texto": "Seguros de coche desde 9,99 €. Sin permanencia y sin letra pequeña.",
+            "dias": 76
+          },
+          {
+            "texto": "-20 % en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 56
+          },
+          {
+            "texto": "Seguros de coche desde 19 €. Sin permanencia y sin letra pequeña.",
+            "dias": 55
+          },
+          {
+            "texto": "Más de 50.000 personas ya confían en nosotros. Únete a la comunidad Lumen.",
+            "dias": 42
+          },
+          {
+            "texto": "Seguros de coche desde 29,90 €. Sin permanencia y sin letra pequeña.",
+            "dias": 37
+          },
+          {
+            "texto": "-15 % en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 21
+          },
+          {
+            "texto": "Seguros de coche desde 49 €. Sin permanencia y sin letra pequeña.",
+            "dias": 15
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100004",
+        "nombre": "Brío",
+        "activos": 9,
+        "cuota": 9,
+        "nuevos": 1,
+        "mediana_dias": 36,
+        "max_dias": 94,
+        "mas_longevo": {
+          "dias": 94,
+          "texto": "Ya estamos en tu ciudad. Ven a conocernos y el primer mes gratis.",
+          "url": "https://www.facebook.com/ads/library/?id=1000040002",
+          "id": "1000040002"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 56
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 22
+          }
+        ],
+        "creatividades": 4,
+        "alcance_ue": 178400,
+        "edades": "25 - 54",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y el primer mes gratis.",
+            "dias": 94
+          },
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Brío.",
+            "dias": 54
+          },
+          {
+            "texto": "Nuevo en Brío: descubre lo último en seguros de coche.",
+            "dias": 50
+          },
+          {
+            "texto": "Seguros de coche desde 4,99 €/mes. Sin permanencia y sin letra pequeña.",
+            "dias": 31
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "analisis": {
+    "fuente": "reglas",
+    "titular": "Kora lidera en anuncios y el argumento más repetido es precio.",
+    "subtitulo": "101 anuncios activos de 5 marcas en Francia. 8 empezaron en los últimos 7 días.",
+    "tendencias": [
+      {
+        "titulo": "Precio es el argumento más usado",
+        "detalle": "Aparece en 41 % de las creatividades distintas."
+      },
+      {
+        "titulo": "Instagram manda",
+        "detalle": "El 100 % de los anuncios se publica en Instagram."
+      },
+      {
+        "titulo": "Kora acelera",
+        "detalle": "Es la marca con más anuncios nuevos: 3 en 7 días."
+      }
+    ],
+    "marcas": {
+      "100003": {
+        "angulos": [
+          "Comunidad",
+          "Novedad",
+          "Calidad"
+        ],
+        "ofertas": [],
+        "tono": "",
+        "conclusion": "28 anuncios activos (28 % del total), 3 nuevos esta semana. Apuesta sobre todo por comunidad y novedad. Su anuncio más longevo lleva 99 días activo."
+      },
+      "100000": {
+        "angulos": [
+          "Local",
+          "Precio",
+          "Urgencia"
+        ],
+        "ofertas": [
+          "el primer mes gratis",
+          "conocernos y envío gratis",
+          "envío gratis"
+        ],
+        "tono": "",
+        "conclusion": "25 anuncios activos (25 % del total), 2 nuevos esta semana. Apuesta sobre todo por local y precio. Su anuncio más longevo lleva 96 días activo."
+      },
+      "100002": {
+        "angulos": [
+          "Comunidad",
+          "Precio",
+          "Urgencia"
+        ],
+        "ofertas": [
+          "-30 %",
+          "-15 %",
+          "2x1"
+        ],
+        "tono": "",
+        "conclusion": "25 anuncios activos (25 % del total), 2 nuevos esta semana. Apuesta sobre todo por comunidad y precio. Su anuncio más longevo lleva 107 días activo."
+      },
+      "100001": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Comunidad"
+        ],
+        "ofertas": [
+          "-30 %",
+          "9,99 €",
+          "-20 %"
+        ],
+        "tono": "",
+        "conclusion": "14 anuncios activos (14 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 93 días activo."
+      },
+      "100004": {
+        "angulos": [
+          "Local",
+          "Calidad",
+          "Novedad"
+        ],
+        "ofertas": [
+          "el primer mes gratis",
+          "4,99 €/mes"
+        ],
+        "tono": "",
+        "conclusion": "9 anuncios activos (9 % del total), 1 nuevo esta semana. Apuesta sobre todo por local y calidad. Su anuncio más longevo lleva 94 días activo."
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@ EMAIL y CRM con Brevo.
 Variables:
   BREVO_API_KEY     clave de API de Brevo (SMTP & API → API keys)
   REMITENTE_EMAIL   email verificado en Brevo desde el que se envía
-  REMITENTE_NOMBRE  opcional, por defecto "adsignal"
+  REMITENTE_NOMBRE  opcional, por defecto "AdSignal"
   BREVO_LISTA_ID    opcional, número de la lista donde guardar los contactos
 
 CorreoPrueba hace lo mismo pero guarda cada email como .html en una carpeta (no envía nada).
@@ -26,9 +26,14 @@ _env = Environment(loader=FileSystemLoader(Path(__file__).parent / "plantillas")
 API = "https://api.brevo.com/v3"
 
 
-def componer(sol, met: dict, an: dict, url: str, ejemplo: bool) -> tuple[str, str]:
-    asunto = f"Tu informe de anuncios: {sol.industria} en {sol.nombre_pais}"
-    html = _env.get_template("email.html").render(sol=sol, met=met, an=an, url=url, ejemplo=ejemplo)
+def componer(sol, met: dict, an: dict, url: str, ejemplo: bool, pdf_url: str | None = None, base_url: str = "") -> tuple[str, str]:
+    from .informe import MESES
+    f = sol.fecha
+    asunto = f"Listo: lo que anuncia el sector {sol.industria.lower()} en {sol.nombre_pais}"
+    html = _env.get_template("email.html").render(
+        sol=sol, met=met, an=an, url=url, ejemplo=ejemplo, pdf_url=pdf_url,
+        base_url=base_url.rstrip("/"), fecha_larga=f"{f.day} de {MESES[f.month - 1]} de {f.year}",
+    )
     return asunto, html
 
 
@@ -39,7 +44,7 @@ class CorreoBrevo:
         self.remitente = (os.environ.get("REMITENTE_EMAIL") or "").strip()
         if not self.clave or not self.remitente:
             raise RuntimeError("Faltan BREVO_API_KEY o REMITENTE_EMAIL.")
-        self.nombre = (os.environ.get("REMITENTE_NOMBRE") or "adsignal").strip()
+        self.nombre = (os.environ.get("REMITENTE_NOMBRE") or "AdSignal").strip()
         self.lista = (os.environ.get("BREVO_LISTA_ID") or "").strip()
 
     def _post(self, ruta: str, cuerpo: dict) -> dict:

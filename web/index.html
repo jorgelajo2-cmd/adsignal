@@ -3,316 +3,320 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>adsignal: mira qué anuncia tu competencia</title>
-  <meta name="description" content="Los anuncios de Meta de tu sector, ordenados y resumidos en un informe gratuito.">
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="brand.css">
+  <title>AdSignal · Ad intelligence para tu sector</title>
+  <meta name="description" content="Ad intelligence: descubre qué anuncia tu competencia en Meta sin pasar horas investigando. Informe gratuito por sector y país.">
+  <meta name="theme-color" content="#05070D">
+  <link rel="icon" href="logo.svg?v=4" type="image/svg+xml">
+  <link rel="stylesheet" href="brand.css?v=5">
+  <link rel="stylesheet" href="dash.css?v=2">
   <style>
-    /* ---------- hero ---------- */
-    .hero { text-align: center; padding: 10rem var(--s3) 8rem; }
-    .pill { display: inline-flex; align-items: center; gap: 0.5rem; font-size: var(--t-sm); color: var(--text); text-decoration: none; background: #fff; border-radius: 999px; padding: 0.3rem 0.85rem 0.3rem 0.35rem; box-shadow: 0 0 0 1px var(--line), 0 4px 12px -6px rgba(11,13,18,0.15); }
-    .pill .tag { background: var(--blue); color: #fff; }
-    .pill:hover { color: var(--ink); }
-    .hero h1 { font-size: var(--t-2xl); margin: var(--s3) auto var(--s2); max-width: 14ch; }
-    .hero .sub { font-size: var(--t-lg); color: var(--text); max-width: 40ch; margin: 0 auto var(--s4); }
+    /* ---------- hero: luz desde arriba ---------- */
+    .hero { position: relative; isolation: isolate; text-align: center; padding: 9.5rem 24px 5.5rem; }
+    .aura { position: absolute; z-index: -1; left: 0; right: 0; top: 0; height: 900px; overflow: hidden; pointer-events: none; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent); mask-image: linear-gradient(180deg, #000 55%, transparent); }
+    .aura::before { content: ""; position: absolute; left: 50%; top: -420px; width: 1200px; height: 820px; margin-left: -600px; border-radius: 50%; background: radial-gradient(closest-side, rgba(110,138,255,.85) 0%, rgba(61,99,255,.38) 42%, rgba(61,99,255,0) 100%); filter: blur(24px); }
+    .aura::after { content: ""; position: absolute; left: 50%; top: -120px; width: 520px; height: 300px; margin-left: -260px; border-radius: 50%; background: radial-gradient(closest-side, rgba(220,228,255,.35), transparent); filter: blur(20px); }
+    .hero .eyebrow { margin-bottom: 1.6rem; }
+    .hero h1 { font-size: var(--t-2xl); font-weight: 600; letter-spacing: -0.045em; line-height: 1.04; max-width: 14ch; margin: 0 auto 1.2rem; text-wrap: balance; }
+    .hero .sub { font-size: 1.08rem; max-width: 42ch; margin: 0 auto 2.6rem; color: #B3BBCB; text-wrap: balance; }
 
+    /* ---------- formulario ---------- */
     .signup { max-width: 640px; margin: 0 auto; }
-    .req { display: grid; grid-template-columns: 1.3fr 1fr; gap: 4px; background: #fff; border-radius: 18px; padding: 6px; text-align: left; box-shadow: 0 0 0 1px rgba(11,13,18,0.06), 0 18px 40px -18px rgba(30,50,160,0.45); }
-    .f { display: flex; flex-direction: column; justify-content: center; padding: 0.55rem 0.9rem; border-radius: 12px; min-height: 58px; transition: background 0.15s; }
-    .f:hover, .f:focus-within { background: var(--panel); }
-    .f label { font-size: var(--t-xs); color: var(--muted); }
-    .f input, .f select { border: 0; outline: 0; background: transparent; font: inherit; color: var(--ink); padding: 0.1rem 0 0; width: 100%; appearance: none; }
-    .f input::placeholder { color: #A3A9B4; }
-    .f select { cursor: pointer; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23737A87' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat right 0 center; }
-    .f.wide { grid-column: 1 / -1; }
-    .req-foot { grid-column: 1 / -1; display: flex; gap: 4px; align-items: stretch; }
-    .req-foot .f { flex: 1; }
-    .req-foot .btn { min-height: auto; border-radius: 12px; padding: 0 1.3rem; gap: 0.5rem; font-size: var(--t-md); }
-    .req-foot .btn svg { width: 16px; height: 16px; }
-    .consent { display: flex; justify-content: center; gap: 0.5rem; align-items: center; margin-top: 0.9rem; font-size: var(--t-xs); color: rgba(255,255,255,0.92); }
-    .consent input { accent-color: var(--blue); width: 14px; height: 14px; margin: 0; }
-    .consent a { color: #fff; }
-    .form-msg { text-align: center; font-size: var(--t-sm); min-height: 1.3em; margin-top: 0.5rem; color: #fff; }
-    .done { max-width: 640px; margin: 0 auto; background: #fff; border-radius: 16px; padding: 1.1rem 1.3rem; text-align: left; display: flex; gap: 0.8rem; align-items: center; box-shadow: 0 18px 40px -18px rgba(30,50,160,0.45); }
-    .done .check { flex: none; width: 28px; height: 28px; border-radius: 50%; background: #E7F7EE; color: var(--green); display: grid; place-items: center; }
+    .fcard { padding: 6px; text-align: left; border-radius: 24px; background: rgba(10,14,26,.55); box-shadow: inset 0 0 0 1px var(--line-hi), inset 0 1px 0 rgba(255,255,255,.08), 0 40px 80px -40px rgba(0,0,0,.9); }
+    .grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 4px; }
+    .field { position: relative; border-radius: 18px; padding: .7rem 1rem .75rem; transition: background-color .25s var(--ease), box-shadow .25s var(--ease); }
+    .field:hover { background: rgba(255,255,255,.035); }
+    .field:focus-within, .field.open { background: rgba(255,255,255,.055); box-shadow: inset 0 0 0 1px var(--line-hi); }
+    .field.invalid { box-shadow: inset 0 0 0 1px rgba(255,160,120,.6); }
+    .field label, .field .lbl { display: block; font-size: .72rem; color: var(--muted); margin-bottom: .15rem; }
+    .field label small { font-size: inherit; color: #4C5466; }
+    .field input { border: 0; outline: 0; background: transparent; font: inherit; font-size: .98rem; color: var(--ink); width: 100%; padding: 0; }
+    .field input::placeholder { color: #5B6376; }
+    .wide { grid-column: 1 / -1; }
+    .sel { display: flex; align-items: center; justify-content: space-between; gap: .5rem; width: 100%; border: 0; background: transparent; font: inherit; font-size: .98rem; color: var(--ink); padding: 0; cursor: pointer; text-align: left; }
+    .sel:focus-visible { outline: none; }
+    .sel-val { display: inline-flex; align-items: center; gap: .55rem; }
+    .code { display: inline-grid; place-items: center; min-width: 28px; height: 19px; padding: 0 6px; border-radius: 6px; background: rgba(255,255,255,.07); color: var(--text); font-size: .66rem; font-weight: 500; letter-spacing: .04em; }
+    .chev { flex: none; width: 14px; height: 14px; color: var(--muted); transition: transform .3s var(--ease); }
+    .field.open .chev { transform: rotate(180deg); }
+    .menu { position: absolute; left: 0; right: 0; top: calc(100% + 8px); z-index: 30; padding: 6px; border-radius: 18px; background: rgba(12,16,28,.86); backdrop-filter: blur(24px) saturate(1.3); -webkit-backdrop-filter: blur(24px) saturate(1.3); box-shadow: inset 0 0 0 1px var(--line-hi), 0 24px 48px -24px rgba(0,0,0,.8); opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity .2s var(--ease), transform .3s var(--flow), visibility 0s .2s; }
+    .field.open .menu { opacity: 1; visibility: visible; transform: none; transition: opacity .2s var(--ease), transform .3s var(--flow), visibility 0s; }
+    .menu-search { display: flex; align-items: center; gap: .5rem; padding: .5rem .7rem; margin-bottom: 4px; border-radius: 12px; background: rgba(255,255,255,.05); color: var(--muted); }
+    .menu-search svg { width: 14px; height: 14px; flex: none; }
+    .menu-search input { font-size: .9rem; }
+    .opts { max-height: 216px; overflow: auto; list-style: none; margin: 0; padding: 0; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.12) transparent; }
+    .opt { display: flex; align-items: center; gap: .65rem; padding: .55rem .7rem; border-radius: 10px; font-size: .92rem; color: var(--text); cursor: pointer; transition: background-color .15s, color .15s; }
+    .opt:hover, .opt.active { background: rgba(255,255,255,.06); color: var(--ink); }
+    .opt[aria-selected="true"] { color: var(--ink); }
+    .opt .tick { margin-left: auto; width: 14px; height: 14px; color: var(--ink); opacity: 0; }
+    .opt[aria-selected="true"] .tick { opacity: 1; }
+    .opt-hint { padding: .45rem .7rem .3rem; font-size: .72rem; color: var(--muted); }
+    .chips-in { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; min-height: 24px; }
+    .chips-in input { flex: 1; min-width: 160px; }
+    .chip { display: inline-flex; align-items: center; gap: .2rem; padding: .12rem .25rem .12rem .6rem; border-radius: 999px; background: rgba(255,255,255,.08); color: var(--ink); font-size: .85rem; animation: pop .35s var(--flow); }
+    @keyframes pop { from { transform: scale(.85); opacity: 0; } }
+    .chip button { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; border: 0; background: transparent; color: var(--text); cursor: pointer; }
+    .chip button:hover { color: var(--ink); background: rgba(255,255,255,.08); }
+    .chip button svg { width: 9px; height: 9px; }
+    .foot { display: flex; gap: 4px; align-items: stretch; margin-top: 4px; }
+    .foot .field { flex: 1; }
+    .submit { border-radius: 18px; padding: 0 1.5rem; font-size: .95rem; min-height: auto; }
+    .consent { display: flex; align-items: center; gap: .6rem; padding: .8rem 1rem .6rem; font-size: .8rem; color: var(--muted); cursor: pointer; user-select: none; }
+    .consent input { position: absolute; opacity: 0; pointer-events: none; }
+    .box { flex: none; width: 16px; height: 16px; border-radius: 5px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.25); display: grid; place-items: center; transition: background-color .2s var(--ease), box-shadow .2s; }
+    .consent:hover .box { box-shadow: inset 0 0 0 1px rgba(255,255,255,.45); }
+    .box svg { width: 10px; height: 10px; color: #05070D; opacity: 0; transform: scale(.6); transition: opacity .2s, transform .3s var(--flow); }
+    .consent input:checked + .box { background: #fff; box-shadow: none; }
+    .consent input:checked + .box svg { opacity: 1; transform: none; }
+    .consent input:focus-visible + .box { outline: 2px solid var(--blue-300); outline-offset: 2px; }
+    .consent a { color: var(--text); }
+    .form-msg { margin: 0; padding: 0 1rem; max-height: 0; overflow: hidden; font-size: .82rem; color: #FFB08A; transition: max-height .3s var(--ease); }
+    .form-msg.show { max-height: 40px; padding: 0 1rem .7rem; }
+    .done { max-width: 640px; margin: 0 auto; padding: 1.1rem 1.3rem; text-align: left; display: flex; gap: .9rem; align-items: center; border-radius: 24px; animation: pop .5s var(--flow); }
+    .done .check { flex: none; width: 28px; height: 28px; border-radius: 50%; background: #fff; color: #05070D; display: grid; place-items: center; }
     .done p { color: var(--ink); }
 
-    /* ---------- producto ---------- */
-    .stage-wrap { margin-top: var(--s5); }
-    .stage { position: relative; background: var(--panel); border-radius: var(--r-lg); padding: var(--s4) var(--s4) 0; overflow: hidden; }
-    .stage .window { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
-    .app { display: grid; grid-template-columns: 170px 1fr; min-height: 430px; }
-    .side { border-right: 1px solid var(--line); padding: var(--s2); font-size: var(--t-sm); }
-    .side .logo { font-size: 0.95rem; margin-bottom: var(--s3); }
-    .side .logo img { width: 18px; height: 18px; }
-    .side h4 { margin: 0 0 0.4rem; font-size: var(--t-xs); font-weight: 500; color: var(--muted); }
-    .side ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
-    .side li { padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
-    .side li.on { background: var(--blue-soft); color: var(--blue); font-weight: 500; }
-    .side li small { font-size: 0.68rem; }
-    .main { padding: var(--s3); display: grid; gap: var(--s2); align-content: start; }
-    .main-head { display: flex; justify-content: space-between; align-items: center; }
-    .main-head h3 { font-size: var(--t-lg); letter-spacing: -0.02em; }
-    .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; }
-    .kpi { border: 1px solid var(--line); border-radius: 10px; padding: 0.7rem 0.8rem; }
-    .kpi span { display: block; font-size: var(--t-xs); color: var(--muted); }
-    .kpi strong { display: flex; align-items: baseline; gap: 0.4rem; font-size: 1.35rem; font-weight: 500; color: var(--ink); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
-    .kpi .tag { font-size: 0.68rem; }
-    .row2 { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0.6rem; }
-    .card { border: 1px solid var(--line); border-radius: 10px; padding: 0.8rem; }
-    .card-title { font-size: var(--t-xs); color: var(--muted); margin-bottom: 0.7rem; display: flex; justify-content: space-between; }
-    .chart { height: 120px; display: grid; grid-template-columns: repeat(30, 1fr); gap: 3px; align-items: end; }
-    .chart span { background: #DCE2F5; border-radius: 3px 3px 1px 1px; transform-origin: bottom; transform: scaleY(0); transition: transform 0.7s cubic-bezier(.2,.8,.2,1); }
-    .chart span.wk { background: var(--blue); }
-    .in .chart span { transform: scaleY(1); }
-    .tbl { width: 100%; border-collapse: collapse; font-size: var(--t-xs); }
-    .tbl th { text-align: left; font-weight: 400; color: var(--muted); padding: 0 0 0.45rem; }
-    .tbl td { padding: 0.42rem 0; border-top: 1px solid var(--line); color: var(--ink); }
-    .tbl .n { text-align: right; font-variant-numeric: tabular-nums; }
-    .tbl th + th, .tbl td + td { padding-left: 0.9rem; }
+    /* ---------- secciones ---------- */
+    .section { padding-top: 8rem; }
+    .head { text-align: center; margin-bottom: 2.8rem; }
+    .head h2 { font-size: var(--t-xl); font-weight: 600; letter-spacing: -0.04em; text-wrap: balance; max-width: 20ch; margin: 0 auto; }
+    .head p { margin-top: .8rem; }
 
-    /* hotspot animado */
-    .hot { position: absolute; z-index: 5; pointer-events: none; transition: left 0.6s cubic-bezier(.5,0,.2,1), top 0.6s cubic-bezier(.5,0,.2,1); opacity: 0; }
-    .in .hot { opacity: 1; }
-    .ring { position: absolute; left: -11px; top: -11px; width: 22px; height: 22px; border-radius: 50%; background: rgba(59,91,253,0.25); box-shadow: 0 0 0 2px var(--blue) inset; }
-    .ring::after { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: 0 0 0 2px var(--blue); animation: ping 1.6s ease-out infinite; }
-    @keyframes ping { from { transform: scale(1); opacity: 0.9; } to { transform: scale(2.4); opacity: 0; } }
-    .bubble { position: absolute; left: 20px; top: -16px; white-space: nowrap; background: var(--blue); color: #fff; font-size: var(--t-sm); font-weight: 500; padding: 0.4rem 0.8rem; border-radius: 10px; box-shadow: 0 10px 24px -8px rgba(59,91,253,0.7); transition: opacity 0.25s; }
-    .bubble.left { left: auto; right: 20px; }
+    /* ---------- dashboard de ejemplo ---------- */
+    .demo { max-width: 980px; margin: 0 auto; padding: 8px; border-radius: 30px; background: rgba(255,255,255,.022); box-shadow: inset 0 0 0 1px var(--line); }
+    .demo-bar { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px 12px; font-size: .78rem; color: var(--muted); }
+    .demo-bar a { color: var(--text); text-decoration: none; display: inline-flex; align-items: center; gap: .35rem; transition: color .2s; }
+    .demo-bar a:hover { color: var(--ink); }
+    .live { display: inline-flex; align-items: center; gap: .5rem; color: var(--ink); }
+    .live i { width: 6px; height: 6px; border-radius: 50%; background: #4ADE9B; box-shadow: 0 0 10px #4ADE9B; }
+    .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .trio .hc { min-height: 318px; }
 
-    /* ---------- tarjetas tipo cristal ---------- */
-    .section { padding-top: var(--s6); }
-    .section-head { text-align: center; margin-bottom: var(--s4); }
-    .section-head h2 { font-size: var(--t-xl); }
-    .section-head p { color: var(--muted); margin-top: 0.6rem; }
-    .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
-    .tile-art {
-      position: relative; aspect-ratio: 1 / 0.92; border-radius: var(--r-md); overflow: hidden; isolation: isolate;
-      background: radial-gradient(80% 70% at 15% 10%, #C9D4FF 0%, transparent 60%), radial-gradient(70% 60% at 90% 90%, #6C85FF 0%, transparent 65%), radial-gradient(60% 50% at 80% 20%, #D9C9FF 0%, transparent 60%), #8FA2F5;
-      display: grid; place-items: center; padding: var(--s3);
-    }
-    .tile-art::before { content: ""; position: absolute; inset: -20%; z-index: -1; background: conic-gradient(from 0deg at 50% 50%, rgba(255,255,255,0.0), rgba(255,255,255,0.35), rgba(255,255,255,0)); filter: blur(30px); animation: spin 14s linear infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .glass { width: 100%; background: rgba(255,255,255,0.42); backdrop-filter: blur(16px) saturate(1.3); border-radius: 12px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 20px 40px -20px rgba(20,30,90,0.45); padding: 0.8rem; font-size: var(--t-sm); color: var(--ink); }
-    .glass-row { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; padding: 0.5rem 0.6rem; border-radius: 8px; }
-    .glass-row + .glass-row { margin-top: 4px; }
-    .glass-row.hl { background: rgba(255,255,255,0.75); }
-    .glass-row small { color: var(--muted); font-size: var(--t-xs); }
-    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-    .chips span { background: rgba(255,255,255,0.75); border-radius: 999px; padding: 0.3rem 0.7rem; font-size: var(--t-xs); font-weight: 500; }
-    .chips span.on { background: var(--blue); color: #fff; }
-    .cursor { position: absolute; display: flex; align-items: flex-start; gap: 2px; animation: wander 6s ease-in-out infinite; }
-    .cursor svg { width: 16px; height: 16px; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25)); }
-    .cursor span { margin-top: 12px; background: var(--ink); color: #fff; font-size: 0.7rem; font-weight: 500; padding: 0.15rem 0.5rem; border-radius: 999px; }
-    @keyframes wander { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-14px, -10px); } }
-    .radar { position: relative; width: 100%; aspect-ratio: 1.3; }
-    .radar i { position: absolute; left: 50%; top: 50%; border-radius: 50%; border: 1px solid rgba(255,255,255,0.55); transform: translate(-50%, -50%); }
-    .radar i:nth-child(1) { width: 30%; aspect-ratio: 1; }
-    .radar i:nth-child(2) { width: 58%; aspect-ratio: 1; }
-    .radar i:nth-child(3) { width: 86%; aspect-ratio: 1; }
-    .radar b { position: absolute; display: flex; align-items: center; gap: 0.35rem; background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border-radius: 999px; padding: 0.2rem 0.6rem 0.2rem 0.25rem; font-size: 0.7rem; font-weight: 500; white-space: nowrap; box-shadow: 0 6px 14px -6px rgba(20,30,90,0.4); }
-    .radar b::before { content: ""; width: 14px; height: 14px; border-radius: 50%; background: var(--blue); }
-    .radar b.v::before { background: var(--violet); }
-    .radar .sweep { position: absolute; left: 50%; top: 50%; width: 43%; height: 1px; transform-origin: 0 0; background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent); animation: spin 5s linear infinite; }
-    .tile h3 { font-size: var(--t-lg); letter-spacing: -0.02em; margin: var(--s2) 0 0.3rem; }
-    .tile p { color: var(--muted); font-size: var(--t-sm); }
+    /* ---------- tres claves: una tarjeta encendida ---------- */
+    .feat { position: relative; isolation: isolate; overflow: hidden; border-radius: 36px; padding: 5rem 2rem 2rem; background: #070A13; box-shadow: inset 0 0 0 1px var(--line); }
+    .feat::before { content: ""; position: absolute; z-index: -2; left: 50%; top: -360px; width: 1000px; height: 620px; margin-left: -500px; border-radius: 50%; background: radial-gradient(closest-side, rgba(90,120,255,.7), rgba(61,99,255,.2) 50%, transparent); filter: blur(20px); }
+    .feat .head { margin-bottom: 3rem; }
+    .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .fc { position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 330px; padding: 1.4rem; border-radius: 22px; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.015)); box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), inset 0 1px 0 rgba(255,255,255,.08); transition: transform .6s var(--flow), box-shadow .6s var(--flow); }
+    .fc:hover { transform: translateY(-4px); box-shadow: inset 0 0 0 1px rgba(255,255,255,.14), inset 0 1px 0 rgba(255,255,255,.12), 0 30px 50px -30px rgba(0,0,0,.9); }
+    .fc h3 { font-size: 1.2rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; max-width: 10ch; }
+    .fc p { margin-top: .6rem; font-size: .86rem; line-height: 1.5; max-width: 26ch; }
+    .fc.hot { background: linear-gradient(170deg, #8DA5FF 0%, #4C70FF 38%, #2441D8 100%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.28), inset 0 1px 0 rgba(255,255,255,.4), 0 30px 70px -30px rgba(61,99,255,.8); }
+    .fc.hot h3 { color: #fff; }
+    .fc.hot p { color: rgba(255,255,255,.82); }
+    .fc .viz { margin-top: auto; padding-top: 1.6rem; }
+    .pairs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 9px; align-items: end; height: 120px; }
+    .pairs i { display: flex; flex-direction: column; height: var(--h); border-radius: 7px; overflow: hidden; transform: scaleY(0); transform-origin: bottom; transition: transform 1s var(--flow) var(--d); }
+    .pairs i::before { content: ""; height: var(--k); background: rgba(6,9,20,.82); }
+    .pairs i::after { content: ""; flex: 1; background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.4)); }
+    .in .pairs i { transform: none; }
+    .donut { display: block; width: 120px; height: 120px; margin: 0 auto; }
+    .donut circle.arc { stroke-dasharray: 0 252; transition: stroke-dasharray 1.6s var(--flow) .2s; }
+    .in .donut circle.arc { stroke-dasharray: 166 252; }
+    .donut text { fill: var(--ink); font-family: var(--font); font-size: 16px; font-weight: 500; letter-spacing: -0.03em; }
+    .dleg { display: flex; justify-content: center; gap: 14px; margin-top: 12px; font-size: .7rem; color: var(--muted); }
+    .dleg span { display: inline-flex; align-items: center; gap: 5px; }
+    .dleg i { width: 6px; height: 6px; border-radius: 50%; background: #8AA4FF; }
+    .dleg span + span i { background: rgba(255,255,255,.2); }
+    .step { display: block; width: 100%; height: 120px; }
+    .step path.ln { stroke-dasharray: 600; stroke-dashoffset: 600; transition: stroke-dashoffset 2s var(--flow) .2s; }
+    .in .step path.ln { stroke-dashoffset: 0; }
 
-    /* ---------- sectores ---------- */
-    .sectors { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
-    .sectors span { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; border-radius: 999px; background: var(--panel); color: var(--muted); font-size: var(--t-sm); }
-    .sectors span.on { background: #fff; color: var(--ink); font-weight: 500; box-shadow: 0 0 0 1px var(--line), var(--shadow); }
-    .sectors span.on::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px #E7F7EE; }
+    /* ---------- carrusel de sectores ---------- */
+    .spot { --sw: 92px; --sa: 320px; --gap: 8px; height: 320px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); }
+    .spot-track { display: flex; align-items: center; gap: var(--gap); width: max-content; height: 100%; transition: transform .8s var(--flow); }
+    .sc { position: relative; flex: 0 0 var(--sw); height: 230px; border-radius: 20px; padding: 4px; background: rgba(255,255,255,.05); box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), 0 30px 50px -30px rgba(0,0,0,.9); text-decoration: none; color: inherit; opacity: .6; cursor: pointer; transition: flex-basis .8s var(--flow), height .8s var(--flow), opacity .5s var(--ease), box-shadow .5s; }
+    .sc:hover { opacity: .85; }
+    .sc.on { flex-basis: var(--sa); height: 300px; opacity: 1; box-shadow: inset 0 0 0 1px rgba(255,255,255,.18), 0 40px 70px -30px rgba(40,70,220,.55); }
+    .sc-img { position: absolute; inset: 4px; overflow: hidden; border-radius: 16px; background: radial-gradient(130% 80% at 30% -10%, hsl(var(--h) 95% 66% / .95), transparent 62%), radial-gradient(90% 70% at 100% 100%, hsl(calc(var(--h) + 30) 80% 45% / .45), transparent 70%), linear-gradient(180deg, hsl(var(--h) 55% 16%), #05070D); }
+    .sc-img svg { position: absolute; left: 50%; bottom: 0; width: 320px; height: 58%; margin-left: -160px; }
+    .sc-tag { position: absolute; left: 50%; top: 14px; transform: translateX(-50%); padding: 2px 8px; border-radius: 6px; font-size: .62rem; font-weight: 600; letter-spacing: .06em; color: rgba(255,255,255,.85); background: rgba(5,7,13,.35); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); white-space: nowrap; }
+    .sc-cap { position: absolute; left: 4px; right: 4px; bottom: 4px; padding: 48px 16px 18px; border-radius: 0 0 16px 16px; text-align: center; background: linear-gradient(180deg, transparent, rgba(5,7,13,.88) 60%); opacity: 0; transform: translateY(10px); transition: opacity .4s var(--ease), transform .6s var(--flow); pointer-events: none; }
+    .sc.on .sc-cap { opacity: 1; transform: none; transition-delay: .25s; pointer-events: auto; }
+    .sc-cap b { display: block; color: #fff; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.03em; white-space: nowrap; }
+    .sc-cap span { display: block; font-size: .78rem; color: rgba(255,255,255,.7); margin: .1rem 0 .8rem; }
+    .sc-cap em { display: inline-flex; align-items: center; gap: .3rem; padding: .32rem .8rem; border-radius: 999px; font-style: normal; font-size: .75rem; font-weight: 600; color: #05070D; background: #fff; }
+    .dots { display: flex; justify-content: center; gap: 6px; margin-top: 18px; }
+    .dots button { width: 6px; height: 6px; padding: 0; border: 0; border-radius: 99px; background: rgba(255,255,255,.18); cursor: pointer; transition: width .5s var(--flow), background .3s; }
+    .dots button.on { width: 22px; background: #fff; }
 
-    /* ---------- faq ---------- */
-    .faq { max-width: 680px; margin: 0 auto; }
-    .faq details { border-bottom: 1px solid var(--line); }
-    .faq summary { cursor: pointer; padding: 1.15rem 0; color: var(--ink); font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    /* ---------- preguntas y cierre ---------- */
+    .faq { max-width: 720px; margin: 0 auto; padding: .3rem 1.5rem; }
+    .faq details + details { border-top: 1px solid var(--line); }
+    .faq summary { cursor: pointer; padding: 1.15rem 0; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: color .2s; }
     .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after { content: ""; width: 10px; height: 10px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Cpath d='M5 0v10M0 5h10' stroke='%230B0D12' stroke-width='1.4'/%3E%3C/svg%3E"); transition: transform 0.2s; }
+    .faq summary::after { content: "+"; color: var(--muted); font-size: 1.2rem; line-height: 1; transition: transform .3s var(--flow); }
     .faq details[open] summary::after { transform: rotate(45deg); }
-    .faq details p { padding-bottom: 1.15rem; color: var(--muted); }
+    .faq details p { padding-bottom: 1.15rem; max-width: 60ch; }
+    .closing { position: relative; isolation: isolate; overflow: hidden; text-align: center; margin: 8rem 12px 0; padding: 7rem 24px; border-radius: 36px; background: #070A13; box-shadow: inset 0 0 0 1px var(--line); }
+    .closing::before { content: ""; position: absolute; z-index: -2; left: 50%; bottom: -380px; width: 900px; height: 600px; margin-left: -450px; border-radius: 50%; background: radial-gradient(closest-side, rgba(90,120,255,.65), rgba(61,99,255,.18) 50%, transparent); filter: blur(20px); }
+    .closing h2 { font-size: var(--t-xl); font-weight: 600; letter-spacing: -0.04em; margin-bottom: 1.8rem; }
 
-    /* ---------- cierre ---------- */
-    .closing { text-align: center; padding: var(--s5) var(--s3); margin: var(--s6) 10px 0; }
-    .closing h2 { font-size: var(--t-xl); margin-bottom: var(--s3); }
-    .closing.hero-shell::after { background: linear-gradient(180deg, rgba(247,248,251,1) 0%, rgba(247,248,251,0.7) 50%, rgba(247,248,251,0) 100%); }
-
-    /* ---------- responsive ---------- */
-    @media (max-width: 900px) {
-      .tiles { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
-      .app { grid-template-columns: 1fr; }
-      .side { display: none; }
-      .row2 { grid-template-columns: 1fr; }
+    @media (max-width: 880px) {
+      .trio, .three { grid-template-columns: 1fr; }
+      .trio .hc { min-height: 290px; }
+      .fc { min-height: 300px; }
+      .feat { padding: 4rem 14px 14px; border-radius: 28px; }
+      .spot { --sw: 44px; --sa: 250px; --gap: 6px; }
+      .sc { height: 200px; }
+      .sc.on { height: 280px; }
+      .sc-tag { display: none; }
+      .sc.on .sc-tag { display: block; }
     }
     @media (max-width: 640px) {
-      .hero { padding: 7.5rem var(--s2) 6rem; }
-      .req { grid-template-columns: 1fr; }
-      .req-foot { flex-direction: column; }
-      .req-foot .btn { min-height: 48px; justify-content: center; }
-      .stage { padding: var(--s2) var(--s2) 0; }
-      .kpis { grid-template-columns: repeat(2, 1fr); }
-      .bubble { font-size: var(--t-xs); }
-      .tbl th:nth-child(4), .tbl td:nth-child(4) { display: none; }
+      .hero { padding: 8rem 16px 4rem; }
+      .grid { grid-template-columns: 1fr; }
+      .foot { flex-direction: column; }
+      .submit { min-height: 50px; }
+      .spot { --sw: 30px; --sa: 230px; --gap: 5px; }
+      .closing { margin: 6rem 0 0; border-radius: 28px; }
     }
   </style>
 </head>
 <body>
   <nav class="nav" aria-label="Principal">
-    <a class="logo" href="#" aria-label="adsignal, inicio"><img src="logo.svg" alt="">adsignal</a>
+    <a class="logo" href="#" aria-label="AdSignal, inicio"><img src="logo.svg?v=4" alt="">AdSignal</a>
     <div class="nav-links">
-      <a href="informe-ejemplo.html">Ver ejemplo</a>
+      <a href="#sectores">Sectores</a>
       <a href="#faq">Preguntas</a>
-      <a class="btn" href="#pedir">Pedir informe</a>
+      <a class="btn btn-white" href="#pedir">Pedir informe</a>
     </div>
   </nav>
 
-  <header class="hero-shell">
-    <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i>
-    <div class="hero">
-      <a class="pill" href="informe-ejemplo.html"><span class="tag">Gratis</span> Cualquier sector, cualquier país de la UE</a>
-      <h1>Mira qué anuncia tu competencia.</h1>
-      <p class="sub">Dinos tu sector y país. Te enviamos los anuncios de tu competencia, ordenados y resumidos.</p>
-
+  <header class="hero">
+    <div class="aura" aria-hidden="true"><i class="grain"></i></div>
+    <span class="eyebrow"><i></i>Ad intelligence sobre Meta</span>
+    <h1>Lo que anuncia tu <span class="hl">competencia</span>, en <span class="hl">datos reales</span>.</h1>
+    <p class="sub">Elige sector y país. El informe llega a tu email, listo para leer o descargar en PDF.</p>
       <form class="signup" id="pedir" novalidate>
-        <div class="req">
-          <div class="f"><label for="industria">Sector</label><input id="industria" name="industria" list="sugerencias" placeholder="Gimnasios, cosmética, seguros…" required autocomplete="off"></div>
-          <div class="f"><label for="pais">País</label><select id="pais" name="pais"><option value="ES" selected>España</option><option value="PT">Portugal</option><option value="FR">Francia</option><option value="IT">Italia</option><option value="DE">Alemania</option><option value="NL">Países Bajos</option><option value="BE">Bélgica</option><option value="IE">Irlanda</option><option value="AT">Austria</option><option value="PL">Polonia</option><option value="SE">Suecia</option><option value="DK">Dinamarca</option><option value="FI">Finlandia</option><option value="GR">Grecia</option><option value="CZ">Chequia</option><option value="RO">Rumanía</option><option value="HU">Hungría</option><option value="SK">Eslovaquia</option><option value="BG">Bulgaria</option><option value="HR">Croacia</option><option value="SI">Eslovenia</option><option value="LT">Lituania</option><option value="LV">Letonia</option><option value="EE">Estonia</option><option value="LU">Luxemburgo</option><option value="CY">Chipre</option><option value="MT">Malta</option></select></div>
-          <div class="f wide"><label for="marcas">Marcas a comparar <span style="color:#A3A9B4">(opcional)</span></label><input id="marcas" name="marcas" placeholder="Si lo dejas vacío, buscamos a los principales anunciantes" autocomplete="off"></div>
-          <div class="req-foot">
-            <div class="f"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
-            <button class="btn" type="submit">Pedir informe <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="fcard glass">
+          <div class="grid">
+            <div class="field" id="f-sector">
+              <label for="industria">Sector</label>
+              <input id="industria" name="industria" placeholder="Gimnasios, cosmética, seguros…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="sector-opts" aria-autocomplete="list">
+              <div class="menu"><div class="opt-hint">Sugerencias</div><ul class="opts" id="sector-opts" role="listbox" aria-label="Sugerencias de sector"></ul></div>
+            </div>
+            <div class="field" id="f-pais">
+              <span class="lbl" id="pais-lbl">País</span>
+              <button type="button" class="sel" id="pais-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="pais-lbl pais-btn">
+                <span class="sel-val"><span class="code" id="pais-code">ES</span><span id="pais-name">España</span></span><svg class="chev" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <input type="hidden" name="pais" id="pais" value="ES">
+              <div class="menu">
+                <div class="menu-search"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><input id="pais-q" placeholder="Buscar país" autocomplete="off" aria-label="Buscar país"></div>
+                <ul class="opts" id="pais-opts" role="listbox" aria-label="Países de la UE"></ul>
+              </div>
+            </div>
+            <div class="field wide" id="f-marcas">
+              <label for="marca-in">Marcas a comparar <small>(opcional)</small></label>
+              <div class="chips-in" id="chips"><input id="marca-in" placeholder="Escribe una marca y pulsa Enter" autocomplete="off"></div>
+              <input type="hidden" name="marcas" id="marcas">
+            </div>
           </div>
+          <div class="foot">
+            <div class="field" id="f-email"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com"></div>
+            <button class="btn btn-white submit" type="submit">Pedir informe <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <label class="consent"><input type="checkbox" name="consent" id="consent"><span class="box"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Acepto recibir el informe por email. <a href="privacidad.html">Privacidad</a></label>
+          <p class="form-msg" id="form-msg" role="alert"></p>
         </div>
-        <datalist id="sugerencias"><option value="Gimnasios"><option value="Cosmética"><option value="Moda"><option value="Seguros"><option value="Bancos"><option value="Comida a domicilio"><option value="Academias de idiomas"><option value="Inmobiliarias"><option value="Telefonía"><option value="Viajes"></datalist>
-        <label class="consent"><input type="checkbox" name="consent" id="consent" required> Acepto recibir el informe por email. <a href="privacidad.html">Privacidad</a></label>
         <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium">
         <input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
-        <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
       </form>
-    </div>
   </header>
 
   <main class="wrap">
-    <section class="stage-wrap" aria-label="Vista previa del informe">
-      <div class="stage" id="stage">
-        <div class="window">
-          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">adsignal.app/gimnasios</span><span style="width:45px"></span></div>
-          <div class="app">
-            <aside class="side">
-              <div class="logo"><img src="logo.svg" alt="">adsignal</div>
-              <h4>Tus informes</h4>
-              <ul>
-                <li class="on">Gimnasios <small>ES</small></li>
-                <li>Cosmética <small>FR</small></li>
-                <li>Seguros <small>ES</small></li>
-                <li>Moda <small>IT</small></li>
-              </ul>
-            </aside>
-            <div class="main">
-              <div class="main-head"><h3>Gimnasios en España</h3><span class="tag">Últimos 30 días</span></div>
-              <div class="kpis">
-                <div class="kpi"><span>Marcas</span><strong>5</strong></div>
-                <div class="kpi"><span>Anuncios activos</span><strong>75</strong></div>
-                <div class="kpi" id="hot-new"><span>Nuevos, 7 días</span><strong>19 <i class="tag green" style="font-style:normal">+46%</i></strong></div>
-                <div class="kpi" id="hot-long"><span>Más longevo</span><strong>63 días</strong></div>
-              </div>
-              <div class="row2">
-                <div class="card"><div class="card-title"><span>Anuncios lanzados por día</span><span>Esta semana en azul</span></div><div class="chart" id="chart"></div></div>
-                <div class="card">
-                  <div class="card-title"><span>Por marca</span></div>
-                  <table class="tbl">
-                    <thead><tr><th>Marca</th><th class="n">Activos</th><th class="n">Nuevos</th><th>Ángulo</th></tr></thead>
-                    <tbody>
-                      <tr id="hot-brand"><td>Pulso Gym</td><td class="n">23</td><td class="n">6</td><td><span class="tag blue">Comunidad</span></td></tr>
-                      <tr id="hot-price"><td>FitCentral</td><td class="n">18</td><td class="n">5</td><td><span class="tag">Precio</span></td></tr>
-                      <tr><td>Núcleo Fitness</td><td class="n">14</td><td class="n">4</td><td><span class="tag">Clases</span></td></tr>
-                      <tr><td>Ola Studio</td><td class="n">11</td><td class="n">2</td><td><span class="tag">Bienestar</span></td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+    <section class="demo rv" aria-label="Así es el informe">
+      <div class="demo-bar">
+        <span class="live"><i></i>Gimnasios · España</span>
+        <a href="informes/gimnasios-es-2026-11-27.html">Ver el informe completo <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="trio">
+        <article class="hc">
+          <div class="hc-head"><div><h3 class="hc-t">Actividad</h3><p class="hc-s">Anuncios nuevos al día <span class="delta">↑ 3 esta semana</span></p></div><span class="hc-go"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="hc-chart" data-chart="stems" data-unit="nuevos" data-values="[1, 0, 1, 0, 2, 1, 0, 3, 0, 0, 4, 3, 1, 1, 1, 0, 0, 3, 3, 0, 1, 3, 0, 1, 0, 1, 0, 1, 0, 0]" data-axis='["30 días","15","Hoy"]'></div>
+          <div class="hc-foot"><div><span>Últimos 30 días</span><b>31</b></div><div><span>Activos hoy</span><b>93</b></div></div>
+        </article>
+        <article class="hc">
+          <div class="hc-head"><div><h3 class="hc-t">Cuota</h3><p class="hc-s">Anuncios por marca <span class="delta">5 marcas</span></p></div><span class="hc-go"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="hc-chart" data-chart="ring" data-items='[["Atlas", 30], ["Kora", 29], ["Vértice", 19], ["Alba", 14], ["Nova", 8]]'></div>
+          <div class="hc-foot"><div class="hc-legend"><div data-i="0"><i></i><span>Atlas</span><em>30%</em></div><div data-i="1"><i></i><span>Kora</span><em>29%</em></div><div data-i="2"><i></i><span>Vértice</span><em>19%</em></div><div data-i="3"><i></i><span>Alba</span><em>14%</em></div></div></div>
+        </article>
+        <article class="hc">
+          <div class="hc-head"><div><h3 class="hc-t">Longevidad</h3><p class="hc-s">Su anuncio más duradero <span class="delta">mediana 38 d</span></p></div><span class="hc-go"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="hc-chart" data-chart="bars" data-unit="días" data-items='[["Atlas", 111], ["Kora", 104], ["Vértice", 90], ["Alba", 88], ["Nova", 78]]'></div>
+          <div class="hc-foot"><div><span>Mediana</span><b>38<small>días</small></b></div><div><span>Récord</span><b>111<small>días</small></b></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="feat rv" aria-labelledby="h-tres">
+        <i class="grain"></i>
+        <div class="head"><h2 id="h-tres">Horas de investigación, <span class="hl">resueltas</span> en un <span class="hl">informe</span>.</h2></div>
+        <div class="three">
+          <article class="fc hot">
+            <h3>Qué lanzan</h3>
+            <p>Los anuncios nuevos de cada marca, día a día.</p>
+            <div class="viz"><div class="pairs" aria-hidden="true">
+              <i style="--h:46%;--k:42%;--d:0ms"></i><i style="--h:62%;--k:30%;--d:70ms"></i><i style="--h:38%;--k:46%;--d:140ms"></i><i style="--h:58%;--k:34%;--d:210ms"></i><i style="--h:92%;--k:24%;--d:280ms"></i><i style="--h:76%;--k:28%;--d:350ms"></i>
+            </div></div>
+          </article>
+          <article class="fc">
+            <h3>Qué les funciona</h3>
+            <p>Los anuncios que siguen activos semanas después.</p>
+            <div class="viz">
+              <svg class="donut" viewBox="0 0 100 100" aria-hidden="true">
+                <defs><linearGradient id="dg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9D5FF"/><stop offset="1" stop-color="#3D63FF"/></linearGradient></defs>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="9"/>
+                <circle class="arc" cx="50" cy="50" r="40" fill="none" stroke="url(#dg)" stroke-width="9" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                <text x="50" y="56" text-anchor="middle">66 %</text>
+              </svg>
+              <div class="dleg"><span><i></i>Más de un mes</span><span><i></i>Recientes</span></div>
             </div>
-          </div>
+          </article>
+          <article class="fc">
+            <h3>Cómo se mueve</h3>
+            <p>Quién acelera y qué argumentos se repiten.</p>
+            <div class="viz">
+              <svg class="step" viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true">
+                <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+                <path d="M0 108 H20 V102 H40 V104 H60 V96 H80 V98 H100 V88 H120 V92 H140 V80 H160 V84 H180 V70 H200 V74 H220 V58 H240 V64 H260 V44 H280 V30 H300 V120 H0 Z" fill="url(#sg)"/>
+                <path class="ln" d="M0 108 H20 V102 H40 V104 H60 V96 H80 V98 H100 V88 H120 V92 H140 V80 H160 V84 H180 V70 H200 V74 H220 V58 H240 V64 H260 V44 H280 V30 H300" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
+          </article>
         </div>
-        <div class="hot" id="hot" aria-hidden="true"><span class="ring"></span><span class="bubble" id="bubble"></span></div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="h-que">
-      <div class="section-head">
-        <h2 id="h-que">Tres cosas que vas a saber</h2>
-      </div>
-      <div class="tiles">
-        <article class="tile">
-          <div class="tile-art">
-            <div class="glass">
-              <div class="glass-row hl"><span>Pulso Gym</span><span class="tag blue">+6 nuevos</span></div>
-              <div class="glass-row"><span>FitCentral</span><small>+5</small></div>
-              <div class="glass-row"><span>Núcleo Fitness</span><small>+4</small></div>
-            </div>
-            <div class="cursor" style="right: 14%; bottom: 16%"><svg viewBox="0 0 16 16"><path d="M2 1l11 6-5 1.5L6 14z" fill="#0B0D12" stroke="#fff" stroke-width="1"/></svg><span>Tú</span></div>
-          </div>
-          <h3>Qué lanzan</h3>
-          <p>Los anuncios nuevos de cada marca.</p>
-        </article>
-        <article class="tile">
-          <div class="tile-art">
-            <div class="glass">
-              <p style="font-size:var(--t-xs);color:var(--muted);margin-bottom:0.6rem">Ofertas detectadas</p>
-              <div class="chips"><span class="on">1er mes a 1 €</span><span>Matrícula gratis</span><span>Clase de prueba</span><span>Sin permanencia</span><span>Bono 5 clases</span></div>
-            </div>
-            <div class="cursor" style="right: 12%; bottom: 12%; animation-delay: -2s"><svg viewBox="0 0 16 16"><path d="M2 1l11 6-5 1.5L6 14z" fill="#0B0D12" stroke="#fff" stroke-width="1"/></svg><span>Tú</span></div>
-          </div>
-          <h3>Qué ofrecen</h3>
-          <p>Precios, promos y ganchos.</p>
-        </article>
-        <article class="tile">
-          <div class="tile-art">
-            <div class="radar">
-              <i></i><i></i><i></i><span class="sweep"></span>
-              <b style="left: 52%; top: 12%">63 días activo</b>
-              <b class="v" style="left: 8%; top: 46%">52 días</b>
-              <b style="left: 56%; top: 70%">47 días</b>
-            </div>
-          </div>
-          <h3>Qué les funciona</h3>
-          <p>Los anuncios que llevan semanas activos.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="h-sect">
-      <div class="section-head"><h2 id="h-sect">El sector que quieras</h2><p>En los 27 países de la UE. Escribe el tuyo en el formulario.</p></div>
-      <div class="sectors">
-        <span class="on">Gimnasios</span><span>Cosmética</span><span>Seguros</span><span>Moda</span><span>Bancos</span><span>Delivery</span><span>Idiomas</span><span>Viajes</span>
-      </div>
+    <section class="section" id="sectores" aria-labelledby="h-sect">
+      <div class="head"><h2 id="h-sect">Cualquier sector, <span class="hl">cualquier país</span> de la UE.</h2></div>
+      <div class="spot" id="spot" aria-roledescription="carrusel"><div class="spot-track" id="spot-track"></div></div>
+      <div class="dots" id="dots" aria-label="Elegir sector"></div>
     </section>
 
     <section class="section" id="faq" aria-labelledby="h-faq">
-      <div class="section-head"><h2 id="h-faq">Preguntas</h2></div>
-      <div class="faq">
-        <details><summary>¿De dónde salen los datos?</summary><p>De la Biblioteca de anuncios de Meta, que es pública. Nosotros los ordenamos y resumimos.</p></details>
+      <div class="head"><h2 id="h-faq">Preguntas</h2></div>
+      <div class="faq glass">
+        <details><summary>¿De dónde salen los datos?</summary><p>De la Biblioteca de anuncios de Meta, que es pública. Nosotros calculamos las métricas y resumimos lo importante.</p></details>
         <details><summary>¿Cuánto cuesta?</summary><p>Nada.</p></details>
         <details><summary>¿Qué países puedo pedir?</summary><p>Los 27 de la Unión Europea. Meta solo publica todos los anuncios de esos países.</p></details>
-        <details><summary>¿Cuánto tarda?</summary><p>Normalmente menos de media hora. Te llega por email.</p></details>
+        <details><summary>¿Cuánto tarda?</summary><p>Normalmente menos de media hora. Te llega por email, en versión web y en PDF.</p></details>
         <details><summary>¿Quién está detrás?</summary><p>Jorge Lajo. Escríbeme a <a href="mailto:jorgelajosala@gmail.com">jorgelajosala@gmail.com</a>.</p></details>
       </div>
     </section>
   </main>
 
-  <section class="hero-shell closing" aria-labelledby="h-cierre">
-    <i class="blob b1"></i><i class="blob b2"></i>
-    <h2 id="h-cierre">Pide el informe de tu sector.</h2>
-    <a class="btn light" href="#pedir">Pedir informe</a>
+  <section class="closing rv" aria-labelledby="h-cierre">
+    <i class="grain"></i>
+    <h2 id="h-cierre">Deja de investigar <span class="hl">a mano</span>.</h2>
+    <a class="btn btn-white" href="#pedir">Pedir informe gratis</a>
   </section>
 
-  <div class="wrap">
-    <footer class="site"><span>adsignal, un proyecto de Jorge Lajo</span><a href="privacidad.html">Privacidad</a></footer>
-  </div>
+  <footer class="site"><span>AdSignal, un proyecto de Jorge Lajo</span><a href="privacidad.html">Privacidad</a></footer>
 
+  <script src="dash.js?v=1" defer></script>
   <script>
-    /* ===== Formulario =====
-       Pega aquí la URL del formulario de Brevo / HubSpot / Make. Vacía = solo muestra la confirmación. */
     const FORM_ENDPOINT = "https://hook.eu1.make.com/mlf50s47ydunrvysunubbgbmowe8cc8i";
 
     const params = new URLSearchParams(location.search);
@@ -323,74 +327,211 @@
 
     const form = document.getElementById("pedir");
     const msg = document.getElementById("form-msg");
+    const norm = (t) => t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const TICK = '<svg class="tick" viewBox="0 0 16 16" fill="none"><path d="M3.5 8.4l3 3 6-6.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    // Cierra cualquier menú abierto al pulsar fuera
+    const abiertos = new Set();
+    function cerrar(f) { f.classList.remove("open"); f.querySelector("[aria-expanded]")?.setAttribute("aria-expanded", "false"); abiertos.delete(f); }
+    function abrir(f) { abiertos.forEach((o) => o !== f && cerrar(o)); f.classList.add("open"); f.querySelector("[aria-expanded]")?.setAttribute("aria-expanded", "true"); abiertos.add(f); }
+    document.addEventListener("pointerdown", (e) => abiertos.forEach((f) => !f.contains(e.target) && cerrar(f)));
+
+    // Desplaza la lista (no la página) para que se vea el elemento
+    function verEnLista(lista, el, centrar) {
+      if (!el) return;
+      const arriba = el.offsetTop, abajo = arriba + el.offsetHeight;
+      if (centrar) lista.scrollTop = arriba - lista.clientHeight / 2 + el.offsetHeight / 2;
+      else if (arriba < lista.scrollTop) lista.scrollTop = arriba;
+      else if (abajo > lista.scrollTop + lista.clientHeight) lista.scrollTop = abajo - lista.clientHeight;
+    }
+
+    // Navegación con teclado común a las dos listas
+    function teclado(e, lista, alElegir, alCerrar) {
+      const items = [...lista.querySelectorAll(".opt")];
+      if (!items.length) return;
+      let i = items.findIndex((x) => x.classList.contains("active"));
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        i = e.key === "ArrowDown" ? Math.min(i + 1, items.length - 1) : Math.max(i - 1, 0);
+        items.forEach((x) => x.classList.remove("active"));
+        items[i].classList.add("active"); verEnLista(lista, items[i]);
+      } else if (e.key === "Enter" && i >= 0) { e.preventDefault(); alElegir(items[i].dataset.v); }
+      else if (e.key === "Escape") { alCerrar(); }
+    }
+
+    // --- Sector: texto libre con sugerencias
+    const SECTORES = ["Gimnasios", "Cosmética", "Moda", "Seguros", "Bancos", "Comida a domicilio", "Restaurantes", "Academias de idiomas", "Formación online", "Inmobiliarias", "Telefonía", "Energía", "Viajes", "Hoteles", "Automoción", "Clínicas dentales", "Mascotas", "Supermercados", "Electrónica", "Joyería"];
+    const fSector = document.getElementById("f-sector"), inSector = document.getElementById("industria"), lSector = document.getElementById("sector-opts");
+    function pintarSectores() {
+      const q = norm(inSector.value.trim());
+      const lista = SECTORES.filter((x) => !q || norm(x).includes(q)).slice(0, 7);
+      lSector.innerHTML = lista.map((x) => `<li class="opt" role="option" data-v="${esc(x)}">${esc(x)}</li>`).join("");
+      lista.length ? abrir(fSector) : cerrar(fSector);
+    }
+    function elegirSector(v) { inSector.value = v; cerrar(fSector); fSector.classList.remove("invalid"); document.getElementById("pais-btn").focus({ preventScroll: true }); }
+    inSector.addEventListener("focus", pintarSectores);
+    inSector.addEventListener("input", () => { fSector.classList.remove("invalid"); pintarSectores(); });
+    inSector.addEventListener("keydown", (e) => teclado(e, lSector, elegirSector, () => cerrar(fSector)));
+    lSector.addEventListener("click", (e) => { const o = e.target.closest(".opt"); if (o) elegirSector(o.dataset.v); });
+
+    // --- País: desplegable con búsqueda
+    const PAISES = [["ES","España"],["PT","Portugal"],["FR","Francia"],["IT","Italia"],["DE","Alemania"],["NL","Países Bajos"],["BE","Bélgica"],["IE","Irlanda"],["AT","Austria"],["PL","Polonia"],["SE","Suecia"],["DK","Dinamarca"],["FI","Finlandia"],["GR","Grecia"],["CZ","Chequia"],["RO","Rumanía"],["HU","Hungría"],["SK","Eslovaquia"],["BG","Bulgaria"],["HR","Croacia"],["SI","Eslovenia"],["LT","Lituania"],["LV","Letonia"],["EE","Estonia"],["LU","Luxemburgo"],["CY","Chipre"],["MT","Malta"]];
+    const fPais = document.getElementById("f-pais"), btnPais = document.getElementById("pais-btn"), qPais = document.getElementById("pais-q"), lPais = document.getElementById("pais-opts"), inPais = document.getElementById("pais");
+    function pintarPaises() {
+      const q = norm(qPais.value.trim());
+      const lista = PAISES.filter(([c, n]) => !q || norm(n).includes(q) || norm(c) === q);
+      lPais.innerHTML = lista.length
+        ? lista.map(([c, n]) => `<li class="opt" role="option" data-v="${c}" aria-selected="${c === inPais.value}"><span class="code">${c}</span>${n}${TICK}</li>`).join("")
+        : '<li class="opt-hint">Solo países de la Unión Europea</li>';
+    }
+    function elegirPais(c) {
+      const [, n] = PAISES.find((p) => p[0] === c);
+      inPais.value = c; document.getElementById("pais-code").textContent = c; document.getElementById("pais-name").textContent = n;
+      cerrar(fPais); btnPais.focus({ preventScroll: true });
+    }
+    btnPais.addEventListener("click", () => {
+      if (fPais.classList.contains("open")) return cerrar(fPais);
+      qPais.value = ""; pintarPaises(); abrir(fPais);
+      qPais.focus({ preventScroll: true });
+      verEnLista(lPais, lPais.querySelector('[aria-selected="true"]'), true);
+    });
+    btnPais.addEventListener("keydown", (e) => { if (e.key === "ArrowDown") { e.preventDefault(); btnPais.click(); } });
+    qPais.addEventListener("input", pintarPaises);
+    qPais.addEventListener("keydown", (e) => teclado(e, lPais, elegirPais, () => { cerrar(fPais); btnPais.focus(); }));
+    lPais.addEventListener("click", (e) => { const o = e.target.closest(".opt"); if (o) elegirPais(o.dataset.v); });
+
+    // --- Marcas: cada una se convierte en una etiqueta
+    const chips = document.getElementById("chips"), inMarca = document.getElementById("marca-in"), hMarcas = document.getElementById("marcas");
+    let marcas = [];
+    function pintarMarcas() {
+      chips.querySelectorAll(".chip").forEach((c) => c.remove());
+      marcas.forEach((m, i) => inMarca.insertAdjacentHTML("beforebegin",
+        `<span class="chip">${esc(m)}<button type="button" data-i="${i}" aria-label="Quitar ${esc(m)}"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></span>`));
+      hMarcas.value = marcas.join(", ");
+      inMarca.placeholder = marcas.length ? (marcas.length < 6 ? "Añadir otra" : "") : "Escribe una marca y pulsa Enter";
+      inMarca.disabled = marcas.length >= 6;
+    }
+    function anadirMarca() {
+      const v = inMarca.value.replace(/,/g, "").trim();
+      if (v && marcas.length < 6 && !marcas.some((m) => norm(m) === norm(v))) { marcas.push(v); }
+      inMarca.value = ""; pintarMarcas();
+    }
+    inMarca.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === ",") { e.preventDefault(); anadirMarca(); }
+      else if (e.key === "Backspace" && !inMarca.value && marcas.length) { marcas.pop(); pintarMarcas(); }
+    });
+    inMarca.addEventListener("blur", anadirMarca);
+    chips.addEventListener("click", (e) => {
+      const b = e.target.closest("button[data-i]");
+      if (b) { marcas.splice(+b.dataset.i, 1); pintarMarcas(); inMarca.focus(); } else inMarca.focus();
+    });
+
+    // --- Validación y envío
+    function aviso(texto, campo) {
+      msg.textContent = texto; msg.classList.add("show");
+      if (campo) { campo.closest(".field")?.classList.add("invalid"); campo.focus(); }
+    }
+    form.addEventListener("input", () => msg.classList.remove("show"));
+    document.getElementById("email").addEventListener("input", (e) => e.target.closest(".field").classList.remove("invalid"));
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      msg.textContent = "";
-      if (!form.industria.value.trim()) { msg.textContent = "Escribe el sector."; form.industria.focus(); return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim())) { msg.textContent = "Revisa el email."; form.email.focus(); return; }
-      if (!form.consent.checked) { msg.textContent = "Marca la casilla para recibirlo."; form.consent.focus(); return; }
+      anadirMarca();
+      if (!inSector.value.trim()) return aviso("Escribe el sector que quieres analizar.", inSector);
+      const em = document.getElementById("email");
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim())) return aviso("Revisa el email.", em);
+      if (!form.consent.checked) return aviso("Marca la casilla para poder enviarte el informe.");
       const data = Object.fromEntries(new FormData(form));
-      data.industria = data.industria.trim();
-      data.marcas = data.marcas.trim();
-      data.email = data.email.trim();
-      data.consent = "si";
-      data.pagina = location.href;
+      data.industria = data.industria.trim(); data.email = data.email.trim();
+      data.consent = "si"; data.pagina = location.href;
       try {
         if (FORM_ENDPOINT) {
           // Formulario normal (no JSON) y modo "no-cors": el navegador no bloquea el envío a Make.
-          // Contrapartida: no podemos leer la respuesta; si falla la red, salta el catch.
           await fetch(FORM_ENDPOINT, { method: "POST", mode: "no-cors", body: new URLSearchParams(data) });
         } else {
-          console.info("[adsignal] FORM_ENDPOINT vacío:", data);
+          console.info("[AdSignal] FORM_ENDPOINT vacío:", data);
         }
         (window.dataLayer = window.dataLayer || []).push({ event: "generate_lead", industria: data.industria, pais: data.pais });
-        const paisTxt = form.pais.options[form.pais.selectedIndex].text;
-        const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-        form.outerHTML = `<div class="done" role="status"><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Hecho. Preparamos tu informe de <b>${esc(data.industria.toLowerCase())}</b> en ${paisTxt} y te lo enviamos a ${esc(data.email)}.</p></div>`;
-      } catch { msg.textContent = "No se ha enviado. Prueba otra vez."; }
+        const paisTxt = document.getElementById("pais-name").textContent;
+        form.outerHTML = `<div class="done glass" role="status"><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Hecho. Preparamos tu informe de <b>${esc(data.industria.toLowerCase())}</b> en ${paisTxt} y te lo enviamos a ${esc(data.email)}.</p></div>`;
+      } catch { aviso("No se ha podido enviar. Prueba otra vez en unos segundos."); }
     });
 
-    /* ===== Gráfico de ejemplo ===== */
-    const chart = document.getElementById("chart");
-    let s = 7; const rnd = () => (s = (s * 9301 + 49297) % 233280) / 233280;
-    for (let i = 0; i < 30; i++) {
-      const v = i >= 23 ? 0.45 + rnd() * 0.55 : 0.12 + rnd() * 0.55;
-      const b = document.createElement("span");
-      b.style.height = `${Math.round(v * 100)}%`;
-      b.style.transitionDelay = `${i * 22}ms`;
-      if (i >= 23) b.className = "wk";
-      chart.appendChild(b);
-    }
 
-    /* ===== Hotspot que recorre el dashboard ===== */
-    const stage = document.getElementById("stage");
-    const hot = document.getElementById("hot");
-    const bubble = document.getElementById("bubble");
-    const stops = [
-      { el: "hot-brand", text: "Pulso Gym: 6 anuncios nuevos", x: 0.25, y: 0.5 },
-      { el: "hot-long", text: "Un anuncio con 63 días activo", x: 0.7, y: 0.6, left: true },
-      { el: "chart", text: "Esta semana se ha disparado", x: 0.86, y: 0.25, left: true },
-      { el: "hot-price", text: "FitCentral sigue con precio", x: 0.25, y: 0.5 },
+    // --- Carrusel de sectores: la tarjeta central se abre y muestra su informe
+    const SPOT = [
+      ["Moda", "IT", 228, "informes/moda-it-2026-11-27.html"],
+      ["Cosmética", "DE", 330, null],
+      ["Gimnasios", "ES", 222, "informes/gimnasios-es-2026-11-27.html"],
+      ["Seguros de coche", "FR", 200, "informes/seguros-de-coche-fr-2026-11-27.html"],
+      ["Viajes", "PT", 190, null],
+      ["Bancos", "NL", 248, null],
+      ["Clínicas dentales", "BE", 262, null],
     ];
-    let idx = 0;
-    function place() {
-      const st = stops[idx], t = document.getElementById(st.el);
-      idx = (idx + 1) % stops.length;
-      if (!t || !t.offsetParent) return;
-      const a = stage.getBoundingClientRect(), b = t.getBoundingClientRect();
-      hot.style.left = `${b.left - a.left + b.width * st.x}px`;
-      hot.style.top = `${b.top - a.top + b.height * st.y}px`;
-      bubble.style.opacity = 0;
-      setTimeout(() => { bubble.textContent = st.text; bubble.classList.toggle("left", !!st.left); bubble.style.opacity = 1; }, 350);
-    }
-    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let timer;
-    new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) {
-        stage.classList.add("in");
-        if (!timer) { place(); if (!reduce) timer = setInterval(place, 2800); }
+    const spot = document.getElementById("spot"), track = document.getElementById("spot-track"), dots = document.getElementById("dots");
+    // Mini gráfico de cada tarjeta, distinto por sector pero siempre igual (semilla fija)
+    function miniGrafico(semilla) {
+      let x = semilla * 9301 + 49297;
+      const rnd = () => ((x = (x * 9301 + 49297) % 233280) / 233280);
+      let barras = "";
+      for (let i = 0; i < 26; i++) {
+        const h = 18 + Math.pow(rnd(), 1.4) * 70 + i * 1.2;
+        barras += `<rect x="${i * 12.3 + 2}" y="${100 - h}" width="4" height="${h}" rx="2" fill="url(#mg${semilla})"/>`;
       }
-    }, { threshold: 0.35 }).observe(stage);
+      return `<svg viewBox="0 0 320 100" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="mg${semilla}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity=".05"/></linearGradient></defs>${barras}</svg>`;
+    }
+    SPOT.forEach(([sector, pais, tono, url], i) => {
+      const nombrePais = PAISES.find((p) => p[0] === pais)[1];
+      const a = document.createElement("a");
+      a.className = "sc"; a.href = url || "#pedir"; a.dataset.i = i;
+      a.setAttribute("aria-label", `${sector} en ${nombrePais}`);
+      a.innerHTML = `<div class="sc-img" style="--h:${tono}">${miniGrafico(i + 3)}<span class="sc-tag">${pais}</span></div>
+        <div class="sc-cap"><b>${esc(sector)}</b><span>${nombrePais}</span><em>${url ? "Ver informe" : "Pedir este informe"} <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5.5 2.5L8 5 5.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></em></div>`;
+      track.appendChild(a);
+      const d = document.createElement("button");
+      d.type = "button"; d.setAttribute("aria-label", `${sector} en ${nombrePais}`);
+      d.addEventListener("click", () => activar(i, true));
+      dots.appendChild(d);
+    });
+    const tarjetas = [...track.children];
+    let actual = 2, quieto = false, reloj = null, bloqueo = 0;
+    function activar(i, usuario) {
+      actual = (i + tarjetas.length) % tarjetas.length;
+      bloqueo = performance.now() + 850;
+      tarjetas.forEach((t, k) => t.classList.toggle("on", k === actual));
+      [...dots.children].forEach((d, k) => d.classList.toggle("on", k === actual));
+      centrar();
+      if (usuario) reiniciar();
+    }
+    // Desliza el carril para que la tarjeta abierta quede siempre en el centro
+    function centrar() {
+      const cs = getComputedStyle(spot), v = (k) => parseFloat(cs.getPropertyValue(k));
+      const x = spot.clientWidth / 2 - (actual * (v("--sw") + v("--gap")) + v("--sa") / 2);
+      track.style.transform = `translateX(${x}px)`;
+    }
+    addEventListener("resize", centrar);
+    function reiniciar() {
+      clearInterval(reloj);
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches) reloj = setInterval(() => !quieto && activar(actual + 1), 3600);
+    }
+    spot.addEventListener("pointerenter", () => (quieto = true));
+    spot.addEventListener("pointerleave", () => (quieto = false));
+    tarjetas.forEach((t, i) => {
+      // Solo al mover el ratón y no mientras el carril se desliza (evita saltos en cadena)
+      t.addEventListener("pointermove", (e) => e.pointerType === "mouse" && i !== actual && performance.now() > bloqueo && activar(i, true));
+      t.addEventListener("click", (e) => {
+        if (!t.classList.contains("on")) { e.preventDefault(); return activar(i, true); }
+        const [sector, pais, , url] = SPOT[i];
+        if (url) return;
+        // Sin informe de ejemplo: rellena el formulario con ese sector y país
+        e.preventDefault();
+        if (!document.getElementById("pedir")) return;
+        inSector.value = sector; elegirPais(pais);
+        document.getElementById("pedir").scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => document.getElementById("email").focus({ preventScroll: true }), 600);
+      });
+    });
+    activar(actual); reiniciar();
   </script>
 </body>
 </html>

@@ -4,11 +4,34 @@
     "pais": "ES",
     "marcas": [],
     "id": "",
-    "fecha": "2026-11-26"
+    "fecha": "2026-11-27"
   },
   "ejemplo": true,
   "metricas": {
-    "fecha_ref": "2026-11-26",
+    "antiguedad": [
+      {
+        "nombre": "Esta semana",
+        "n": 3,
+        "pct": 3
+      },
+      {
+        "nombre": "8-30 días",
+        "n": 28,
+        "pct": 30
+      },
+      {
+        "nombre": "1-3 meses",
+        "n": 56,
+        "pct": 60
+      },
+      {
+        "nombre": "Más de 3 meses",
+        "n": 6,
+        "pct": 6
+      }
+    ],
+    "max_serie": 3,
+    "fecha_ref": "2026-11-27",
     "total_anuncios": 93,
     "n_marcas": 5,
     "nuevos": 3,
@@ -93,6 +116,38 @@
             "texto": "Gimnasios desde 29,90 €. Sin permanencia y sin letra pequeña.",
             "dias": 31
           }
+        ],
+        "serie_30d": [
+          1,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
         ]
       },
       {
@@ -160,6 +215,38 @@
             "texto": "Gimnasios desde 4,99 €/mes. Sin permanencia y sin letra pequeña.",
             "dias": 18
           }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
         ]
       },
       {
@@ -235,6 +322,38 @@
             "texto": "Últimos días: un 20 % de descuento. Después vuelve al precio normal.",
             "dias": 32
           }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
         ]
       },
       {
@@ -298,6 +417,38 @@
             "texto": "Gimnasios desde 4,99 €/mes. Sin permanencia y sin letra pequeña.",
             "dias": 9
           }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
         ]
       },
       {
@@ -349,6 +500,38 @@
             "texto": "Ya estamos en tu ciudad. Ven a conocernos y un regalo de bienvenida.",
             "dias": 6
           }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
         ]
       }
     ]

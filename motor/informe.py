@@ -10,15 +10,18 @@ from .solicitud import Solicitud
 
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
          "septiembre", "octubre", "noviembre", "diciembre"]
-_env = Environment(loader=FileSystemLoader(Path(__file__).parent / "plantillas"),
+# La plantilla incrusta dash.css y dash.js de la web: los gráficos son los mismos en ambos sitios
+_RAIZ = Path(__file__).parent
+_env = Environment(loader=FileSystemLoader([_RAIZ / "plantillas", _RAIZ.parent / "web"]),
                    autoescape=select_autoescape(["html"]), trim_blocks=True, lstrip_blocks=True)
 
 
 def generar(sol: Solicitud, met: dict, an: dict, ejemplo: bool, carpeta: Path) -> Path:
     carpeta.mkdir(parents=True, exist_ok=True)
     f = sol.fecha
+    serie_total = [sum(m["serie_30d"][i] for m in met["marcas"]) for i in range(30)]
     html = _env.get_template("informe.html").render(
-        sol=sol, met=met, an=an, ejemplo=ejemplo,
+        sol=sol, met=met, an=an, ejemplo=ejemplo, pdf_nombre=f"{sol.nombre_archivo}.pdf", serie_total=serie_total,
         fecha_larga=f"{f.day} de {MESES[f.month - 1]} de {f.year}",
     )
     destino = carpeta / f"{sol.nombre_archivo}.html"

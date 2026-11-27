@@ -18,6 +18,7 @@ class Resultado:
     metricas: dict
     analisis: dict
     ejemplo: bool
+    pdf: Path | None = None
 
 
 def generar_informe(sol: Solicitud, fuente: str, usar_ia: bool | None, carpeta: Path, log=print) -> Resultado:
@@ -37,4 +38,11 @@ def generar_informe(sol: Solicitud, fuente: str, usar_ia: bool | None, carpeta: 
     log(f"  análisis hecho con: {an['fuente']}")
     ejemplo = fuente != "meta"
     archivo = informe.generar(sol, met, an, ejemplo=ejemplo, carpeta=carpeta)
-    return Resultado(archivo, met, an, ejemplo)
+    pdf = None
+    try:  # Si el PDF falla, el informe web y el email siguen adelante
+        from .pdf import generar_pdf
+        pdf = generar_pdf(archivo)
+        log(f"  PDF generado: {pdf.name}")
+    except Exception as e:
+        log(f"  aviso: no se pudo generar el PDF ({type(e).__name__}: {str(e)[:150]})")
+    return Resultado(archivo, met, an, ejemplo, pdf)

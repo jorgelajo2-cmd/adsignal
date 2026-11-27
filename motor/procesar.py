@@ -53,7 +53,8 @@ def procesar_fila(fila: dict, hoja, correo, fuente: str, carpeta: Path, base_url
     except Exception as e:
         print(f"   aviso: no se pudo guardar el contacto en Brevo ({e})")
 
-    asunto, html = componer(sol, r.metricas, r.analisis, url, r.ejemplo)
+    pdf_url = f"{base_url.rstrip('/')}/informes/{r.pdf.name}" if r.pdf else None
+    asunto, html = componer(sol, r.metricas, r.analisis, url, r.ejemplo, pdf_url=pdf_url, base_url=base_url)
     correo.enviar(email, asunto, html)
     return url
 
