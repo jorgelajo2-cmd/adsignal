@@ -1,0 +1,890 @@
+{
+  "solicitud": {
+    "industria": "Gimnasios",
+    "pais": "ES",
+    "marcas": [],
+    "id": "f77e1ca234b84d68b4d3bf50e321f912",
+    "fecha": "2026-11-27"
+  },
+  "ejemplo": false,
+  "metricas": {
+    "antiguedad": [
+      {
+        "nombre": "Esta semana",
+        "n": 56,
+        "pct": 22
+      },
+      {
+        "nombre": "8-30 días",
+        "n": 85,
+        "pct": 33
+      },
+      {
+        "nombre": "1-3 meses",
+        "n": 114,
+        "pct": 44
+      },
+      {
+        "nombre": "Más de 3 meses",
+        "n": 2,
+        "pct": 1
+      }
+    ],
+    "max_serie": 53,
+    "fecha_ref": "2026-11-27",
+    "total_anuncios": 257,
+    "n_marcas": 6,
+    "nuevos": 56,
+    "mediana_dias": 14,
+    "plataformas": [
+      {
+        "nombre": "Facebook",
+        "pct": 100
+      },
+      {
+        "nombre": "Instagram",
+        "pct": 100
+      },
+      {
+        "nombre": "Threads",
+        "pct": 58
+      },
+      {
+        "nombre": "Audience Network",
+        "pct": 28
+      },
+      {
+        "nombre": "Messenger",
+        "pct": 20
+      }
+    ],
+    "marcas": [
+      {
+        "page_id": "160445247434157",
+        "nombre": "vivagym.es",
+        "activos": 125,
+        "cuota": 49,
+        "nuevos": 10,
+        "mediana_dias": 56,
+        "max_dias": 84,
+        "mas_longevo": {
+          "dias": 84,
+          "texto": "Únete a VivaGym 🧡 con esta super oferta. ¡Entrena tu cuerpo y dale amor a tu coco! 🏋️‍♀️🧠",
+          "url": "https://www.facebook.com/ads/library/?id=1381881820805138",
+          "id": "1381881820805138"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Threads",
+            "pct": 56
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 14
+          }
+        ],
+        "creatividades": 15,
+        "alcance_ue": 39983676,
+        "edades": "18 - 65",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Únete a VivaGym 🧡 con esta super oferta. ¡Entrena tu cuerpo y dale amor a tu coco! 🏋️‍♀️🧠",
+            "titulo": "¡Por tiempo limitado! 🧡 · Únete a VivaGym 🧡",
+            "dias": 84
+          },
+          {
+            "texto": "Construye tu propio negocio como Personal Trainer en VivaGym 🧡, ¡es tu momento!",
+            "titulo": "¿Eres Personal Trainer?",
+            "dias": 79
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym Ronda Manca, Córdoba.\n\n¡Únete ahora por sólo 25,90€! Aprovecha la promoción 🤩\n\n¡Apúntate ya!",
+            "titulo": "Únete a VivaGym",
+            "dias": 26
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym Avilés\n\n¡Únete ahora por sólo 19,90€! Aprovecha la promoción 🤩\n\n¡Apúntate ya!",
+            "titulo": "Únete a VivaGym",
+            "dias": 26
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym Compostela.\n\n¡Únete ahora por sólo 19,90€! Aprovecha la promoción 🤩\n\n¡Apúntate ya!",
+            "titulo": "Únete a VivaGym por sólo 19,90€",
+            "dias": 26
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym Palleter, Valencia.\n\n¡Únete ahora por sólo 20,90€! Aprovecha la promoción 🤩\n\n¡Apúntate ya!",
+            "titulo": "Únete a VivaGym",
+            "dias": 24
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym Tome Cano. Aprovecha la promoción 🤩\n\n¡Apúntate ya!",
+            "titulo": "Únete a VivaGym",
+            "dias": 24
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym Tablero, Córdoba.\n\n🗓️ 23 de Diciembre ¡Apúntate ya!",
+            "titulo": "Únete a VivaGym",
+            "dias": 9
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym Sagunt, Valencia.\n\n🗓️ 21 de Diciembre ¡Apúntate ya!",
+            "titulo": "Únete a VivaGym",
+            "dias": 9
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym Palleter, Valencia.\n\n🗓️ 23 de Diciembre ¡Apúntate ya!",
+            "titulo": "Únete a VivaGym",
+            "dias": 9
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym Herrera Oria, Madrid.\n\n🗓️ 21 de Diciembre ¡Apúntate ya!",
+            "titulo": "Únete a VivaGym",
+            "dias": 9
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym Corredoria, Asturias.\n\n🗓️ 30 de Noviembre ¡Apúntate ya!",
+            "titulo": "Únete a VivaGym",
+            "dias": 9
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym Besós Mar, Barcelona.\n\n🗓️ 21 de Diciembre ¡Apúntate ya!",
+            "titulo": "Únete a VivaGym",
+            "dias": 9
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym Astillero, Cantabria.\n\n🗓️ 23 de Diciembre ¡Apúntate ya!",
+            "titulo": "Únete a VivaGym",
+            "dias": 9
+          },
+          {
+            "texto": "🏋📍Nueva apertura: VivaGym A Barca, Pontevedra.\n\n🗓️ 21 de Diciembre ¡Apúntate ya!",
+            "titulo": "Únete a VivaGym",
+            "dias": 9
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          3,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "960169974018504",
+        "nombre": "GO fit",
+        "activos": 61,
+        "cuota": 24,
+        "nuevos": 2,
+        "mediana_dias": 10,
+        "max_dias": 95,
+        "mas_longevo": {
+          "dias": 95,
+          "texto": "Tu cuerpo se activa, tu mente respira. Esto es desconectar de verdad. Descubre GO fit con piscina, spa, calses ¡y mucho más!",
+          "url": "https://www.facebook.com/ads/library/?id=1083135754664455",
+          "id": "1083135754664455"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 59
+          },
+          {
+            "nombre": "Threads",
+            "pct": 59
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 18
+          }
+        ],
+        "creatividades": 13,
+        "alcance_ue": 532353,
+        "edades": "18 - 65",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Tu cuerpo se activa, tu mente respira. Esto es desconectar de verdad. Descubre GO fit con piscina, spa, calses ¡y mucho más!",
+            "titulo": "¿Aún no conoces GOfit?",
+            "dias": 95
+          },
+          {
+            "texto": "Disfruta de entrenar y desconecta de la rutina. En GOfit tienes clases, piscina, spa, sala fitness y mucho más. ¡Inscríbete!",
+            "titulo": "Actívate y desconecta. GO fit · ¿Aún no conoces GOfit? · Imagen generada con IA · Seguimiento personalizado · Para toda la familia",
+            "dias": 57
+          },
+          {
+            "texto": "Cuando tu cuerpo se mueve, tú descansas 💙 En GOfit tienes más de 150 actividades dirigidas a la semana, piscina, spa y un amplio horario para entrenar cuando mejor te venga. ¡Encuentra tu centro y empieza hoy! 💪",
+            "titulo": "Cuando te mueves, descansas · Imagen generada con IA · Seguimiento personalizado · Imagen editada con IA · Para toda la familia",
+            "dias": 10
+          },
+          {
+            "texto": "Tu cuerpo se activa, tu mente respira. Esto es desconectar de verdad. Descubre GO fit con piscina, spa, clases ¡y mucho más! Libérate del estrés diario con clases, piscina, spa, sala fitness… Cuando activas tu cuerpo, encuentras la calma que buscas.",
+            "titulo": "¿Aún no conoces GOfit?",
+            "dias": 10
+          },
+          {
+            "texto": "Tu cuerpo se activa, tu mente respira. Esto es desconectar de verdad. Descubre GOfit con piscina, spa, clases ¡y mucho más! Cuando tu cuerpo se mueve, tú descansas 💙 En GOfit tienes más de 150 actividades dirigidas a la semana, piscina, spa y un amplio horario para entrenar cuando mejor te venga. ¡Encuentra tu centro y empieza hoy! 💪",
+            "titulo": "Cuando te mueves, descansas · Todo lo que necesitas. GOfit. · Actívate y desconecta. GOfit",
+            "dias": 10
+          },
+          {
+            "texto": "Tu momento GOfit empieza aquí 🔥 Instalaciones renovadas, piscina y spa para recuperarte, seguimiento personalizado con la app My GOfit y 2 horas de parking gratis. Inscríbete online 🎁",
+            "titulo": "Imagen generada con IA · Seguimiento personalizado · Imagen editada con IA · Para toda la familia · Descubre GOfit",
+            "dias": 10
+          },
+          {
+            "texto": "Tu cuerpo se activa, tu mente respira. Esto es desconectar de verdad. Descubre GO fit con piscina, spa, clases ¡y mucho más! Disfruta de entrenar y desconecta de la rutina. En GOfit tienes clases, piscina, spa, sala fitness y mucho más. ¡Inscríbete!",
+            "titulo": "¿Aún no conoces GOfit?",
+            "dias": 10
+          },
+          {
+            "texto": "Tu cuerpo se activa, tu mente respira. Esto es desconectar de verdad. Descubre GO fit con piscina, spa, clases ¡y mucho más! Cuando tu cuerpo se mueve, tú descansas 💙 En GOfit tienes más de 150 actividades dirigidas a la semana, piscina, spa y un amplio horario para entrenar cuando mejor te venga. ¡Encuentra tu centro y empieza hoy! 💪",
+            "titulo": "Cuando te mueves, descansas · ¡Disfruta tu momento GOfit!",
+            "dias": 10
+          },
+          {
+            "texto": "Cuando tu cuerpo se mueve, tú descansas 💙 En GOfit tienes más de 150 actividades dirigidas a la semana, piscina, spa y un amplio horario para entrenar cuando mejor te venga. ¡Encuentra tu centro y empieza hoy! 💪 Libérate del estrés diario con clases, piscina, spa, sala fitness… Cuando activas tu cuerpo, encuentras la calma que buscas.",
+            "titulo": "¿Aún no conoces GOfit?",
+            "dias": 10
+          },
+          {
+            "texto": "Entrena en familia 👨‍👩‍👧 En GOfit, con la misma cuota, los menores de 16 años acceden gratis a las instalaciones y a un montón de actividades. Bike, yoga, pilates, piscina y mucho más te esperan 🏊‍♀️✨ Libérate del estrés diario con clases, piscina, spa, sala fitness… Cuando activas tu cuerpo, encuentras la calma que buscas.",
+            "titulo": "¿Aún no conoces GOfit?",
+            "dias": 10
+          },
+          {
+            "texto": "Sé de los primeros en formar parte de GOfit Vitoria. Un espacio para entrenar, cuidarte y lograr tus objetivos. Preinscríbete",
+            "titulo": "Kaixo, Gasteiz! · Descubre GOfit · Tu nuevo centro deportivo · ¡Asegura tu plaza!",
+            "dias": 10
+          },
+          {
+            "texto": "Tu momento GOfit empieza aquí 🔥 Instalaciones renovadas, piscina y spa para recuperarte, seguimiento personalizado con la app My GOfit y 2 horas de parking gratis. Inscríbete online y llévate la llave TGS gratis 🎁 Cuando tu cuerpo se mueve, tú descansas 💙 En GOfit tienes más de 150 actividades dirigidas a la semana, piscina, spa y un amplio horario para entrenar cuando mejor te venga. ¡Encuentra tu centro y empieza hoy! 💪",
+            "titulo": "Piscina, spa y mucho más · Cuando te mueves, descansas",
+            "dias": 8
+          },
+          {
+            "texto": "Tu momento GOfit empieza aquí 🔥 Instalaciones renovadas, piscina y spa para recuperarte, seguimiento personalizado con la app My GOfit y 2 horas de parking gratis. Inscríbete online y llévate la llave TGS gratis 🎁",
+            "titulo": "Imagen generada con IA · Seguimiento personalizado · Imagen editada con IA · Para toda la familia · Descubre todas las novedades",
+            "dias": 7
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          53,
+          0,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "131627430281347",
+        "nombre": "Basic-Fit",
+        "activos": 30,
+        "cuota": 12,
+        "nuevos": 19,
+        "mediana_dias": 2,
+        "max_dias": 80,
+        "mas_longevo": {
+          "dias": 80,
+          "texto": "A veces el espejo sabe exactamente lo que necesitas. 🧡",
+          "url": "https://www.facebook.com/ads/library/?id=1649348603560005",
+          "id": "1649348603560005"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Threads",
+            "pct": 53
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 37
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 37
+          }
+        ],
+        "creatividades": 15,
+        "alcance_ue": 16384230,
+        "edades": "18 - 65",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "A veces el espejo sabe exactamente lo que necesitas. 🧡",
+            "titulo": "Únete al club que te sienta bien. 💪✨",
+            "dias": 80
+          },
+          {
+            "texto": "Es por esa sensación que lo haces. Cada vez.",
+            "titulo": "Entrena cerca de casa",
+            "dias": 42
+          },
+          {
+            "texto": "Fortalece tu mente y hazte más fuerte en el club que te sienta bien.",
+            "titulo": "Trabaja cuerpo y mente en Barcelona · Trabaja cuerpo y mente en Barakaldo · Trabaja cuerpo y mente en Madrid · Trabaja cuerpo y mente en Alcobendas",
+            "dias": 14
+          },
+          {
+            "texto": "Hazte más fuerte, luce mejor y descansa bien. Tu cuerpo y mente estarán genial en el club que te sienta bien.",
+            "titulo": "Siéntete bien y enfocado en Barcelona · Siéntete bien y enfocado en Barakaldo · Siéntete bien y enfocado en Madrid · Siéntete bien y enfocado en Alcobendas",
+            "dias": 14
+          },
+          {
+            "texto": "Progresa como nunca con el mejor equipamiento en el club que te sienta bien.",
+            "titulo": "Siéntete bien y mejora en Barcelona · Siéntete bien y mejora en Barakaldo · Siéntete bien y mejora en Madrid · Siéntete bien y mejora en Alcobendas",
+            "dias": 14
+          },
+          {
+            "texto": "Entrena como quieras, cuando quieras. \nEl club que te sienta bien.\n¡Apúntate hoy!",
+            "titulo": "Entrena a tu ritmo.",
+            "dias": 14
+          },
+          {
+            "texto": "Estés donde estés, siempre habrá un club donde sentirte bien \ncerca de ti. Apúntate hoy.",
+            "titulo": "Entrena cerca de casa",
+            "dias": 14
+          },
+          {
+            "texto": "Desde un yoga brutal hasta un press banca perfecto. \nEncuentra tu ejercicio en nuestra app. \n¡Apúntate hoy!",
+            "titulo": "+1000 entrenos en la app",
+            "dias": 14
+          },
+          {
+            "texto": "Pronto abriremos un nuevo gym en Blanes: Avinguda Parlament de Catalunya 11.",
+            "titulo": "Pronto abriremos un nuevo gym",
+            "dias": 4
+          },
+          {
+            "texto": "¿A qué esperas? Apúntate ya a Basic-Fit,\nempieza por solo 1 euro y llévate una mochila\nÚnete al club que te sienta bien.",
+            "titulo": "Empieza por solo 1€*",
+            "dias": 2
+          },
+          {
+            "texto": "Pronto abriremos un nuevo gym en Utrera: Calle de Doña Juana González.",
+            "titulo": "Pronto abriremos un nuevo gym",
+            "dias": 1
+          },
+          {
+            "texto": "Pronto abriremos un nuevo gym en Málaga: Avenida de los Guindos 22.",
+            "titulo": "Pronto abriremos un nuevo gym",
+            "dias": 1
+          },
+          {
+            "texto": "Pronto abriremos un nuevo gym en Murcia: Avenida Princesa Doña Leticia 14.",
+            "titulo": "Pronto abriremos un nuevo gym",
+            "dias": 1
+          },
+          {
+            "texto": "Pronto abriremos un nuevo gym en Mataró: Ronda Barceló 92.",
+            "titulo": "Pronto abriremos un nuevo gym",
+            "dias": 1
+          },
+          {
+            "texto": "Black Friday deals! Apúntate ya a Basic-Fit,\nempieza por solo 1 euro y llévate una mochila\nÚnete al club que te sienta bien.\"",
+            "titulo": "Únete al club que te sienta bien. 💪✨",
+            "dias": 1
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          5,
+          12,
+          0
+        ]
+      },
+      {
+        "page_id": "1604396393171019",
+        "nombre": "Forus España",
+        "activos": 18,
+        "cuota": 7,
+        "nuevos": 12,
+        "mediana_dias": 7,
+        "max_dias": 51,
+        "mas_longevo": {
+          "dias": 51,
+          "texto": "¡Empieza a entrenar a lo grande sin pagar de más! 🔥\nDisfruta de un club de primera categoría con, sala fitness de última generación, más de 280 actividades dirigidas a la semana, experiencias de entrenamiento inmersivo, piscina climatizada y circuito de SPA.",
+          "url": "https://www.facebook.com/ads/library/?id=1104006868887623",
+          "id": "1104006868887623"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 83
+          },
+          {
+            "nombre": "Threads",
+            "pct": 83
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 67
+          }
+        ],
+        "creatividades": 9,
+        "alcance_ue": 170194,
+        "edades": "18 - 65",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "¡Empieza a entrenar a lo grande sin pagar de más! 🔥\nDisfruta de un club de primera categoría con, sala fitness de última generación, más de 280 actividades dirigidas a la semana, experiencias de entrenamiento inmersivo, piscina climatizada y circuito de SPA.",
+            "titulo": "Forus Selection Alcalá Magna",
+            "dias": 51
+          },
+          {
+            "texto": "¿Cansado de esperar para usar las máquinas? En Forus Selection Alcalá Magna vienes a entrenar sin masificaciones para que aproveches tu tiempo al máximo. Disfruta de nuestra sala fitness de última generación con profesionales que te acompañan en cada paso. Descubre también nuestras zonas de entrenamiento Hyrox, piscina climatizada y relájate en el circuito de SPA. ¡Ven a conocernos y asegura tu plaza!",
+            "titulo": "Forus Selection Alcalá Magna",
+            "dias": 51
+          },
+          {
+            "texto": "¿Estás listo para un viaje increíble? 🚀 Descubre el entrenamiento del futuro en Forus Selection Alcalá Magna. Siente la adrenalina con nuestras sesiones de Entrenamiento Inmersivo Les Mills The Trip: pedalea a través de mundos virtuales y transforma tu esfuerzo en una experiencia alucinante. Súmate ahora y aprovecha tu matrícula.",
+            "titulo": "Forus Selection Alcalá Magna",
+            "dias": 51
+          },
+          {
+            "texto": "Cuidarte y mantenerte activo es la mejor inversión, y este Black Friday en Forus te lo ponemos muy fácil 🖤. Del 20 al 29 de noviembre aprovecha nuestro 2x1: matrícula GRATIS y el mes de enero de regalo. Entrena a tu ritmo en nuestras instalaciones y gana fuerza y vitalidad con todas las comodidades. ⏳ Últimos días y plazas limitadas.",
+            "titulo": "Mantén tus Hábitos Activos",
+            "dias": 7
+          },
+          {
+            "texto": "Este Black Friday es el momento ideal para empezar en Forus. Del 20 al 29 de noviembre tienes un 2x1 en ventajas: matrícula GRATIS y el mes de enero de regalo. Entrena a tu ritmo, disfruta de todas nuestras instalaciones y empieza el año con ventaja sin pagar de más. ⏳ Últimos días y plazas limitadas.",
+            "titulo": "Invierte en Ti con Forus",
+            "dias": 7
+          },
+          {
+            "texto": "Esta vuelta a la rutina viene cargada de ventajas para vosotros en Forus: matrícula gratis y 100€ de regalo con sesión de bienvenida incluida, válido solo hasta el 15 de septiembre 🗓️. ¡Os esperamos! Este Black Friday es el momento perfecto para disfrutar del deporte en familia 🖤. Del 20 al 29 de noviembre tienes un 2x1 en ventajas en Forus: matrícula GRATIS y el mes de enero de regalo. Instalaciones y actividades para que tanto adultos como peques os mantengáis activos todo el año. ⏳ Últimos días y plazas limitadas.",
+            "titulo": "Diversión y Deporte en Familia",
+            "dias": 7
+          },
+          {
+            "texto": "Esta vuelta a la rutina viene cargada de ventajas para vosotros en Forus: matrícula gratis y 100€ de regalo con sesión de bienvenida incluida, válido solo hasta el 30 de septiembre 🗓️. ¡Últimos días para aprovechar nuestra oferta! Esta vuelta a la rutina viene cargada de ventajas para vosotros en Forus: matrícula y lo que queda de mes gratis y 100€ de regalo con sesión de bienvenida incluida, válido solo hasta el 30 de septiembre 🗓️. ¡Últimos días para aprovechar nuestra oferta! Este Black Friday es el momento perfecto para disfrutar del deporte en familia 🖤. Del 20 al 29 de noviembre tienes un 2x1 en ventajas en Forus: matrícula GRATIS y el mes de enero de regalo. Instalaciones y actividades para que tanto adultos como peques os mantengáis activos todo el año. ⏳ Últimos días y plazas limitadas.",
+            "titulo": "Diversión y Deporte en Familia",
+            "dias": 7
+          },
+          {
+            "texto": "Esta vuelta a la rutina viene cargada de ventajas para vosotros en Forus: matrícula gratis y 100€ de regalo con sesión de bienvenida incluida, válido solo hasta el 15 de septiembre 🗓️. ¡Os esperamos! Esta vuelta a la rutina viene cargada de ventajas para vosotros en Forus: matrícula gratis y 100€ de regalo con sesión de bienvenida incluida, válido solo hasta el 25 de septiembre 🗓️. ¡Os esperamos! Este Black Friday es el momento perfecto para disfrutar del deporte en familia 🖤. Del 20 al 29 de noviembre tienes un 2x1 en ventajas en Forus: matrícula GRATIS y el mes de enero de regalo. Instalaciones y actividades para que tanto adultos como peques os mantengáis activos todo el año. ⏳ Últimos días y plazas limitadas.",
+            "titulo": "Diversión y Deporte en Familia",
+            "dias": 7
+          },
+          {
+            "texto": "Esta vuelta a la rutina viene cargada de ventajas para vosotros en Forus: matrícula gratis y 100€ de regalo con sesión de bienvenida incluida, válido solo hasta el 30 de septiembre 🗓️. ¡Os esperamos! Este Black Friday es el momento perfecto para disfrutar del deporte en familia 🖤. Del 20 al 29 de noviembre tienes un 2x1 en ventajas en Forus: matrícula GRATIS y el mes de enero de regalo. Instalaciones y actividades para que tanto adultos como peques os mantengáis activos todo el año. ⏳ Últimos días y plazas limitadas.",
+            "titulo": "Diversión y Deporte en Familia",
+            "dias": 7
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          12,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "482216231881695",
+        "nombre": "Synergym España",
+        "activos": 12,
+        "cuota": 5,
+        "nuevos": 11,
+        "mediana_dias": 4,
+        "max_dias": 28,
+        "mas_longevo": {
+          "dias": 28,
+          "texto": "¡Nuevo Synergym muy cerca de ti! \n⏰Abrimos en DICIEMBRE 2026⏰\nAhorra reservando ya y ¡No pagues hasta la apertura! \n⏳Plazas limitadas ⏳\n\n😱 Sin Permanencia, Sin Trucos\n💪 Amplia zona de peso libre\n🏅 Personal cualificado que te ayudará en lo que necesites\n👍 Clases dirigidas incluidas\n\n\nConsulta tu club más cercano y su precio en la web",
+          "url": "https://www.facebook.com/ads/library/?id=1564130715398185",
+          "id": "1564130715398185"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          }
+        ],
+        "creatividades": 5,
+        "alcance_ue": 2059566,
+        "edades": "18 - 65",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "¡Nuevo Synergym muy cerca de ti! \n⏰Abrimos en DICIEMBRE 2026⏰\nAhorra reservando ya y ¡No pagues hasta la apertura! \n⏳Plazas limitadas ⏳\n\n😱 Sin Permanencia, Sin Trucos\n💪 Amplia zona de peso libre\n🏅 Personal cualificado que te ayudará en lo que necesites\n👍 Clases dirigidas incluidas\n\n\nConsulta tu club más cercano y su precio en la web",
+            "titulo": "RESERVA AHORA",
+            "dias": 28
+          },
+          {
+            "texto": "¡Abrimos un Nuevo Synergym muy cerca de ti!\n🚨PRECIO especial y Matrícula GRATIS\n¡No pagues hasta la apertura! \n⏳ Plazas limitadas ⏳\n\n😱 Sin Permanencia, Sin Trucos\n💪 Amplia zona de peso libre\n🏅 Personal cualificado que te ayudará en lo que necesites\n👍 Clases dirigidas incluidas\n\nConsulta tu club más cercano y su precio en la web",
+            "titulo": "RESERVA TU PLAZA",
+            "dias": 7
+          },
+          {
+            "texto": "✅ CUOTA MENSUAL SIN PERMANENCIA\nMucho gym para tan poco precio!",
+            "titulo": "APÚNTATE AHORA",
+            "dias": 4
+          },
+          {
+            "texto": "¡Nuevo Synergym muy cerca de ti! \n⏰Abrimos en NOVIEMBRE 2026⏰\nAhorra reservando ya y ¡No pagues hasta la apertura! \n⏳Plazas limitadas ⏳\n\n😱 Sin Permanencia, Sin Trucos\n💪 Amplia zona de peso libre\n🏅 Personal cualificado que te ayudará en lo que necesites\n👍 Clases dirigidas incluidas\n\n\nConsulta tu club más cercano y su precio en la web",
+            "titulo": "RESERVA AHORA",
+            "dias": 4
+          },
+          {
+            "texto": "Otra máquina más superada 💪🏻",
+            "titulo": "",
+            "dias": 3
+          }
+        ],
+        "serie_30d": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          8,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "192605307454071",
+        "nombre": "ALTAFIT GIMNASIOS",
+        "activos": 11,
+        "cuota": 4,
+        "nuevos": 2,
+        "mediana_dias": 17,
+        "max_dias": 17,
+        "mas_longevo": {
+          "dias": 17,
+          "texto": "¿Prefieres levantar pesas, entrenar a ritmo de música o darlo todo en una clase colectiva? 💥\n\nEn Altafit tienes diferentes formas de entrenar para que encuentres la que mejor encaja contigo.\n\nFuerza, cardio, actividades dirigidas y mucho más. Cambia de rutina cuando quieras y encuentra tu propia manera de disfrutar del deporte.",
+          "url": "https://www.facebook.com/ads/library/?id=2194418864791971",
+          "id": "2194418864791971"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 100
+          },
+          {
+            "nombre": "Threads",
+            "pct": 100
+          }
+        ],
+        "creatividades": 2,
+        "alcance_ue": 25783,
+        "edades": "18 - 65",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "¿Prefieres levantar pesas, entrenar a ritmo de música o darlo todo en una clase colectiva? 💥\n\nEn Altafit tienes diferentes formas de entrenar para que encuentres la que mejor encaja contigo.\n\nFuerza, cardio, actividades dirigidas y mucho más. Cambia de rutina cuando quieras y encuentra tu propia manera de disfrutar del deporte.",
+            "titulo": "Tu próximo objetivo empieza aquí",
+            "dias": 17
+          },
+          {
+            "texto": "¿Buscas un gimnasio que te lo ponga fácil para empezar y seguir entrenando? 💪\n\nEn Altafit tienes todo lo que necesitas para ponerte en marcha: sala fitness, actividades dirigidas y asesoramiento para entrenar con un plan adaptado a tus objetivos.\n\nTú pones las ganas. ¡Nosotros te ayudamos a dar el primer paso! ¿Levantar pesas, ritmo de música o clase colectiva? 💥\n\nEn Altafit hay diferentes formas de entrenar: fuerza, cardio y actividades dirigidas.\n\nEncuentra la que encaja contigo y cambia de rutina cuando quieras.",
+            "titulo": "Tu próximo objetivo empieza aquí",
+            "dias": 3
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "avisos": [
+      "Marcas: anunciantes conocidos del sector con anuncios activos. No es una lista completa: puedes pedir las marcas que quieras comparar."
+    ]
+  },
+  "analisis": {
+    "fuente": "reglas",
+    "titular": "vivagym.es publica el 49 % de los anuncios de las marcas analizadas.",
+    "subtitulo": "257 anuncios activos de 6 marcas en España. 56 empezaron en los últimos 7 días.",
+    "tendencias": [
+      {
+        "titulo": "Novedad es el argumento más usado",
+        "detalle": "Aparece en 53 % de las creatividades distintas."
+      },
+      {
+        "titulo": "Empate: Facebook y Instagram",
+        "detalle": "Cada una aparece en el 100 % de los anuncios."
+      },
+      {
+        "titulo": "Basic-Fit acelera",
+        "detalle": "Es la marca con más anuncios nuevos: 19 en 7 días."
+      }
+    ],
+    "marcas": {
+      "160445247434157": {
+        "angulos": [
+          "Comunidad",
+          "Novedad",
+          "Urgencia"
+        ],
+        "ofertas": [
+          "por sólo 19,90 €",
+          "por sólo 25,90 €",
+          "por sólo 20,90 €"
+        ],
+        "tono": "",
+        "conclusion": "125 anuncios activos (49 % del total), 10 nuevos esta semana. Apuesta sobre todo por comunidad y novedad. Su anuncio más longevo lleva 84 días activo."
+      },
+      "960169974018504": {
+        "angulos": [
+          "Novedad",
+          "Conveniencia",
+          "Resultados"
+        ],
+        "ofertas": [
+          "horas de parking gratis",
+          "la llave tgs gratis",
+          "16 años acceden gratis a"
+        ],
+        "tono": "",
+        "conclusion": "61 anuncios activos (24 % del total), 2 nuevos esta semana. Apuesta sobre todo por novedad y conveniencia. Su anuncio más longevo lleva 95 días activo."
+      },
+      "131627430281347": {
+        "angulos": [
+          "Novedad",
+          "Comunidad",
+          "Local"
+        ],
+        "ofertas": [
+          "por solo 1 €",
+          "llévate una mochila",
+          "black friday"
+        ],
+        "tono": "",
+        "conclusion": "30 anuncios activos (12 % del total), 19 nuevos esta semana. Apuesta sobre todo por novedad y comunidad. Su anuncio más longevo lleva 80 días activo."
+      },
+      "1604396393171019": {
+        "angulos": [
+          "Urgencia",
+          "Precio",
+          "Novedad"
+        ],
+        "ofertas": [
+          "2x1",
+          "matrícula gratis y",
+          "black friday"
+        ],
+        "tono": "",
+        "conclusion": "18 anuncios activos (7 % del total), 12 nuevos esta semana. Apuesta sobre todo por urgencia y precio. Su anuncio más longevo lleva 51 días activo."
+      },
+      "482216231881695": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Novedad"
+        ],
+        "ofertas": [
+          "especial y matrícula gratis"
+        ],
+        "tono": "",
+        "conclusion": "12 anuncios activos (5 % del total), 11 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 28 días activo."
+      },
+      "192605307454071": {
+        "angulos": [
+          "Resultados",
+          "Conveniencia"
+        ],
+        "ofertas": [],
+        "tono": "",
+        "conclusion": "11 anuncios activos (4 % del total), 2 nuevos esta semana. Apuesta sobre todo por resultados y conveniencia. Su anuncio más longevo lleva 17 días activo."
+      }
+    }
+  }
+}
