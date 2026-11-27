@@ -5,11 +5,14 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from . import analisis, informe, metricas
+from .seguridad import ocultar
 from .solicitud import Solicitud
 
 
 class SinAnuncios(RuntimeError):
-    pass
+    def __init__(self, mensaje: str, avisos: list[str] | None = None):
+        super().__init__(mensaje)
+        self.avisos = avisos or []
 
 
 @dataclass
@@ -23,17 +26,20 @@ class Resultado:
 
 def generar_informe(sol: Solicitud, fuente: str, usar_ia: bool | None, carpeta: Path, log=print) -> Resultado:
     log(f"  recolectando anuncios ({fuente})…")
+    avisos: list[str] = []
     if fuente == "meta":
         from .meta_api import recolectar
-        anuncios = recolectar(sol, log=lambda m: log("  " + m))
+        recogida = recolectar(sol, log=lambda m: log("  " + m))
+        anuncios, avisos = recogida.anuncios, recogida.avisos
     else:
         from .ejemplo import anuncios_de_ejemplo
         anuncios = anuncios_de_ejemplo(sol)
     if not anuncios:
-        raise SinAnuncios(f"No hay anuncios activos de «{sol.industria}» en {sol.nombre_pais}.")
+        raise SinAnuncios(f"No hay anuncios activos de «{sol.industria}» en {sol.nombre_pais}.", avisos)
 
     log(f"  calculando métricas de {len(anuncios)} anuncios…")
     met = metricas.calcular(anuncios, sol.fecha)
+    met["avisos"] = avisos
     an = analisis.analizar(sol, met, usar_ia)
     log(f"  análisis hecho con: {an['fuente']}")
     ejemplo = fuente != "meta"
@@ -44,5 +50,5 @@ def generar_informe(sol: Solicitud, fuente: str, usar_ia: bool | None, carpeta: 
         pdf = generar_pdf(archivo)
         log(f"  PDF generado: {pdf.name}")
     except Exception as e:
-        log(f"  aviso: no se pudo generar el PDF ({type(e).__name__}: {str(e)[:150]})")
+        log(f"  aviso: no se pudo generar el PDF ({type(e).__name__}: {ocultar(e)[:150]})")
     return Resultado(archivo, met, an, ejemplo, pdf)

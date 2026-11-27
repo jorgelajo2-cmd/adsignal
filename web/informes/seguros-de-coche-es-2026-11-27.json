@@ -1,0 +1,625 @@
+{
+  "solicitud": {
+    "industria": "Seguros de coche",
+    "pais": "ES",
+    "marcas": [],
+    "id": "",
+    "fecha": "2026-11-27"
+  },
+  "ejemplo": true,
+  "metricas": {
+    "antiguedad": [
+      {
+        "nombre": "Esta semana",
+        "n": 2,
+        "pct": 5
+      },
+      {
+        "nombre": "8-30 días",
+        "n": 16,
+        "pct": 36
+      },
+      {
+        "nombre": "1-3 meses",
+        "n": 24,
+        "pct": 55
+      },
+      {
+        "nombre": "Más de 3 meses",
+        "n": 2,
+        "pct": 5
+      }
+    ],
+    "max_serie": 2,
+    "fecha_ref": "2026-11-27",
+    "total_anuncios": 44,
+    "n_marcas": 5,
+    "nuevos": 2,
+    "mediana_dias": 34,
+    "plataformas": [
+      {
+        "nombre": "Instagram",
+        "pct": 100
+      },
+      {
+        "nombre": "Facebook",
+        "pct": 59
+      },
+      {
+        "nombre": "Audience Network",
+        "pct": 18
+      },
+      {
+        "nombre": "Messenger",
+        "pct": 18
+      }
+    ],
+    "marcas": [
+      {
+        "page_id": "100002",
+        "nombre": "Lumen",
+        "activos": 12,
+        "cuota": 27,
+        "nuevos": 0,
+        "mediana_dias": 34,
+        "max_dias": 81,
+        "mas_longevo": {
+          "dias": 81,
+          "texto": "Seguros de coche desde 49 €. Sin permanencia y sin letra pequeña.",
+          "url": "https://www.facebook.com/ads/library/?id=1000020003",
+          "id": "1000020003"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 8
+          }
+        ],
+        "creatividades": 8,
+        "alcance_ue": 706600,
+        "edades": "18 - 65+",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Seguros de coche desde 49 €. Sin permanencia y sin letra pequeña.",
+            "titulo": "Lumen · Seguros de coche",
+            "dias": 81
+          },
+          {
+            "texto": "Últimos días: un 20 % de descuento. Después vuelve al precio normal.",
+            "titulo": "Lumen · Seguros de coche",
+            "dias": 69
+          },
+          {
+            "texto": "Últimos días: envío gratis. Después vuelve al precio normal.",
+            "titulo": "Lumen · Seguros de coche",
+            "dias": 53
+          },
+          {
+            "texto": "Seguros de coche desde 9,99 €. Sin permanencia y sin letra pequeña.",
+            "titulo": "Lumen · Seguros de coche",
+            "dias": 45
+          },
+          {
+            "texto": "Seguros de coche desde 4,99 €/mes. Sin permanencia y sin letra pequeña.",
+            "titulo": "Lumen · Seguros de coche",
+            "dias": 45
+          },
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Lumen.",
+            "titulo": "Lumen · Seguros de coche",
+            "dias": 37
+          },
+          {
+            "texto": "Últimos días: el primer mes gratis. Después vuelve al precio normal.",
+            "titulo": "Lumen · Seguros de coche",
+            "dias": 32
+          },
+          {
+            "texto": "-15 % en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+            "titulo": "Lumen · Seguros de coche",
+            "dias": 14
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100000",
+        "nombre": "Alba",
+        "activos": 10,
+        "cuota": 23,
+        "nuevos": 1,
+        "mediana_dias": 16,
+        "max_dias": 103,
+        "mas_longevo": {
+          "dias": 103,
+          "texto": "Calidad que se nota y dura años. Así trabajamos en Alba.",
+          "url": "https://www.facebook.com/ads/library/?id=1000000001",
+          "id": "1000000001"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 80
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 20
+          }
+        ],
+        "creatividades": 6,
+        "alcance_ue": 209000,
+        "edades": "25 - 54",
+        "genero": "Men",
+        "textos": [
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Alba.",
+            "titulo": "Alba · Seguros de coche",
+            "dias": 103
+          },
+          {
+            "texto": "Nuevo en Alba: descubre lo último en seguros de coche.",
+            "titulo": "Alba · Seguros de coche",
+            "dias": 40
+          },
+          {
+            "texto": "-15 % en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+            "titulo": "Alba · Seguros de coche",
+            "dias": 21
+          },
+          {
+            "texto": "Últimos días: un 20 % de descuento. Después vuelve al precio normal.",
+            "titulo": "Alba · Seguros de coche",
+            "dias": 11
+          },
+          {
+            "texto": "Últimos días: envío gratis. Después vuelve al precio normal.",
+            "titulo": "Alba · Seguros de coche",
+            "dias": 11
+          },
+          {
+            "texto": "Últimos días: una prueba gratuita. Después vuelve al precio normal.",
+            "titulo": "Alba · Seguros de coche",
+            "dias": 9
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "page_id": "100004",
+        "nombre": "Brío",
+        "activos": 9,
+        "cuota": 20,
+        "nuevos": 0,
+        "mediana_dias": 34,
+        "max_dias": 78,
+        "mas_longevo": {
+          "dias": 78,
+          "texto": "Ya estamos en tu ciudad. Ven a conocernos y un regalo de bienvenida.",
+          "url": "https://www.facebook.com/ads/library/?id=1000040004",
+          "id": "1000040004"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          }
+        ],
+        "creatividades": 5,
+        "alcance_ue": 457400,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un regalo de bienvenida.",
+            "titulo": "Brío · Seguros de coche",
+            "dias": 78
+          },
+          {
+            "texto": "Seguros de coche desde 49 €. Sin permanencia y sin letra pequeña.",
+            "titulo": "Brío · Seguros de coche",
+            "dias": 43
+          },
+          {
+            "texto": "Todo desde la app, cuando quieras y donde quieras. Empieza en 2 minutos.",
+            "titulo": "Brío · Seguros de coche",
+            "dias": 41
+          },
+          {
+            "texto": "Seguros de coche desde 19 €. Sin permanencia y sin letra pequeña.",
+            "titulo": "Brío · Seguros de coche",
+            "dias": 19
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y una prueba gratuita.",
+            "titulo": "Brío · Seguros de coche",
+            "dias": 19
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100003",
+        "nombre": "Prisma",
+        "activos": 7,
+        "cuota": 16,
+        "nuevos": 0,
+        "mediana_dias": 34,
+        "max_dias": 46,
+        "mas_longevo": {
+          "dias": 46,
+          "texto": "Calidad que se nota y dura años. Así trabajamos en Prisma.",
+          "url": "https://www.facebook.com/ads/library/?id=1000030005",
+          "id": "1000030005"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 14
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 14
+          }
+        ],
+        "creatividades": 6,
+        "alcance_ue": 321000,
+        "edades": "25 - 54",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Prisma.",
+            "titulo": "Prisma · Seguros de coche",
+            "dias": 46
+          },
+          {
+            "texto": "Últimos días: envío gratis. Después vuelve al precio normal.",
+            "titulo": "Prisma · Seguros de coche",
+            "dias": 38
+          },
+          {
+            "texto": "Últimos días: una prueba gratuita. Después vuelve al precio normal.",
+            "titulo": "Prisma · Seguros de coche",
+            "dias": 34
+          },
+          {
+            "texto": "-20 % en seguros de coche solo esta semana. Aprovecha antes de que acabe.",
+            "titulo": "Prisma · Seguros de coche",
+            "dias": 34
+          },
+          {
+            "texto": "Últimos días: un regalo de bienvenida. Después vuelve al precio normal.",
+            "titulo": "Prisma · Seguros de coche",
+            "dias": 31
+          },
+          {
+            "texto": "Últimos días: un 20 % de descuento. Después vuelve al precio normal.",
+            "titulo": "Prisma · Seguros de coche",
+            "dias": 25
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100001",
+        "nombre": "Kora",
+        "activos": 6,
+        "cuota": 14,
+        "nuevos": 1,
+        "mediana_dias": 58,
+        "max_dias": 97,
+        "mas_longevo": {
+          "dias": 97,
+          "texto": "Garantía total: si no te convence, te devolvemos el dinero.",
+          "url": "https://www.facebook.com/ads/library/?id=1000010000",
+          "id": "1000010000"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 83
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 83
+          }
+        ],
+        "creatividades": 4,
+        "alcance_ue": 340800,
+        "edades": "25 - 54",
+        "genero": "Women",
+        "textos": [
+          {
+            "texto": "Garantía total: si no te convence, te devolvemos el dinero.",
+            "titulo": "Kora · Seguros de coche",
+            "dias": 97
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un regalo de bienvenida.",
+            "titulo": "Kora · Seguros de coche",
+            "dias": 86
+          },
+          {
+            "texto": "Nuevo en Kora: descubre lo último en seguros de coche.",
+            "titulo": "Kora · Seguros de coche",
+            "dias": 43
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un 20 % de descuento.",
+            "titulo": "Kora · Seguros de coche",
+            "dias": 17
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "avisos": []
+  },
+  "analisis": {
+    "fuente": "reglas",
+    "titular": "Lumen lidera en anuncios y el argumento más repetido es precio.",
+    "subtitulo": "44 anuncios activos de 5 marcas en España. 2 empezaron en los últimos 7 días.",
+    "tendencias": [
+      {
+        "titulo": "Precio es el argumento más usado",
+        "detalle": "Aparece en 66 % de las creatividades distintas."
+      },
+      {
+        "titulo": "Instagram manda",
+        "detalle": "El 100 % de los anuncios se publica en Instagram."
+      },
+      {
+        "titulo": "Cuánto duran los anuncios",
+        "detalle": "La mitad de los anuncios lleva más de 34 días activos."
+      }
+    ],
+    "marcas": {
+      "100002": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Calidad"
+        ],
+        "ofertas": [
+          "desde 49 €",
+          "20 % de descuento",
+          "envío gratis"
+        ],
+        "tono": "",
+        "conclusion": "12 anuncios activos (27 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 81 días activo."
+      },
+      "100000": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Calidad"
+        ],
+        "ofertas": [
+          "-15 %",
+          "20 % de descuento",
+          "envío gratis"
+        ],
+        "tono": "",
+        "conclusion": "10 anuncios activos (23 % del total), 1 nuevo esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 103 días activo."
+      },
+      "100004": {
+        "angulos": [
+          "Local",
+          "Precio",
+          "Conveniencia"
+        ],
+        "ofertas": [
+          "desde 49 €",
+          "desde 19 €"
+        ],
+        "tono": "",
+        "conclusion": "9 anuncios activos (20 % del total), 0 nuevos esta semana. Apuesta sobre todo por local y precio. Su anuncio más longevo lleva 78 días activo."
+      },
+      "100003": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Calidad"
+        ],
+        "ofertas": [
+          "envío gratis",
+          "-20 %",
+          "20 % de descuento"
+        ],
+        "tono": "",
+        "conclusion": "7 anuncios activos (16 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 46 días activo."
+      },
+      "100001": {
+        "angulos": [
+          "Local",
+          "Confianza",
+          "Novedad"
+        ],
+        "ofertas": [
+          "20 % de descuento"
+        ],
+        "tono": "",
+        "conclusion": "6 anuncios activos (14 % del total), 1 nuevo esta semana. Apuesta sobre todo por local y confianza. Su anuncio más longevo lleva 97 días activo."
+      }
+    }
+  }
+}

@@ -8,6 +8,7 @@ service-account*.json
 salida_emails/
 solicitudes_prueba.csv
 anuncios.csv
+sectores_prueba.json
 /informes/
 __pycache__/
 .claude/

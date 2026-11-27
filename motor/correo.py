@@ -37,6 +37,12 @@ def componer(sol, met: dict, an: dict, url: str, ejemplo: bool, pdf_url: str | N
     return asunto, html
 
 
+def componer_sin_resultados(sol, avisos: list[str], base_url: str = "") -> tuple[str, str]:
+    asunto = f"No hemos encontrado anuncios de {sol.industria.lower()} en {sol.nombre_pais}"
+    html = _env.get_template("sin_resultados.html").render(sol=sol, avisos=avisos, base_url=base_url.rstrip("/"))
+    return asunto, html
+
+
 class CorreoBrevo:
     def __init__(self):
         # .strip(): al pegar un secreto es fácil que se cuele un salto de línea invisible
@@ -89,4 +95,5 @@ class CorreoPrueba:
         (self.carpeta / f"{nombre}.html").write_text(f"<!-- Para: {para} | Asunto: {asunto} -->\n{html}", encoding="utf-8")
 
     def contacto(self, email: str, atributos: dict):
-        (self.carpeta / "contactos.jsonl").open("a", encoding="utf-8").write(json.dumps({"email": email, **atributos}, ensure_ascii=False) + "\n")
+        with (self.carpeta / "contactos.jsonl").open("a", encoding="utf-8") as f:
+            f.write(json.dumps({"email": email, **atributos}, ensure_ascii=False) + "\n")

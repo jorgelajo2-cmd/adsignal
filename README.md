@@ -1,6 +1,6 @@
 # AdSignal
 
-**Informes automáticos de los anuncios de tu competencia.** Eliges sector y país (UE) en la web y recibes por email un informe con lo que anuncian las marcas de ese mercado en Meta: quién invierte más, qué lanza, qué ofertas usa y qué anuncios mantiene activos más tiempo.
+**Informes automáticos de los anuncios de tu competencia.** Eliges entre 150 sectores en la web y recibes por email un informe con lo que anuncian las marcas de ese mercado en España en Meta: quién publica más anuncios, qué lanza, qué ofertas usa y qué anuncios mantiene activos más tiempo.
 
 🔗 **Web:** https://jorgelajo2-cmd.github.io/adsignal
 
@@ -11,15 +11,23 @@
 ```
 Landing ──► Make (webhook) ──► Google Sheets "Solicitudes"  ← cola de trabajo (estado: pendiente)
                                         │
-            GitHub Actions, cada 15 min: python -m motor.procesar
-                                        │  1. API de la Biblioteca de anuncios de Meta
-                                        │  2. Métricas (código, siempre exactas)
-                                        │  3. Análisis de los textos (Claude, con alternativa por reglas)
-                                        │  4. Informe HTML
-                                        │  5. Contacto en Brevo (CRM) + email con el informe
+            GitHub Actions (programado)
+                                        │  1. generar: API de la Biblioteca de anuncios de Meta
+                                        │              métricas (código, siempre exactas)
+                                        │              análisis de textos (Claude o reglas)
+                                        │              informe HTML + PDF, contacto en Brevo (CRM)
+                                        │  2. publicar: GitHub Pages (web e informes)
+                                        │  3. enviar:   email con el enlace, ya publicado
                                         ▼
-            GitHub Pages publica la web y los informes
+            estado: enviado · sin_resultados · error
 ```
+
+## Seguridad y fiabilidad
+
+- Meta incluye el token en el enlace de cada anuncio: se sustituye por el enlace público al recoger los datos, y nada que lo contenga llega a guardarse.
+- Los registros de GitHub Actions son públicos: no muestran emails ni claves.
+- Si el token caduca o Meta limita las peticiones, las solicitudes siguen pendientes y se reintentan.
+- Una marca que no se encuentra se indica en el informe; nunca se sustituye por otra parecida.
 
 | Pieza | Herramienta | Qué demuestra |
 |---|---|---|
@@ -47,8 +55,12 @@ Los números se calculan con código. La IA solo interpreta los textos y tiene p
 ```
 web/                 Landing, privacidad e informes publicados
 motor/               Motor de informes
-  solicitud.py       Validación de la petición (sector, país UE, marcas)
+  solicitud.py       Validación de la petición (sector y marcas; solo España)
   meta_api.py        Recolector de la API de Meta
+  sectores.py        Catálogo de sectores y sus búsquedas (genera web/sectores.js)
+  marcas.py          Anunciantes conocidos de los sectores principales
+  relevancia.py      Descarta el ruido al buscar por palabras
+  seguridad.py       Evita que claves o emails acaben en sitios públicos
   metricas.py        Cálculo de métricas
   analisis.py        Interpretación con Claude o reglas
   informe.py         Generación del HTML
@@ -62,13 +74,17 @@ motor/               Motor de informes
 
 ```bash
 pip install -r requirements.txt
-python -m motor --industria "gimnasios" --pais ES          # un informe con datos de ejemplo
+python -m motor --industria "gimnasios"                    # un informe con datos de ejemplo
+python -m motor.sectores                                   # tras editar el catálogo, actualiza la lista de la web
 python -m motor.procesar --prueba                          # procesa una cola CSV sin enviar emails
+python probar_api.py "Basic-Fit" "McFit"                   # prueba la API real (pide el token sin mostrarlo)
+python -m unittest discover -s tests                       # pruebas, sin red ni credenciales
 ```
 
 ## Limitaciones
 
-- La API de Meta solo ofrece **todos** los anuncios de países de la UE (Ley de Servicios Digitales). Fuera de la UE solo hay anuncios políticos.
+- Solo analiza España. La API de Meta ofrece todos los anuncios en la UE y Reino Unido; centrarse en un país permite afinar los sectores.
+- La API no sabe de sectores. En los principales se usan anunciantes conocidos; en el resto se buscan palabras y se filtra el ruido (apps de series, tiendas dudosas), pero puede colarse alguna marca ajena. Indicar las marcas es lo más preciso.
 - Sin token de Meta, el sistema funciona con datos de ejemplo, y así se indica en cada informe.
 
 ---

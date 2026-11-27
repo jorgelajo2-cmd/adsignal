@@ -12,6 +12,7 @@ Definiciones (aparecen también en el informe):
 """
 from __future__ import annotations
 
+import re
 from collections import Counter
 from datetime import date
 from statistics import median
@@ -21,6 +22,7 @@ NOMBRES_PLATAFORMA = {
     "audience_network": "Audience Network", "threads": "Threads", "whatsapp": "WhatsApp",
 }
 DIAS_NUEVO = 7
+_RE_HUECO = re.compile(r"\{\{[^{}]*\}\}")
 
 
 def _fecha(valor) -> date | None:
@@ -32,9 +34,16 @@ def _fecha(valor) -> date | None:
         return None
 
 
+def _unir(valores, separador: str = " ") -> str:
+    # Un carrusel repite el mismo texto en cada tarjeta: se cuenta una vez
+    distintos = dict.fromkeys(v.strip() for v in valores or [] if v)
+    # Los anuncios de catálogo traen huecos sin rellenar, como {{product.name}}
+    texto = _RE_HUECO.sub("", separador.join(distintos))
+    return re.sub(r"[ \t]{2,}", " ", texto).strip()
+
+
 def _texto(ad: dict) -> str:
-    cuerpos = ad.get("ad_creative_bodies") or []
-    return " ".join(c for c in cuerpos if c).strip()
+    return _unir(ad.get("ad_creative_bodies"))
 
 
 def _reparto(contador: Counter, total: int) -> list[dict]:
@@ -53,7 +62,7 @@ def calcular(anuncios: list[dict], fecha_ref: date) -> dict:
     todos_dias, plataformas_sector, marcas = [], Counter(), []
 
     for page_id, ads in por_marca.items():
-        dias, plataformas, textos = [], Counter(), {}
+        dias, plataformas, textos, titulos = [], Counter(), {}, {}
         mas_longevo = None
         for ad in ads:
             inicio = _fecha(ad.get("ad_delivery_start_time"))
@@ -69,6 +78,8 @@ def calcular(anuncios: list[dict], fecha_ref: date) -> dict:
             if t:
                 # Para el análisis guardamos cada texto distinto una vez, con su antigüedad máxima
                 textos[t] = max(textos.get(t, 0), d or 0)
+                # El titular va aparte: muchas ofertas solo aparecen ahí
+                titulos.setdefault(t, {}).update(dict.fromkeys(x for x in ad.get("ad_creative_link_titles") or [] if x))
         plataformas_sector.update(plataformas)
         todos_dias.extend(dias)
         # Lanzamientos por día en los últimos 30 días (índice 0 = hace 29 días, 29 = hoy)
@@ -92,7 +103,8 @@ def calcular(anuncios: list[dict], fecha_ref: date) -> dict:
             "alcance_ue": sum(int(ad.get("eu_total_reach") or 0) for ad in ads),
             "edades": edades.most_common(1)[0][0] if edades else None,
             "genero": generos.most_common(1)[0][0] if generos else None,
-            "textos": [{"texto": t, "dias": d} for t, d in sorted(textos.items(), key=lambda x: -x[1])][:40],
+            "textos": [{"texto": t, "titulo": _unir(list(titulos[t])[:5], " · "), "dias": d}
+                       for t, d in sorted(textos.items(), key=lambda x: -x[1])][:40],
             "serie_30d": serie,
         })
 

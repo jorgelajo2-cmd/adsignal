@@ -1,0 +1,659 @@
+{
+  "solicitud": {
+    "industria": "Moda",
+    "pais": "ES",
+    "marcas": [],
+    "id": "",
+    "fecha": "2026-11-27"
+  },
+  "ejemplo": true,
+  "metricas": {
+    "antiguedad": [
+      {
+        "nombre": "Esta semana",
+        "n": 2,
+        "pct": 2
+      },
+      {
+        "nombre": "8-30 días",
+        "n": 30,
+        "pct": 35
+      },
+      {
+        "nombre": "1-3 meses",
+        "n": 52,
+        "pct": 60
+      },
+      {
+        "nombre": "Más de 3 meses",
+        "n": 2,
+        "pct": 2
+      }
+    ],
+    "max_serie": 3,
+    "fecha_ref": "2026-11-27",
+    "total_anuncios": 86,
+    "n_marcas": 5,
+    "nuevos": 2,
+    "mediana_dias": 43,
+    "plataformas": [
+      {
+        "nombre": "Instagram",
+        "pct": 100
+      },
+      {
+        "nombre": "Facebook",
+        "pct": 41
+      },
+      {
+        "nombre": "Audience Network",
+        "pct": 10
+      },
+      {
+        "nombre": "Messenger",
+        "pct": 2
+      }
+    ],
+    "marcas": [
+      {
+        "page_id": "100003",
+        "nombre": "Prisma",
+        "activos": 28,
+        "cuota": 33,
+        "nuevos": 1,
+        "mediana_dias": 44,
+        "max_dias": 77,
+        "mas_longevo": {
+          "dias": 77,
+          "texto": "Nuevo en Prisma: descubre lo último en moda.",
+          "url": "https://www.facebook.com/ads/library/?id=1000030014",
+          "id": "1000030014"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 11
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 4
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 4
+          }
+        ],
+        "creatividades": 8,
+        "alcance_ue": 2207600,
+        "edades": "25 - 54",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Nuevo en Prisma: descubre lo último en moda.",
+            "titulo": "Prisma · Moda",
+            "dias": 77
+          },
+          {
+            "texto": "Moda desde 19 €. Sin permanencia y sin letra pequeña.",
+            "titulo": "Prisma · Moda",
+            "dias": 62
+          },
+          {
+            "texto": "Resultados que se notan desde el primer mes. Así lo cuentan nuestros clientes.",
+            "titulo": "Prisma · Moda",
+            "dias": 62
+          },
+          {
+            "texto": "Moda desde 49 €. Sin permanencia y sin letra pequeña.",
+            "titulo": "Prisma · Moda",
+            "dias": 58
+          },
+          {
+            "texto": "Moda desde 4,99 €/mes. Sin permanencia y sin letra pequeña.",
+            "titulo": "Prisma · Moda",
+            "dias": 58
+          },
+          {
+            "texto": "2x1 en moda solo esta semana. Aprovecha antes de que acabe.",
+            "titulo": "Prisma · Moda",
+            "dias": 45
+          },
+          {
+            "texto": "Moda desde 9,99 €. Sin permanencia y sin letra pequeña.",
+            "titulo": "Prisma · Moda",
+            "dias": 30
+          },
+          {
+            "texto": "-15 % en moda solo esta semana. Aprovecha antes de que acabe.",
+            "titulo": "Prisma · Moda",
+            "dias": 12
+          }
+        ],
+        "serie_30d": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100004",
+        "nombre": "Atlas",
+        "activos": 27,
+        "cuota": 31,
+        "nuevos": 0,
+        "mediana_dias": 41,
+        "max_dias": 93,
+        "mas_longevo": {
+          "dias": 93,
+          "texto": "Calidad que se nota y dura años. Así trabajamos en Atlas.",
+          "url": "https://www.facebook.com/ads/library/?id=1000040025",
+          "id": "1000040025"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 7
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 4
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 4
+          }
+        ],
+        "creatividades": 8,
+        "alcance_ue": 1691600,
+        "edades": "25 - 54",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Atlas.",
+            "titulo": "Atlas · Moda",
+            "dias": 93
+          },
+          {
+            "texto": "-15 % en moda solo esta semana. Aprovecha antes de que acabe.",
+            "titulo": "Atlas · Moda",
+            "dias": 75
+          },
+          {
+            "texto": "2x1 en moda solo esta semana. Aprovecha antes de que acabe.",
+            "titulo": "Atlas · Moda",
+            "dias": 65
+          },
+          {
+            "texto": "Garantía total: si no te convence, te devolvemos el dinero.",
+            "titulo": "Atlas · Moda",
+            "dias": 63
+          },
+          {
+            "texto": "-30 % en moda solo esta semana. Aprovecha antes de que acabe.",
+            "titulo": "Atlas · Moda",
+            "dias": 56
+          },
+          {
+            "texto": "Más de 10.000 personas ya confían en nosotros. Únete a la comunidad Atlas.",
+            "titulo": "Atlas · Moda",
+            "dias": 55
+          },
+          {
+            "texto": "Más de 50.000 personas ya confían en nosotros. Únete a la comunidad Atlas.",
+            "titulo": "Atlas · Moda",
+            "dias": 55
+          },
+          {
+            "texto": "Más de 200.000 personas ya confían en nosotros. Únete a la comunidad Atlas.",
+            "titulo": "Atlas · Moda",
+            "dias": 50
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          2,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100002",
+        "nombre": "Kora",
+        "activos": 15,
+        "cuota": 17,
+        "nuevos": 1,
+        "mediana_dias": 44,
+        "max_dias": 103,
+        "mas_longevo": {
+          "dias": 103,
+          "texto": "Todo desde la app, cuando quieras y donde quieras. Empieza en 2 minutos.",
+          "url": "https://www.facebook.com/ads/library/?id=1000020001",
+          "id": "1000020001"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 7
+          }
+        ],
+        "creatividades": 8,
+        "alcance_ue": 997600,
+        "edades": "25 - 54",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Todo desde la app, cuando quieras y donde quieras. Empieza en 2 minutos.",
+            "titulo": "Kora · Moda",
+            "dias": 103
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un 20 % de descuento.",
+            "titulo": "Kora · Moda",
+            "dias": 80
+          },
+          {
+            "texto": "-15 % en moda solo esta semana. Aprovecha antes de que acabe.",
+            "titulo": "Kora · Moda",
+            "dias": 70
+          },
+          {
+            "texto": "2x1 en moda solo esta semana. Aprovecha antes de que acabe.",
+            "titulo": "Kora · Moda",
+            "dias": 59
+          },
+          {
+            "texto": "Moda desde 29,90 €. Sin permanencia y sin letra pequeña.",
+            "titulo": "Kora · Moda",
+            "dias": 53
+          },
+          {
+            "texto": "Moda desde 49 €. Sin permanencia y sin letra pequeña.",
+            "titulo": "Kora · Moda",
+            "dias": 25
+          },
+          {
+            "texto": "Moda desde 9,99 €. Sin permanencia y sin letra pequeña.",
+            "titulo": "Kora · Moda",
+            "dias": 13
+          },
+          {
+            "texto": "-20 % en moda solo esta semana. Aprovecha antes de que acabe.",
+            "titulo": "Kora · Moda",
+            "dias": 0
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "page_id": "100001",
+        "nombre": "Lumen",
+        "activos": 10,
+        "cuota": 12,
+        "nuevos": 0,
+        "mediana_dias": 21,
+        "max_dias": 76,
+        "mas_longevo": {
+          "dias": 76,
+          "texto": "Últimos días: el primer mes gratis. Después vuelve al precio normal.",
+          "url": "https://www.facebook.com/ads/library/?id=1000010009",
+          "id": "1000010009"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 90
+          }
+        ],
+        "creatividades": 7,
+        "alcance_ue": 570200,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Últimos días: el primer mes gratis. Después vuelve al precio normal.",
+            "titulo": "Lumen · Moda",
+            "dias": 76
+          },
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Lumen.",
+            "titulo": "Lumen · Moda",
+            "dias": 73
+          },
+          {
+            "texto": "Últimos días: envío gratis. Después vuelve al precio normal.",
+            "titulo": "Lumen · Moda",
+            "dias": 53
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un 20 % de descuento.",
+            "titulo": "Lumen · Moda",
+            "dias": 41
+          },
+          {
+            "texto": "Moda desde 19 €. Sin permanencia y sin letra pequeña.",
+            "titulo": "Lumen · Moda",
+            "dias": 20
+          },
+          {
+            "texto": "Últimos días: una prueba gratuita. Después vuelve al precio normal.",
+            "titulo": "Lumen · Moda",
+            "dias": 14
+          },
+          {
+            "texto": "Moda desde 4,99 €/mes. Sin permanencia y sin letra pequeña.",
+            "titulo": "Lumen · Moda",
+            "dias": 9
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100000",
+        "nombre": "Vértice",
+        "activos": 6,
+        "cuota": 7,
+        "nuevos": 0,
+        "mediana_dias": 56,
+        "max_dias": 66,
+        "mas_longevo": {
+          "dias": 66,
+          "texto": "Calidad que se nota y dura años. Así trabajamos en Vértice.",
+          "url": "https://www.facebook.com/ads/library/?id=1000000003",
+          "id": "1000000003"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 100
+          }
+        ],
+        "creatividades": 3,
+        "alcance_ue": 481600,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Vértice.",
+            "titulo": "Vértice · Moda",
+            "dias": 66
+          },
+          {
+            "texto": "Garantía total: si no te convence, te devolvemos el dinero.",
+            "titulo": "Vértice · Moda",
+            "dias": 48
+          },
+          {
+            "texto": "-30 % en moda solo esta semana. Aprovecha antes de que acabe.",
+            "titulo": "Vértice · Moda",
+            "dias": 12
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "avisos": []
+  },
+  "analisis": {
+    "fuente": "reglas",
+    "titular": "Prisma lidera en anuncios y el argumento más repetido es precio.",
+    "subtitulo": "86 anuncios activos de 5 marcas en España. 2 empezaron en los últimos 7 días.",
+    "tendencias": [
+      {
+        "titulo": "Precio es el argumento más usado",
+        "detalle": "Aparece en 68 % de las creatividades distintas."
+      },
+      {
+        "titulo": "Instagram manda",
+        "detalle": "El 100 % de los anuncios se publica en Instagram."
+      },
+      {
+        "titulo": "Cuánto duran los anuncios",
+        "detalle": "La mitad de los anuncios lleva más de 43 días activos."
+      }
+    ],
+    "marcas": {
+      "100003": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Novedad"
+        ],
+        "ofertas": [
+          "desde 19 €",
+          "desde 49 €",
+          "desde 4,99 €/mes"
+        ],
+        "tono": "",
+        "conclusion": "28 anuncios activos (33 % del total), 1 nuevo esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 77 días activo."
+      },
+      "100004": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Comunidad"
+        ],
+        "ofertas": [
+          "-15 %",
+          "2x1",
+          "-30 %"
+        ],
+        "tono": "",
+        "conclusion": "27 anuncios activos (31 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 93 días activo."
+      },
+      "100002": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Conveniencia"
+        ],
+        "ofertas": [
+          "20 % de descuento",
+          "-15 %",
+          "2x1"
+        ],
+        "tono": "",
+        "conclusion": "15 anuncios activos (17 % del total), 1 nuevo esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 103 días activo."
+      },
+      "100001": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Calidad"
+        ],
+        "ofertas": [
+          "el primer mes gratis",
+          "envío gratis",
+          "20 % de descuento"
+        ],
+        "tono": "",
+        "conclusion": "10 anuncios activos (12 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 76 días activo."
+      },
+      "100000": {
+        "angulos": [
+          "Calidad",
+          "Confianza",
+          "Precio"
+        ],
+        "ofertas": [
+          "-30 %"
+        ],
+        "tono": "",
+        "conclusion": "6 anuncios activos (7 % del total), 0 nuevos esta semana. Apuesta sobre todo por calidad y confianza. Su anuncio más longevo lleva 66 días activo."
+      }
+    }
+  }
+}

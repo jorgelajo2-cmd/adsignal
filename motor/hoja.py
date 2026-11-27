@@ -41,10 +41,11 @@ class HojaGoogle:
         if faltan:
             raise RuntimeError(f"A la hoja le faltan columnas: {', '.join(faltan)}")
 
-    def pendientes(self) -> list[dict]:
-        filas = self.ws.get_all_records(expected_headers=COLUMNAS)
+    def filas(self, *estados: str) -> list[dict]:
+        # numericise_ignore: un id o un número de página no deben convertirse en número
+        filas = self.ws.get_all_records(expected_headers=COLUMNAS, numericise_ignore=["all"])
         # _fila = número de fila real en la hoja (la 1 es la cabecera)
-        return [{**f, "_fila": i + 2} for i, f in enumerate(filas) if str(f.get("estado", "")).strip().lower() == "pendiente"]
+        return [{**f, "_fila": i + 2} for i, f in enumerate(filas) if str(f.get("estado", "")).strip().lower() in estados]
 
     def actualizar(self, fila: dict, **valores):
         for campo, valor in valores.items():
@@ -59,8 +60,8 @@ class HojaCSV:
         with self.ruta.open(encoding="utf-8", newline="") as f:
             return list(csv.DictReader(f))
 
-    def pendientes(self) -> list[dict]:
-        return [{**f, "_fila": i + 2} for i, f in enumerate(self._leer()) if f.get("estado", "").strip().lower() == "pendiente"]
+    def filas(self, *estados: str) -> list[dict]:
+        return [{**f, "_fila": i + 2} for i, f in enumerate(self._leer()) if f.get("estado", "").strip().lower() in estados]
 
     def actualizar(self, fila: dict, **valores):
         filas = self._leer()

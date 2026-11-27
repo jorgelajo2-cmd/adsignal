@@ -1,0 +1,24 @@
+# Comprueba el motor cada vez que cambia el código. No usa ninguna credencial.
+name: pruebas
+
+on:
+  push:
+    branches: [main]
+    paths: ["motor/**", "tests/**", "web/sectores.js", "probar_api.py", "requirements.txt"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v

@@ -6,15 +6,9 @@ import unicodedata
 from dataclasses import dataclass, field
 from datetime import date
 
-# Países de la UE: los únicos para los que la API de Meta da TODOS los anuncios (DSA).
-PAISES_UE = {
-    "ES": "España", "PT": "Portugal", "FR": "Francia", "IT": "Italia", "DE": "Alemania",
-    "NL": "Países Bajos", "BE": "Bélgica", "IE": "Irlanda", "AT": "Austria", "PL": "Polonia",
-    "SE": "Suecia", "DK": "Dinamarca", "FI": "Finlandia", "GR": "Grecia", "CZ": "Chequia",
-    "RO": "Rumanía", "HU": "Hungría", "SK": "Eslovaquia", "BG": "Bulgaria", "HR": "Croacia",
-    "SI": "Eslovenia", "LT": "Lituania", "LV": "Letonia", "EE": "Estonia", "LU": "Luxemburgo",
-    "CY": "Chipre", "MT": "Malta",
-}
+# AdSignal analiza solo España. El campo «pais» se conserva porque la hoja y Make lo usan.
+PAIS = "ES"
+NOMBRE_PAIS = "España"
 
 
 def slug(texto: str) -> str:
@@ -25,7 +19,7 @@ def slug(texto: str) -> str:
 @dataclass
 class Solicitud:
     industria: str
-    pais: str = "ES"
+    pais: str = PAIS
     marcas: list[str] = field(default_factory=list)
     email: str = ""
     id: str = ""
@@ -33,21 +27,24 @@ class Solicitud:
 
     def __post_init__(self):
         self.industria = self.industria.strip()
-        self.pais = self.pais.strip().upper()
+        self.pais = self.pais.strip().upper() or PAIS
         if not self.industria:
             raise ValueError("Falta el sector (industria).")
-        if self.pais not in PAISES_UE:
-            raise ValueError(f"País no válido: {self.pais}. Solo países de la UE: {', '.join(PAISES_UE)}")
+        # Viene de un formulario público y acaba en un título publicado
+        if len(self.industria) > 60:
+            raise ValueError("El nombre del sector es demasiado largo (máximo 60 caracteres).")
+        if self.pais != PAIS:
+            raise ValueError(f"País no válido: {self.pais}. AdSignal solo analiza España.")
         self.marcas = [m.strip() for m in self.marcas if m and m.strip()]
 
     @classmethod
-    def desde_texto(cls, industria: str, pais: str = "ES", marcas: str = "", email: str = "", id: str = ""):
+    def desde_texto(cls, industria: str, pais: str = PAIS, marcas: str = "", email: str = "", id: str = ""):
         """Crea la solicitud a partir de los campos tal como llegan del formulario."""
         return cls(industria=industria, pais=pais, marcas=re.split(r"[,;\n]", marcas or ""), email=email, id=id)
 
     @property
     def nombre_pais(self) -> str:
-        return PAISES_UE[self.pais]
+        return NOMBRE_PAIS
 
     @property
     def nombre_archivo(self) -> str:

@@ -2,8 +2,8 @@
 Genera un informe a mano, desde la terminal.
 
 Ejemplos:
-  python -m motor --industria "gimnasios" --pais ES --fuente ejemplo
-  python -m motor --industria "seguros de coche" --pais ES --marcas "Mapfre, Línea Directa" --fuente meta
+  python -m motor --industria "gimnasios" --fuente ejemplo
+  python -m motor --industria "seguros de coche" --marcas "Mapfre, Línea Directa" --fuente meta
 
 Para procesar automáticamente las solicitudes de la hoja: python -m motor.procesar
 """
@@ -13,6 +13,7 @@ import argparse
 import sys
 from pathlib import Path
 
+from .meta_api import pedir_token_si_falta
 from .pipeline import SinAnuncios, generar_informe
 from .solicitud import Solicitud
 
@@ -20,7 +21,6 @@ from .solicitud import Solicitud
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="python -m motor", description="Genera un informe de anuncios de adsignal.")
     ap.add_argument("--industria", required=True, help="Sector, p. ej. «gimnasios»")
-    ap.add_argument("--pais", default="ES", help="Código de país de la UE (ES, FR, IT…)")
     ap.add_argument("--marcas", default="", help="Marcas separadas por comas (opcional)")
     ap.add_argument("--fuente", choices=["ejemplo", "meta"], default="ejemplo",
                     help="«ejemplo» = datos inventados para probar; «meta» = API real (necesita META_TOKEN)")
@@ -29,12 +29,14 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
 
     try:
-        sol = Solicitud.desde_texto(a.industria, a.pais, a.marcas)
+        sol = Solicitud.desde_texto(a.industria, marcas=a.marcas)
     except ValueError as e:
         print(f"Error en la solicitud: {e}", file=sys.stderr)
         return 2
 
     print(f"Informe de «{sol.industria}» en {sol.nombre_pais}")
+    if a.fuente == "meta":
+        pedir_token_si_falta()
     try:
         r = generar_informe(sol, a.fuente, {"auto": None, "si": True, "no": False}[a.ia], Path(a.salida))
     except SinAnuncios as e:

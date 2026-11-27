@@ -63,11 +63,11 @@ Con el escenario activo, envía el formulario. En la hoja tiene que aparecer una
 Puedes generar un informe con datos de ejemplo desde la terminal:
 
 ```powershell
-python -m motor --industria "gimnasios" --pais ES --salida web/informes
+python -m motor --industria "gimnasios" --salida web/informes
 ```
 
 ```powershell
-python -m motor --industria "seguros de coche" --pais FR --marcas "Marca A, Marca B" --salida web/informes
+python -m motor --industria "seguros de coche" --marcas "Marca A, Marca B" --salida web/informes
 ```
 
 El informe aparece en `web/informes/` (HTML para verlo y JSON con todos los datos).

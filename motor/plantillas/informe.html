@@ -273,7 +273,7 @@
               <dt>Lidera</dt><dd><b style="font-weight:550">{{ lider.nombre }}</b>, con el {{ lider.cuota }} % de los anuncios</dd>
               <dt>Más activa</dt><dd><b style="font-weight:550">{{ activa.nombre }}</b>: {{ activa.nuevos }} anuncio{{ "s" if activa.nuevos != 1 }} nuevo{{ "s" if activa.nuevos != 1 }} en 7 días</dd>
               {% if longevo %}<dt>Más duradero</dt><dd><b style="font-weight:550">{{ longevo.nombre }}</b>: un anuncio con {{ longevo.max_dias }} días activo</dd>{% endif %}
-              {% if met.plataformas %}<dt>Plataforma</dt><dd>{{ met.plataformas[0].nombre }}, en el {{ met.plataformas[0].pct }} % de los anuncios</dd>{% endif %}
+              {% if met.plataformas %}<dt>Plataforma</dt><dd>{{ met.plataformas | selectattr("pct", "equalto", met.plataformas[0].pct) | map(attribute="nombre") | join(", ") }}: en el {{ met.plataformas[0].pct }} % de los anuncios</dd>{% endif %}
             </dl>
           </article>
         </div>
@@ -343,7 +343,9 @@
         <div><h2>Cómo se ha hecho</h2></div>
         <ul>
           <li>Fuente: Biblioteca de anuncios de Meta (Facebook, Instagram, Messenger y Audience Network), anuncios activos en {{ sol.nombre_pais }} el {{ fecha_larga }}.</li>
-          <li>{% if sol.marcas %}Marcas elegidas por quien pidió el informe.{% else %}Marcas: los anunciantes con más anuncios activos para «{{ sol.industria }}».{% endif %}</li>
+          <li>{% if sol.marcas %}Marcas elegidas por quien pidió el informe.{% else %}Sector analizado: «{{ sol.industria }}».{% endif %}</li>
+          {% for aviso in met.avisos or [] %}<li>{{ aviso }}</li>
+          {% endfor %}
           <li>«Nuevo»: empezó a publicarse en los últimos 7 días. «Días activo»: desde que empezó hasta hoy. Un anuncio que dura semanas suele ser uno que funciona.</li>
           <li>Los números se calculan directamente de los datos. {% if an.fuente == "claude" %}Los argumentos y conclusiones los redacta una IA a partir de los textos de los anuncios.{% else %}Los argumentos se detectan por palabras clave en los textos.{% endif %}</li>
         </ul>
@@ -352,7 +354,7 @@
   </div>
 
   <section class="cta rv">
-    <h2>¿Otro sector u otro país?</h2>
+    <h2>¿Otro sector?</h2>
     <a class="btn btn-p" href="../index.html#pedir">Pedir otro informe</a>
   </section>
   <footer><span>AdSignal · Informe {{ sol.id or "" }}</span><span>Datos de la Biblioteca de anuncios de Meta</span></footer>

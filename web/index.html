@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdSignal · Ad intelligence para tu sector</title>
-  <meta name="description" content="Ad intelligence: descubre qué anuncia tu competencia en Meta sin pasar horas investigando. Informe gratuito por sector y país.">
+  <meta name="description" content="Ad intelligence: descubre qué anuncia tu competencia en Meta sin pasar horas investigando. Informe gratuito por sector, con datos de España.">
   <meta name="theme-color" content="#05070D">
   <link rel="icon" href="logo.svg?v=4" type="image/svg+xml">
   <link rel="stylesheet" href="brand.css?v=5">
@@ -22,7 +22,7 @@
     /* ---------- formulario ---------- */
     .signup { max-width: 640px; margin: 0 auto; }
     .fcard { padding: 6px; text-align: left; border-radius: 24px; background: rgba(10,14,26,.55); box-shadow: inset 0 0 0 1px var(--line-hi), inset 0 1px 0 rgba(255,255,255,.08), 0 40px 80px -40px rgba(0,0,0,.9); }
-    .grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 4px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 4px; }
     .field { position: relative; border-radius: 18px; padding: .7rem 1rem .75rem; transition: background-color .25s var(--ease), box-shadow .25s var(--ease); }
     .field:hover { background: rgba(255,255,255,.035); }
     .field:focus-within, .field.open { background: rgba(255,255,255,.055); box-shadow: inset 0 0 0 1px var(--line-hi); }
@@ -32,23 +32,11 @@
     .field input { border: 0; outline: 0; background: transparent; font: inherit; font-size: .98rem; color: var(--ink); width: 100%; padding: 0; }
     .field input::placeholder { color: #5B6376; }
     .wide { grid-column: 1 / -1; }
-    .sel { display: flex; align-items: center; justify-content: space-between; gap: .5rem; width: 100%; border: 0; background: transparent; font: inherit; font-size: .98rem; color: var(--ink); padding: 0; cursor: pointer; text-align: left; }
-    .sel:focus-visible { outline: none; }
-    .sel-val { display: inline-flex; align-items: center; gap: .55rem; }
-    .code { display: inline-grid; place-items: center; min-width: 28px; height: 19px; padding: 0 6px; border-radius: 6px; background: rgba(255,255,255,.07); color: var(--text); font-size: .66rem; font-weight: 500; letter-spacing: .04em; }
-    .chev { flex: none; width: 14px; height: 14px; color: var(--muted); transition: transform .3s var(--ease); }
-    .field.open .chev { transform: rotate(180deg); }
-    .menu { position: absolute; left: 0; right: 0; top: calc(100% + 8px); z-index: 30; padding: 6px; border-radius: 18px; background: rgba(12,16,28,.86); backdrop-filter: blur(24px) saturate(1.3); -webkit-backdrop-filter: blur(24px) saturate(1.3); box-shadow: inset 0 0 0 1px var(--line-hi), 0 24px 48px -24px rgba(0,0,0,.8); opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity .2s var(--ease), transform .3s var(--flow), visibility 0s .2s; }
+    .menu { position: absolute; left: 0; right: 0; top: calc(100% + 8px); z-index: 30; padding: 6px; border-radius: 18px; background: rgba(12,16,28,.985); backdrop-filter: blur(24px) saturate(1.3); -webkit-backdrop-filter: blur(24px) saturate(1.3); box-shadow: inset 0 0 0 1px var(--line-hi), 0 24px 48px -24px rgba(0,0,0,.8); opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity .2s var(--ease), transform .3s var(--flow), visibility 0s .2s; }
     .field.open .menu { opacity: 1; visibility: visible; transform: none; transition: opacity .2s var(--ease), transform .3s var(--flow), visibility 0s; }
-    .menu-search { display: flex; align-items: center; gap: .5rem; padding: .5rem .7rem; margin-bottom: 4px; border-radius: 12px; background: rgba(255,255,255,.05); color: var(--muted); }
-    .menu-search svg { width: 14px; height: 14px; flex: none; }
-    .menu-search input { font-size: .9rem; }
-    .opts { max-height: 216px; overflow: auto; list-style: none; margin: 0; padding: 0; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.12) transparent; }
+    .opts { position: relative; max-height: 300px; overflow: auto; list-style: none; margin: 0; padding: 0; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.12) transparent; }
     .opt { display: flex; align-items: center; gap: .65rem; padding: .55rem .7rem; border-radius: 10px; font-size: .92rem; color: var(--text); cursor: pointer; transition: background-color .15s, color .15s; }
     .opt:hover, .opt.active { background: rgba(255,255,255,.06); color: var(--ink); }
-    .opt[aria-selected="true"] { color: var(--ink); }
-    .opt .tick { margin-left: auto; width: 14px; height: 14px; color: var(--ink); opacity: 0; }
-    .opt[aria-selected="true"] .tick { opacity: 1; }
     .opt-hint { padding: .45rem .7rem .3rem; font-size: .72rem; color: var(--muted); }
     .chips-in { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; min-height: 24px; }
     .chips-in input { flex: 1; min-width: 160px; }
@@ -164,7 +152,6 @@
     }
     @media (max-width: 640px) {
       .hero { padding: 8rem 16px 4rem; }
-      .grid { grid-template-columns: 1fr; }
       .foot { flex-direction: column; }
       .submit { min-height: 50px; }
       .spot { --sw: 30px; --sa: 230px; --gap: 5px; }
@@ -184,28 +171,18 @@
 
   <header class="hero">
     <div class="aura" aria-hidden="true"><i class="grain"></i></div>
-    <span class="eyebrow"><i></i>Ad intelligence sobre Meta</span>
+    <span class="eyebrow"><i></i>Ad intelligence sobre Meta en España</span>
     <h1>Lo que anuncia tu <span class="hl">competencia</span>, en <span class="hl">datos reales</span>.</h1>
-    <p class="sub">Elige sector y país. El informe llega a tu email, listo para leer o descargar en PDF.</p>
+    <p class="sub">Elige tu sector. El informe de lo que se anuncia en España llega a tu email, listo para leer o descargar en PDF.</p>
       <form class="signup" id="pedir" novalidate>
         <div class="fcard glass">
           <div class="grid">
-            <div class="field" id="f-sector">
+            <div class="field wide" id="f-sector">
               <label for="industria">Sector</label>
-              <input id="industria" name="industria" placeholder="Gimnasios, cosmética, seguros…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="sector-opts" aria-autocomplete="list">
-              <div class="menu"><div class="opt-hint">Sugerencias</div><ul class="opts" id="sector-opts" role="listbox" aria-label="Sugerencias de sector"></ul></div>
+              <input id="industria" name="industria" maxlength="60" placeholder="Busca tu sector: gimnasios, vino, seguros…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="sector-opts" aria-autocomplete="list">
+              <div class="menu"><ul class="opts" id="sector-opts" role="listbox" aria-label="Sectores"></ul></div>
             </div>
-            <div class="field" id="f-pais">
-              <span class="lbl" id="pais-lbl">País</span>
-              <button type="button" class="sel" id="pais-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="pais-lbl pais-btn">
-                <span class="sel-val"><span class="code" id="pais-code">ES</span><span id="pais-name">España</span></span><svg class="chev" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <input type="hidden" name="pais" id="pais" value="ES">
-              <div class="menu">
-                <div class="menu-search"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><input id="pais-q" placeholder="Buscar país" autocomplete="off" aria-label="Buscar país"></div>
-                <ul class="opts" id="pais-opts" role="listbox" aria-label="Países de la UE"></ul>
-              </div>
-            </div>
+            <input type="hidden" name="pais" value="ES">
             <div class="field wide" id="f-marcas">
               <label for="marca-in">Marcas a comparar <small>(opcional)</small></label>
               <div class="chips-in" id="chips"><input id="marca-in" placeholder="Escribe una marca y pulsa Enter" autocomplete="off"></div>
@@ -290,7 +267,7 @@
     </section>
 
     <section class="section" id="sectores" aria-labelledby="h-sect">
-      <div class="head"><h2 id="h-sect">Cualquier sector, <span class="hl">cualquier país</span> de la UE.</h2></div>
+      <div class="head"><h2 id="h-sect">Tu sector, <span class="hl">en toda España</span>.</h2></div>
       <div class="spot" id="spot" aria-roledescription="carrusel"><div class="spot-track" id="spot-track"></div></div>
       <div class="dots" id="dots" aria-label="Elegir sector"></div>
     </section>
@@ -300,8 +277,9 @@
       <div class="faq glass">
         <details><summary>¿De dónde salen los datos?</summary><p>De la Biblioteca de anuncios de Meta, que es pública. Nosotros calculamos las métricas y resumimos lo importante.</p></details>
         <details><summary>¿Cuánto cuesta?</summary><p>Nada.</p></details>
-        <details><summary>¿Qué países puedo pedir?</summary><p>Los 27 de la Unión Europea. Meta solo publica todos los anuncios de esos países.</p></details>
-        <details><summary>¿Cuánto tarda?</summary><p>Normalmente menos de media hora. Te llega por email, en versión web y en PDF.</p></details>
+        <details><summary>¿Qué sectores puedo pedir?</summary><p>Tienes 150 en la lista, desde gimnasios hasta seguros o vino. Si el tuyo no está, escríbelo y lo buscamos tal cual.</p></details>
+        <details><summary>¿De qué país son los datos?</summary><p>De España: anuncios de Meta que se están publicando aquí.</p></details>
+        <details><summary>¿Cuánto tarda?</summary><p>Normalmente un par de horas como mucho. Te llega por email, en versión web y en PDF.</p></details>
         <details><summary>¿Quién está detrás?</summary><p>Jorge Lajo. Escríbeme a <a href="mailto:jorgelajosala@gmail.com">jorgelajosala@gmail.com</a>.</p></details>
       </div>
     </section>
@@ -316,6 +294,7 @@
   <footer class="site"><span>AdSignal, un proyecto de Jorge Lajo</span><a href="privacidad.html">Privacidad</a></footer>
 
   <script src="dash.js?v=1" defer></script>
+  <script src="sectores.js?v=1"></script>
   <script>
     const FORM_ENDPOINT = "https://hook.eu1.make.com/mlf50s47ydunrvysunubbgbmowe8cc8i";
 
@@ -329,7 +308,6 @@
     const msg = document.getElementById("form-msg");
     const norm = (t) => t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
     const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-    const TICK = '<svg class="tick" viewBox="0 0 16 16" fill="none"><path d="M3.5 8.4l3 3 6-6.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
     // Cierra cualquier menú abierto al pulsar fuera
     const abiertos = new Set();
@@ -360,46 +338,37 @@
       else if (e.key === "Escape") { alCerrar(); }
     }
 
-    // --- Sector: texto libre con sugerencias
-    const SECTORES = ["Gimnasios", "Cosmética", "Moda", "Seguros", "Bancos", "Comida a domicilio", "Restaurantes", "Academias de idiomas", "Formación online", "Inmobiliarias", "Telefonía", "Energía", "Viajes", "Hoteles", "Automoción", "Clínicas dentales", "Mascotas", "Supermercados", "Electrónica", "Joyería"];
+    // --- Sector: catálogo por categorías (sectores.js) y texto libre
+    const CATALOGO = window.SECTORES || [];
     const fSector = document.getElementById("f-sector"), inSector = document.getElementById("industria"), lSector = document.getElementById("sector-opts");
-    function pintarSectores() {
-      const q = norm(inSector.value.trim());
-      const lista = SECTORES.filter((x) => !q || norm(x).includes(q)).slice(0, 7);
-      lSector.innerHTML = lista.map((x) => `<li class="opt" role="option" data-v="${esc(x)}">${esc(x)}</li>`).join("");
-      lista.length ? abrir(fSector) : cerrar(fSector);
+    // Coincide por nombre, categoría o palabra relacionada: «dentista» encuentra «Clínicas dentales»
+    function filtrar(q) {
+      return CATALOGO.map(([cat, sectores]) => [cat, sectores.filter(([n, terminos]) =>
+        !q || norm(cat).includes(q) || [n, ...terminos].some((x) => norm(x).includes(q)))]).filter(([, s]) => s.length);
     }
-    function elegirSector(v) { inSector.value = v; cerrar(fSector); fSector.classList.remove("invalid"); document.getElementById("pais-btn").focus({ preventScroll: true }); }
-    inSector.addEventListener("focus", pintarSectores);
+    function pintarSectores(todos) {
+      const q = todos ? "" : norm(inSector.value.trim());
+      const grupos = filtrar(q);
+      lSector.innerHTML = grupos.length
+        ? grupos.map(([cat, s]) => `<li class="opt-hint" role="presentation">${esc(cat)}</li>` +
+            s.map(([n]) => `<li class="opt" role="option" data-v="${esc(n)}">${esc(n)}</li>`).join("")).join("")
+        : `<li class="opt-hint" role="presentation">No está en la lista: lo buscaremos tal como lo has escrito</li>`;
+      lSector.scrollTop = 0;
+      abrir(fSector);
+      inSector.setAttribute("aria-expanded", "true");
+    }
+    function elegirSector(v) { inSector.value = v; cerrar(fSector); fSector.classList.remove("invalid"); inMarca.focus({ preventScroll: true }); }
+    // Al volver a un sector ya elegido se muestra la lista entera, no solo ese
+    const elegido = () => CATALOGO.some(([, s]) => s.some(([n]) => n === inSector.value));
+    inSector.addEventListener("focus", () => pintarSectores(elegido()));
+    inSector.addEventListener("click", () => fSector.classList.contains("open") || pintarSectores(elegido()));
     inSector.addEventListener("input", () => { fSector.classList.remove("invalid"); pintarSectores(); });
-    inSector.addEventListener("keydown", (e) => teclado(e, lSector, elegirSector, () => cerrar(fSector)));
-    lSector.addEventListener("click", (e) => { const o = e.target.closest(".opt"); if (o) elegirSector(o.dataset.v); });
-
-    // --- País: desplegable con búsqueda
-    const PAISES = [["ES","España"],["PT","Portugal"],["FR","Francia"],["IT","Italia"],["DE","Alemania"],["NL","Países Bajos"],["BE","Bélgica"],["IE","Irlanda"],["AT","Austria"],["PL","Polonia"],["SE","Suecia"],["DK","Dinamarca"],["FI","Finlandia"],["GR","Grecia"],["CZ","Chequia"],["RO","Rumanía"],["HU","Hungría"],["SK","Eslovaquia"],["BG","Bulgaria"],["HR","Croacia"],["SI","Eslovenia"],["LT","Lituania"],["LV","Letonia"],["EE","Estonia"],["LU","Luxemburgo"],["CY","Chipre"],["MT","Malta"]];
-    const fPais = document.getElementById("f-pais"), btnPais = document.getElementById("pais-btn"), qPais = document.getElementById("pais-q"), lPais = document.getElementById("pais-opts"), inPais = document.getElementById("pais");
-    function pintarPaises() {
-      const q = norm(qPais.value.trim());
-      const lista = PAISES.filter(([c, n]) => !q || norm(n).includes(q) || norm(c) === q);
-      lPais.innerHTML = lista.length
-        ? lista.map(([c, n]) => `<li class="opt" role="option" data-v="${c}" aria-selected="${c === inPais.value}"><span class="code">${c}</span>${n}${TICK}</li>`).join("")
-        : '<li class="opt-hint">Solo países de la Unión Europea</li>';
-    }
-    function elegirPais(c) {
-      const [, n] = PAISES.find((p) => p[0] === c);
-      inPais.value = c; document.getElementById("pais-code").textContent = c; document.getElementById("pais-name").textContent = n;
-      cerrar(fPais); btnPais.focus({ preventScroll: true });
-    }
-    btnPais.addEventListener("click", () => {
-      if (fPais.classList.contains("open")) return cerrar(fPais);
-      qPais.value = ""; pintarPaises(); abrir(fPais);
-      qPais.focus({ preventScroll: true });
-      verEnLista(lPais, lPais.querySelector('[aria-selected="true"]'), true);
+    inSector.addEventListener("keydown", (e) => {
+      if (e.key === "Tab") return cerrar(fSector);
+      teclado(e, lSector, elegirSector, () => cerrar(fSector));
+      if (e.key === "Enter") { e.preventDefault(); cerrar(fSector); }
     });
-    btnPais.addEventListener("keydown", (e) => { if (e.key === "ArrowDown") { e.preventDefault(); btnPais.click(); } });
-    qPais.addEventListener("input", pintarPaises);
-    qPais.addEventListener("keydown", (e) => teclado(e, lPais, elegirPais, () => { cerrar(fPais); btnPais.focus(); }));
-    lPais.addEventListener("click", (e) => { const o = e.target.closest(".opt"); if (o) elegirPais(o.dataset.v); });
+    lSector.addEventListener("click", (e) => { const o = e.target.closest(".opt"); if (o) elegirSector(o.dataset.v); });
 
     // --- Marcas: cada una se convierte en una etiqueta
     const chips = document.getElementById("chips"), inMarca = document.getElementById("marca-in"), hMarcas = document.getElementById("marcas");
@@ -452,22 +421,22 @@
           console.info("[AdSignal] FORM_ENDPOINT vacío:", data);
         }
         (window.dataLayer = window.dataLayer || []).push({ event: "generate_lead", industria: data.industria, pais: data.pais });
-        const paisTxt = document.getElementById("pais-name").textContent;
-        form.outerHTML = `<div class="done glass" role="status"><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Hecho. Preparamos tu informe de <b>${esc(data.industria.toLowerCase())}</b> en ${paisTxt} y te lo enviamos a ${esc(data.email)}.</p></div>`;
+        form.outerHTML = `<div class="done glass" role="status"><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Hecho. Preparamos tu informe de <b>${esc(data.industria.toLowerCase())}</b> en España y te lo enviamos a ${esc(data.email)}.</p></div>`;
       } catch { aviso("No se ha podido enviar. Prueba otra vez en unos segundos."); }
     });
 
 
     // --- Carrusel de sectores: la tarjeta central se abre y muestra su informe
     const SPOT = [
-      ["Moda", "IT", 228, "informes/moda-it-2026-11-27.html"],
-      ["Cosmética", "DE", 330, null],
-      ["Gimnasios", "ES", 222, "informes/gimnasios-es-2026-11-27.html"],
-      ["Seguros de coche", "FR", 200, "informes/seguros-de-coche-fr-2026-11-27.html"],
-      ["Viajes", "PT", 190, null],
-      ["Bancos", "NL", 248, null],
-      ["Clínicas dentales", "BE", 262, null],
+      ["Moda", 228, "informes/moda-es-2026-11-27.html"],
+      ["Cosmética", 330, null],
+      ["Gimnasios", 222, "informes/gimnasios-es-2026-11-27.html"],
+      ["Seguros de coche", 200, "informes/seguros-de-coche-es-2026-11-27.html"],
+      ["Viajes", 190, null],
+      ["Bancos", 248, null],
+      ["Clínicas dentales", 262, null],
     ];
+    const categoriaDe = (sector) => (CATALOGO.find(([, s]) => s.some(([n]) => n === sector)) || ["España"])[0];
     const spot = document.getElementById("spot"), track = document.getElementById("spot-track"), dots = document.getElementById("dots");
     // Mini gráfico de cada tarjeta, distinto por sector pero siempre igual (semilla fija)
     function miniGrafico(semilla) {
@@ -480,16 +449,16 @@
       }
       return `<svg viewBox="0 0 320 100" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="mg${semilla}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity=".05"/></linearGradient></defs>${barras}</svg>`;
     }
-    SPOT.forEach(([sector, pais, tono, url], i) => {
-      const nombrePais = PAISES.find((p) => p[0] === pais)[1];
+    SPOT.forEach(([sector, tono, url], i) => {
+      const categoria = categoriaDe(sector);
       const a = document.createElement("a");
       a.className = "sc"; a.href = url || "#pedir"; a.dataset.i = i;
-      a.setAttribute("aria-label", `${sector} en ${nombrePais}`);
-      a.innerHTML = `<div class="sc-img" style="--h:${tono}">${miniGrafico(i + 3)}<span class="sc-tag">${pais}</span></div>
-        <div class="sc-cap"><b>${esc(sector)}</b><span>${nombrePais}</span><em>${url ? "Ver informe" : "Pedir este informe"} <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5.5 2.5L8 5 5.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></em></div>`;
+      a.setAttribute("aria-label", `${sector} en España`);
+      a.innerHTML = `<div class="sc-img" style="--h:${tono}">${miniGrafico(i + 3)}<span class="sc-tag">ES</span></div>
+        <div class="sc-cap"><b>${esc(sector)}</b><span>${esc(categoria)}</span><em>${url ? "Ver informe" : "Pedir este informe"} <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5.5 2.5L8 5 5.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></em></div>`;
       track.appendChild(a);
       const d = document.createElement("button");
-      d.type = "button"; d.setAttribute("aria-label", `${sector} en ${nombrePais}`);
+      d.type = "button"; d.setAttribute("aria-label", `${sector} en España`);
       d.addEventListener("click", () => activar(i, true));
       dots.appendChild(d);
     });
@@ -521,12 +490,12 @@
       t.addEventListener("pointermove", (e) => e.pointerType === "mouse" && i !== actual && performance.now() > bloqueo && activar(i, true));
       t.addEventListener("click", (e) => {
         if (!t.classList.contains("on")) { e.preventDefault(); return activar(i, true); }
-        const [sector, pais, , url] = SPOT[i];
+        const [sector, , url] = SPOT[i];
         if (url) return;
-        // Sin informe de ejemplo: rellena el formulario con ese sector y país
+        // Sin informe de ejemplo: rellena el formulario con ese sector
         e.preventDefault();
         if (!document.getElementById("pedir")) return;
-        inSector.value = sector; elegirPais(pais);
+        inSector.value = sector;
         document.getElementById("pedir").scrollIntoView({ behavior: "smooth", block: "center" });
         setTimeout(() => document.getElementById("email").focus({ preventScroll: true }), 600);
       });

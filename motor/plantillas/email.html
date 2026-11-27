@@ -113,6 +113,13 @@
           </table>
         </td></tr>
 
+        {% if met.avisos %}
+        <!-- lo que hay que saber de estos datos -->
+        <tr><td class="px" style="padding:20px 28px 0;font-size:13px;line-height:1.55;color:#8F98AD;">
+          {% for a in met.avisos %}<p style="margin:0 0 6px;">{{ a }}</p>{% endfor %}
+        </td></tr>
+        {% endif %}
+
         <!-- botones -->
         <tr><td class="px" align="center" style="padding:30px 28px 8px;">
           <p style="margin:0 0 18px;font-size:15px;color:#B4BCCC;">El informe completo incluye la actividad de cada marca, sus ofertas y sus anuncios más duraderos.</p>

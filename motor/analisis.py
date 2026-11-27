@@ -34,10 +34,13 @@ ANGULOS = {
     "Local": ["tu ciudad", "cerca de", "barrio", "ven a"],
 }
 RE_OFERTAS = [
-    r"\d+(?:[.,]\d+)?\s?€(?:\s?/\s?mes)?",
+    r"(?:\b(?:desde|por)\s+(?:solo\s+|sólo\s+)?)?\d+(?:[.,]\d+)?\s?(?:€|euros?\b)(?:\s?/\s?mes)?",
     r"-?\d+\s?%(?:\s?de descuento)?",
     r"2x1",
     r"(?:\w+\s){0,3}gratis(?:\s\w+)?",
+    r"\bll[eé]vate\s+(?:una?|tu)\s+\w+",
+    r"\bsin matr[ií]cula\b",
+    r"\bblack friday\b",
 ]
 
 
@@ -61,10 +64,13 @@ def _angulos_de(texto: str) -> list[str]:
 
 
 def _ofertas_de(texto: str) -> list[str]:
+    """Ofertas distintas de un texto, escritas siempre igual («1€» y «1 euro» son la misma)."""
     encontradas = []
     for patron in RE_OFERTAS:
-        encontradas += [m.group(0).strip() for m in re.finditer(patron, texto, flags=re.I)]
-    return encontradas
+        for m in re.finditer(patron, texto, flags=re.I):
+            o = re.sub(r"\s?(?:€|euros?\b)", " €", " ".join(m.group(0).lower().split()))
+            encontradas.append(o)
+    return list(dict.fromkeys(encontradas))
 
 
 # ----------------------------------------------------------------------------- reglas
@@ -73,11 +79,12 @@ def _por_reglas(sol: Solicitud, met: dict) -> dict:
     for m in met["marcas"]:
         angs, ofertas = Counter(), Counter()
         for t in m["textos"]:
-            for a in _angulos_de(t["texto"]):
+            completo = f"{t['texto']}\n{t.get('titulo', '')}"
+            for a in _angulos_de(completo):
                 angs[a] += 1
                 sector_angulos[a] += 1
-            for o in _ofertas_de(t["texto"]):
-                ofertas[o.lower()] += 1
+            for o in _ofertas_de(completo):
+                ofertas[o] += 1
         top = [a for a, _ in angs.most_common(3)]
         frases = []
         frases.append(f"{_plural(m['activos'], 'anuncio activo', 'anuncios activos')} ({m['cuota']} % del total), "
@@ -98,8 +105,11 @@ def _por_reglas(sol: Solicitud, met: dict) -> dict:
     lider = marcas[0] if marcas else None
     ang_top, ang_n = (sector_angulos.most_common(1)[0] if sector_angulos else ("—", 0))
 
-    if lider and lider["cuota"] >= 35:
-        titular = f"{lider['nombre']} acapara el {lider['cuota']} % de los anuncios de {sol.industria.lower()}."
+    if lider and len(marcas) == 1:
+        titular = f"{lider['nombre']} tiene {_plural(lider['activos'], 'anuncio activo', 'anuncios activos')} en {sol.nombre_pais}."
+    elif lider and lider["cuota"] >= 35:
+        # La cuota es sobre las marcas del informe, no sobre todo el sector
+        titular = f"{lider['nombre']} publica el {lider['cuota']} % de los anuncios de las marcas analizadas."
     elif lider:
         titular = f"{lider['nombre']} lidera en anuncios y el argumento más repetido es {ang_top.lower()}."
     else:
@@ -113,8 +123,15 @@ def _por_reglas(sol: Solicitud, met: dict) -> dict:
         tendencias.append({"titulo": f"{ang_top} es el argumento más usado",
                            "detalle": f"Aparece en {round(100 * ang_n / total_textos)} % de las creatividades distintas."})
     if met["plataformas"]:
-        p = met["plataformas"][0]
-        tendencias.append({"titulo": f"{p['nombre']} manda", "detalle": f"El {p['pct']} % de los anuncios se publica en {p['nombre']}."})
+        pct = met["plataformas"][0]["pct"]
+        primeras = [p["nombre"] for p in met["plataformas"] if p["pct"] == pct]
+        if len(primeras) == 1:
+            tendencias.append({"titulo": f"{primeras[0]} manda",
+                               "detalle": f"El {pct} % de los anuncios se publica en {primeras[0]}."})
+        else:  # empate: nombrar solo una sería engañoso
+            juntas = ", ".join(primeras[:-1]) + " y " + primeras[-1]
+            tendencias.append({"titulo": f"Empate: {juntas}",
+                               "detalle": f"Cada una aparece en el {pct} % de los anuncios."})
     mas_activa = max(marcas, key=lambda m: m["nuevos"], default=None)
     if mas_activa and mas_activa["nuevos"] >= 2:
         tendencias.append({"titulo": f"{mas_activa['nombre']} acelera",
@@ -175,7 +192,8 @@ def _por_claude(sol: Solicitud, met: dict) -> dict:
             "page_id": m["page_id"], "nombre": m["nombre"], "activos": m["activos"], "cuota_pct": m["cuota"],
             "nuevos_7_dias": m["nuevos"], "mediana_dias_activo": m["mediana_dias"], "max_dias_activo": m["max_dias"],
             "creatividades_distintas": m["creatividades"], "plataformas": m["plataformas"],
-            "textos": [{"texto": t["texto"][:400], "dias_activo": t["dias"]} for t in m["textos"][:25]],
+            "textos": [{"texto": t["texto"][:400], "titulo": t.get("titulo", "")[:150], "dias_activo": t["dias"]}
+                       for t in m["textos"][:25]],
         } for m in met["marcas"]],
     }
     client = anthropic.Anthropic()

@@ -1,125 +1,119 @@
 """
-Prueba de la API de la Biblioteca de anuncios de Meta.
+Prueba de la API de la Biblioteca de anuncios de Meta con tu token. Solo España.
 
 Uso (PowerShell):
-    $env:META_TOKEN = "tu_token"
-    python probar_api.py <page_id> [<page_id> ...]
+    python probar_api.py "Basic-Fit" "AltaFit"             anuncios de unas marcas → anuncios.csv
+    python probar_api.py 123456789                         (número de página)
+    python probar_api.py --sectores Gimnasios Bancos Vino  qué anunciantes encuentra cada sector
+                                                           → sectores_prueba.json
 
-Opcional:
-    $env:META_API_VERSION = "v23.0"   # versión de la API Graph (mira el Explorador)
-    $env:META_PAIS = "ES"
-
-Genera anuncios.csv y muestra un resumen por marca. Solo usa la librería estándar.
+Si no hay META_TOKEN en el entorno, lo pide sin mostrarlo y no lo guarda.
+Ningún archivo que genera contiene el token.
 """
 
+import argparse
 import csv
 import json
-import os
 import sys
-import urllib.error
-import urllib.parse
-import urllib.request
-from datetime import date, datetime
+from collections import Counter
+from datetime import date
 
-VERSION = os.environ.get("META_API_VERSION", "v23.0")
-PAIS = os.environ.get("META_PAIS", "ES")
-MAX_PAGINAS = 5  # 5 x 50 = hasta 250 anuncios por marca
-
-CAMPOS = [
-    "id", "page_id", "page_name", "ad_creation_time",
-    "ad_delivery_start_time", "ad_delivery_stop_time",
-    "ad_creative_bodies", "ad_creative_link_titles",
-    "ad_creative_link_descriptions", "ad_creative_link_captions",
-    "publisher_platforms", "languages",
-    "eu_total_reach", "target_ages", "target_gender", "target_locations",
-    "ad_snapshot_url",
-]
-
-
-def pedir(url):
-    try:
-        with urllib.request.urlopen(url, timeout=60) as r:
-            return json.load(r)
-    except urllib.error.HTTPError as e:
-        cuerpo = e.read().decode("utf-8", "replace")
-        try:
-            msg = json.loads(cuerpo)["error"]["message"]
-        except Exception:
-            msg = cuerpo[:500]
-        sys.exit(f"Error {e.code} de la API: {msg}")
-
-
-def anuncios_de_pagina(token, page_id):
-    params = {
-        "access_token": token,
-        "search_page_ids": json.dumps([page_id]),
-        "ad_reached_countries": json.dumps([PAIS]),
-        "ad_type": "ALL",
-        "ad_active_status": "ACTIVE",
-        "limit": 50,
-        "fields": ",".join(CAMPOS),
-    }
-    url = f"https://graph.facebook.com/{VERSION}/ads_archive?" + urllib.parse.urlencode(params)
-    for _ in range(MAX_PAGINAS):
-        datos = pedir(url)
-        yield from datos.get("data", [])
-        url = datos.get("paging", {}).get("next")
-        if not url:
-            break
+from motor.meta_api import CAMPOS, ErrorMeta, anunciantes_de_sector, marcas_conocidas, pedir_token_si_falta, recolectar
+from motor.seguridad import comprobar_publicable
+from motor.solicitud import PAIS, Solicitud
 
 
 def unir(valor):
     if isinstance(valor, list):
-        return " | ".join(str(v) for v in valor)
-    if isinstance(valor, (dict,)):
+        return " | ".join(json.dumps(v, ensure_ascii=False) if isinstance(v, dict) else str(v) for v in valor)
+    if isinstance(valor, dict):
         return json.dumps(valor, ensure_ascii=False)
     return "" if valor is None else str(valor)
 
 
 def dias_activo(inicio):
     try:
-        return (date.today() - datetime.fromisoformat(inicio[:10]).date()).days
-    except Exception:
+        return (date.today() - date.fromisoformat(inicio[:10])).days
+    except (TypeError, ValueError):
         return ""
 
 
-def main():
-    token = os.environ.get("META_TOKEN")
-    if not token:
-        sys.exit('Falta el token. Ejecuta antes:  $env:META_TOKEN = "tu_token"')
-    page_ids = sys.argv[1:]
-    if not page_ids:
-        sys.exit("Indica al menos un page_id:  python probar_api.py 123456789")
+def probar_sectores(sectores: list[str]) -> int:
+    """Para revisar a quién elige cada sector, sin descargar todos los anuncios de cada marca."""
+    resultado = {}
+    for sector in sectores:
+        print(f"\n== {sector}")
+        conocidas = marcas_conocidas(sector, PAIS)
+        # La búsqueda se hace siempre aquí, para poder revisar el filtro aunque haya marcas conocidas
+        paginas, anuncios, terminos, en_catalogo = anunciantes_de_sector(sector, PAIS)
+        resultado[sector] = {
+            "terminos": terminos, "en_catalogo": en_catalogo, "conocidas": conocidas,
+            "filtradas": [{"id": p, "nombre": n, "anuncios": c} for p, n, c in paginas[:25]],
+            "anuncios": anuncios,
+        }
+        print(f"  búsqueda {terminos}, tras filtrar quedan {len(paginas)} anunciantes. Primeros:")
+        for _, n, c in paginas[:8]:
+            print(f"   {c:>4}  {n}")
+        texto = json.dumps(resultado, ensure_ascii=False)
+        comprobar_publicable(texto)
+        # Se guarda tras cada sector: si Meta corta por límite, lo hecho no se pierde
+        with open("sectores_prueba.json", "w", encoding="utf-8") as f:
+            f.write(texto)
+    print("\nGuardado sectores_prueba.json")
+    return 0
 
+
+def main(argv=None) -> int:
+    for salida in (sys.stdout, sys.stderr):
+        salida.reconfigure(errors="replace")  # emojis en consolas antiguas de Windows
+    ap = argparse.ArgumentParser(description="Prueba la API de anuncios de Meta (España).")
+    ap.add_argument("marcas", nargs="*", help="Nombres de marca, números de página o URL de la Biblioteca")
+    ap.add_argument("--sectores", nargs="+", default=[], help="Sectores a revisar")
+    a = ap.parse_args(argv)
+    if not a.marcas and not a.sectores:
+        ap.error('indica alguna marca (python probar_api.py "Basic-Fit") o --sectores')
+
+    pedir_token_si_falta()
+    try:
+        if a.sectores:
+            return probar_sectores(a.sectores)
+        r = recolectar(Solicitud(industria="prueba", marcas=a.marcas), log=print)
+    except ErrorMeta as e:
+        print(f"\nError: {e}", file=sys.stderr)
+        return 1
+
+    for aviso in r.avisos:
+        print(f"AVISO: {aviso}")
+    if not r.anuncios:
+        print("\nNo ha llegado ningún anuncio. Compara con https://www.facebook.com/ads/library")
+        return 0
+
+    campos = CAMPOS.split(",")
+    columnas = ["fecha_extraccion", "dias_activo"] + campos
     filas = []
-    for pid in page_ids:
-        anuncios = list(anuncios_de_pagina(token, pid))
-        nombre = anuncios[0].get("page_name", pid) if anuncios else pid
-        print(f"\n== {nombre} ({pid}): {len(anuncios)} anuncios activos en {PAIS}")
-        for a in anuncios:
-            fila = {c: unir(a.get(c)) for c in CAMPOS}
-            fila["dias_activo"] = dias_activo(a.get("ad_delivery_start_time", ""))
-            fila["fecha_extraccion"] = date.today().isoformat()
-            filas.append(fila)
-        for a in anuncios[:3]:
-            texto = unir(a.get("ad_creative_bodies"))[:120].replace("\n", " ")
-            print(f"   - [{a.get('ad_delivery_start_time', '')[:10]}] {texto}")
-
-    if not filas:
-        print("\nNo ha llegado ningún anuncio. Revisa los page_id y que las marcas anuncien en ese país.")
-        return
-
-    columnas = ["fecha_extraccion", "dias_activo"] + CAMPOS
+    for ad in r.anuncios:
+        fila = {c: unir(ad.get(c)) for c in campos}
+        fila["dias_activo"] = dias_activo(ad.get("ad_delivery_start_time"))
+        fila["fecha_extraccion"] = date.today().isoformat()
+        filas.append(fila)
+    comprobar_publicable(json.dumps(filas, ensure_ascii=False))
     with open("anuncios.csv", "w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=columnas)
         w.writeheader()
         w.writerows(filas)
 
-    vacios = [c for c in CAMPOS if not any(f[c] for f in filas)]
+    print()
+    for nombre, n in Counter(f["page_name"] for f in filas).most_common():
+        print(f"== {nombre}: {n} anuncios")
+        for f in [x for x in filas if x["page_name"] == nombre][:3]:
+            texto = f["ad_creative_bodies"][:110].replace("\n", " ")
+            print(f"   - [{f['ad_delivery_start_time'][:10]}] {texto}")
     print(f"\nGuardado anuncios.csv ({len(filas)} filas).")
+    vacios = [c for c in campos if not any(f[c] for f in filas)]
     if vacios:
         print("Campos que han llegado vacíos:", ", ".join(vacios))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
