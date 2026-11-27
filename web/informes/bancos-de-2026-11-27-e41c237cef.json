@@ -1,0 +1,611 @@
+{
+  "solicitud": {
+    "industria": "Bancos",
+    "pais": "DE",
+    "marcas": [],
+    "id": "e41c237cef1d47bcb48bd17b821c75f1",
+    "fecha": "2026-11-27"
+  },
+  "ejemplo": true,
+  "metricas": {
+    "antiguedad": [
+      {
+        "nombre": "Esta semana",
+        "n": 7,
+        "pct": 12
+      },
+      {
+        "nombre": "8-30 días",
+        "n": 17,
+        "pct": 28
+      },
+      {
+        "nombre": "1-3 meses",
+        "n": 35,
+        "pct": 58
+      },
+      {
+        "nombre": "Más de 3 meses",
+        "n": 1,
+        "pct": 2
+      }
+    ],
+    "max_serie": 2,
+    "fecha_ref": "2026-11-27",
+    "total_anuncios": 60,
+    "n_marcas": 5,
+    "nuevos": 7,
+    "mediana_dias": 42,
+    "plataformas": [
+      {
+        "nombre": "Instagram",
+        "pct": 100
+      },
+      {
+        "nombre": "Facebook",
+        "pct": 88
+      },
+      {
+        "nombre": "Messenger",
+        "pct": 7
+      },
+      {
+        "nombre": "Audience Network",
+        "pct": 5
+      }
+    ],
+    "marcas": [
+      {
+        "page_id": "100003",
+        "nombre": "Kora",
+        "activos": 25,
+        "cuota": 42,
+        "nuevos": 1,
+        "mediana_dias": 42,
+        "max_dias": 71,
+        "mas_longevo": {
+          "dias": 71,
+          "texto": "Bancos desde 49 €. Sin permanencia y sin letra pequeña.",
+          "url": "https://www.facebook.com/ads/library/?id=1000030011",
+          "id": "1000030011"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 92
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 8
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 8
+          }
+        ],
+        "creatividades": 9,
+        "alcance_ue": 1976800,
+        "edades": "18 - 65+",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Bancos desde 49 €. Sin permanencia y sin letra pequeña.",
+            "dias": 71
+          },
+          {
+            "texto": "Bancos desde 4,99 €/mes. Sin permanencia y sin letra pequeña.",
+            "dias": 66
+          },
+          {
+            "texto": "Más de 200.000 personas ya confían en nosotros. Únete a la comunidad Kora.",
+            "dias": 60
+          },
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Kora.",
+            "dias": 59
+          },
+          {
+            "texto": "Más de 50.000 personas ya confían en nosotros. Únete a la comunidad Kora.",
+            "dias": 54
+          },
+          {
+            "texto": "Garantía total: si no te convence, te devolvemos el dinero.",
+            "dias": 53
+          },
+          {
+            "texto": "Bancos desde 9,99 €. Sin permanencia y sin letra pequeña.",
+            "dias": 47
+          },
+          {
+            "texto": "Más de 10.000 personas ya confían en nosotros. Únete a la comunidad Kora.",
+            "dias": 32
+          },
+          {
+            "texto": "Bancos desde 19 €. Sin permanencia y sin letra pequeña.",
+            "dias": 18
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100004",
+        "nombre": "Brío",
+        "activos": 14,
+        "cuota": 23,
+        "nuevos": 3,
+        "mediana_dias": 28,
+        "max_dias": 108,
+        "mas_longevo": {
+          "dias": 108,
+          "texto": "Calidad que se nota y dura años. Así trabajamos en Brío.",
+          "url": "https://www.facebook.com/ads/library/?id=1000040000",
+          "id": "1000040000"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Audience Network",
+            "pct": 7
+          }
+        ],
+        "creatividades": 7,
+        "alcance_ue": 1183400,
+        "edades": "18 - 34",
+        "genero": "All",
+        "textos": [
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Brío.",
+            "dias": 108
+          },
+          {
+            "texto": "Bancos desde 29,90 €. Sin permanencia y sin letra pequeña.",
+            "dias": 84
+          },
+          {
+            "texto": "Bancos desde 19 €. Sin permanencia y sin letra pequeña.",
+            "dias": 81
+          },
+          {
+            "texto": "Bancos desde 4,99 €/mes. Sin permanencia y sin letra pequeña.",
+            "dias": 63
+          },
+          {
+            "texto": "Nuevo en Brío: descubre lo último en bancos.",
+            "dias": 14
+          },
+          {
+            "texto": "Bancos desde 49 €. Sin permanencia y sin letra pequeña.",
+            "dias": 6
+          },
+          {
+            "texto": "Resultados que se notan desde el primer mes. Así lo cuentan nuestros clientes.",
+            "dias": 2
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100002",
+        "nombre": "Lumen",
+        "activos": 9,
+        "cuota": 15,
+        "nuevos": 1,
+        "mediana_dias": 44,
+        "max_dias": 67,
+        "mas_longevo": {
+          "dias": 67,
+          "texto": "Calidad que se nota y dura años. Así trabajamos en Lumen.",
+          "url": "https://www.facebook.com/ads/library/?id=1000020001",
+          "id": "1000020001"
+        },
+        "plataformas": [
+          {
+            "nombre": "Facebook",
+            "pct": 100
+          },
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 11
+          }
+        ],
+        "creatividades": 6,
+        "alcance_ue": 610800,
+        "edades": "18 - 65+",
+        "genero": "Women",
+        "textos": [
+          {
+            "texto": "Calidad que se nota y dura años. Así trabajamos en Lumen.",
+            "dias": 67
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y envío gratis.",
+            "dias": 65
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un regalo de bienvenida.",
+            "dias": 46
+          },
+          {
+            "texto": "-30 % en bancos solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 44
+          },
+          {
+            "texto": "Más de 200.000 personas ya confían en nosotros. Únete a la comunidad Lumen.",
+            "dias": 33
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y una prueba gratuita.",
+            "dias": 15
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100000",
+        "nombre": "Vértice",
+        "activos": 6,
+        "cuota": 10,
+        "nuevos": 0,
+        "mediana_dias": 35,
+        "max_dias": 74,
+        "mas_longevo": {
+          "dias": 74,
+          "texto": "Nuevo en Vértice: descubre lo último en bancos.",
+          "url": "https://www.facebook.com/ads/library/?id=1000000004",
+          "id": "1000000004"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 33
+          },
+          {
+            "nombre": "Messenger",
+            "pct": 17
+          }
+        ],
+        "creatividades": 5,
+        "alcance_ue": 269600,
+        "edades": "25 - 54",
+        "genero": "Women",
+        "textos": [
+          {
+            "texto": "Nuevo en Vértice: descubre lo último en bancos.",
+            "dias": 74
+          },
+          {
+            "texto": "Garantía total: si no te convence, te devolvemos el dinero.",
+            "dias": 55
+          },
+          {
+            "texto": "-20 % en bancos solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 47
+          },
+          {
+            "texto": "-30 % en bancos solo esta semana. Aprovecha antes de que acabe.",
+            "dias": 23
+          },
+          {
+            "texto": "Bancos desde 29,90 €. Sin permanencia y sin letra pequeña.",
+            "dias": 15
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "page_id": "100001",
+        "nombre": "Atlas",
+        "activos": 6,
+        "cuota": 10,
+        "nuevos": 2,
+        "mediana_dias": 33,
+        "max_dias": 73,
+        "mas_longevo": {
+          "dias": 73,
+          "texto": "Todo desde la app, cuando quieras y donde quieras. Empieza en 2 minutos.",
+          "url": "https://www.facebook.com/ads/library/?id=1000010001",
+          "id": "1000010001"
+        },
+        "plataformas": [
+          {
+            "nombre": "Instagram",
+            "pct": 100
+          },
+          {
+            "nombre": "Facebook",
+            "pct": 83
+          }
+        ],
+        "creatividades": 5,
+        "alcance_ue": 319800,
+        "edades": "25 - 54",
+        "genero": "Women",
+        "textos": [
+          {
+            "texto": "Todo desde la app, cuando quieras y donde quieras. Empieza en 2 minutos.",
+            "dias": 73
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y un 20 % de descuento.",
+            "dias": 58
+          },
+          {
+            "texto": "Ya estamos en tu ciudad. Ven a conocernos y una prueba gratuita.",
+            "dias": 54
+          },
+          {
+            "texto": "Más de 50.000 personas ya confían en nosotros. Únete a la comunidad Atlas.",
+            "dias": 12
+          },
+          {
+            "texto": "Más de 200.000 personas ya confían en nosotros. Únete a la comunidad Atlas.",
+            "dias": 5
+          }
+        ],
+        "serie_30d": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "analisis": {
+    "fuente": "reglas",
+    "titular": "Kora acapara el 42 % de los anuncios de bancos.",
+    "subtitulo": "60 anuncios activos de 5 marcas en Alemania. 7 empezaron en los últimos 7 días.",
+    "tendencias": [
+      {
+        "titulo": "Precio es el argumento más usado",
+        "detalle": "Aparece en 41 % de las creatividades distintas."
+      },
+      {
+        "titulo": "Instagram manda",
+        "detalle": "El 100 % de los anuncios se publica en Instagram."
+      },
+      {
+        "titulo": "Brío acelera",
+        "detalle": "Es la marca con más anuncios nuevos: 3 en 7 días."
+      }
+    ],
+    "marcas": {
+      "100003": {
+        "angulos": [
+          "Precio",
+          "Comunidad",
+          "Calidad"
+        ],
+        "ofertas": [
+          "49 €",
+          "4,99 €/mes",
+          "9,99 €"
+        ],
+        "tono": "",
+        "conclusion": "25 anuncios activos (42 % del total), 1 nuevo esta semana. Apuesta sobre todo por precio y comunidad. Su anuncio más longevo lleva 71 días activo."
+      },
+      "100004": {
+        "angulos": [
+          "Precio",
+          "Calidad",
+          "Novedad"
+        ],
+        "ofertas": [
+          "29,90 €",
+          "19 €",
+          "4,99 €/mes"
+        ],
+        "tono": "",
+        "conclusion": "14 anuncios activos (23 % del total), 3 nuevos esta semana. Apuesta sobre todo por precio y calidad. Su anuncio más longevo lleva 108 días activo."
+      },
+      "100002": {
+        "angulos": [
+          "Local",
+          "Calidad",
+          "Precio"
+        ],
+        "ofertas": [
+          "conocernos y envío gratis",
+          "-30 %"
+        ],
+        "tono": "",
+        "conclusion": "9 anuncios activos (15 % del total), 1 nuevo esta semana. Apuesta sobre todo por local y calidad. Su anuncio más longevo lleva 67 días activo."
+      },
+      "100000": {
+        "angulos": [
+          "Precio",
+          "Urgencia",
+          "Novedad"
+        ],
+        "ofertas": [
+          "-20 %",
+          "-30 %",
+          "29,90 €"
+        ],
+        "tono": "",
+        "conclusion": "6 anuncios activos (10 % del total), 0 nuevos esta semana. Apuesta sobre todo por precio y urgencia. Su anuncio más longevo lleva 74 días activo."
+      },
+      "100001": {
+        "angulos": [
+          "Local",
+          "Comunidad",
+          "Conveniencia"
+        ],
+        "ofertas": [
+          "20 % de descuento"
+        ],
+        "tono": "",
+        "conclusion": "6 anuncios activos (10 % del total), 2 nuevos esta semana. Apuesta sobre todo por local y comunidad. Su anuncio más longevo lleva 73 días activo."
+      }
+    }
+  }
+}
